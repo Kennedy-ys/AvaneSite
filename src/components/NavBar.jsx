@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
-import Logo from '../assets/logo.jpg'
+import Logo from './logo'
 import AnimatedMenu from './AnimatedMenu'
 import ThemeToggle from './ThemeToggle'
 import SideBar from './SideBar'
@@ -12,7 +12,7 @@ const NavBar = () => {
     <header>
     <nav className='bg-white dark:bg-gray-950 drop-shadow-sm flex items-center justify-between py-3 px-7 fixed top-0 left-0 w-full'>
         <Link to='/'>
-        <img src={Logo} className='w-20 h-9' alt="Avane Logo" />
+        <Logo className='w-20 h-auto'/>
         </Link>
 
         <div className="hidden md:flex transition-all items-center gap-7">
