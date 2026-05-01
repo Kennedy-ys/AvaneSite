@@ -2,7 +2,6 @@ import Home from "./routes/Home"
 import About from "./routes/About"
 import Services from "./routes/Services"
 import Contact from "./routes/Contact"
-import Logo from "./components/logo"
 import NavBar from "./components/NavBar"
 import { Routes, Route } from "react-router-dom"
 import React, { useEffect, useState } from "react"
@@ -65,7 +64,6 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/services' element={<Services/>} />
         <Route path='/contact' element={<Contact/>} />
-        <Route path='/logo' element={<Logo/>} />
       </Routes>
       <Footer />
     </div>

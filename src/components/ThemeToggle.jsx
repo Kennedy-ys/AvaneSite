@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon } from 'lucide-react';
+import { FaMoon, FaSun } from "react-icons/fa";
 import { useTheme } from '../hooks/useTheme';
 
 const ThemeToggle = ({ size = 32 }) => {
@@ -24,7 +24,7 @@ const ThemeToggle = ({ size = 32 }) => {
       aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
       onClick={toggleTheme}
       style={{ width: `${width}px`, height: `${size}px`, padding: `${padding}px` }}
-      className={`relative flex items-center rounded-full transition-all duration-300 ${
+      className={`relative border border-gray-300 dark:border-gray-700 flex items-center rounded-full transition-all duration-300 ${
         isDarkMode ? 'bg-gray-800' : 'bg-gray-200'
       }`}
     >
@@ -37,9 +37,9 @@ const ThemeToggle = ({ size = 32 }) => {
         className="bg-white rounded-full shadow-md transition-transform duration-300 flex items-center justify-center"
       >
         {isDarkMode ? (
-          <Moon size={iconSize} className="text-gray-800 hover:cursor-pointer" />
+          <FaSun size={iconSize} className="text-yellow-500 hover:cursor-pointer" />
         ) : (
-          <Sun size={iconSize} className="text-yellow-500 hover:cursor-pointer" />
+          <FaMoon size={iconSize} className="text-gray-800 hover:cursor-pointer" />
         )}
       </div>
     </button>
