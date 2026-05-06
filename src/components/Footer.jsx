@@ -5,9 +5,8 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaGoogle,
-  FaPhone,
-  FaEnvelope
 } from "react-icons/fa6";
+import { TbBellRinging } from "react-icons/tb";
 import { FaRegEnvelope } from "react-icons/fa";
 import NewsLetter from "../assets/NewsLetter.png";
 import Button from "./Button";
@@ -30,29 +29,16 @@ const Footer = () => {
     { name: "Testimonials", link: "#" },
   ];
   const servicesLinks = [
-    { name: "Research", link: "/services" },
-    { name: "Software Development", link: "/services" },
-    { name: "UI/UX Design", link: "/services" },
+    { name: "Research", link: "/services/research" },
+    { name: "Software Development", link: "/services/development" },
+    { name: "UI/UX Design", link: "/services/design" },
   ];
 
   return (
-    <footer className="relative bg-white dark:bg-slate-900  dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8">
-      {/* <div className="relative w-full h-64 rounded-3xl overflow-hidden bg-[#1a2c2e] flex items-center justify-center">
-  {/* The Gradient Layers */}
-  {/* <div className="absolute inset-0 bg-liinear-to-br from-[#1a3a3a] via-[#104d5a] to-[#2d1b4d] opacity-80" /> */}
-  
-  {/* The "Glow" spot (that teal/cyan light) */}
-  {/* <div className="absolute top-[-20%] right-[10%] w-80 h-80 bg-[#4fd1c5] rounded-full blur-[120px] opacity-20" /> */}
-
-  {/* The Noise Overlay (Texture) */}
-  {/* <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" /> */}
-  
-  {/* <div className="relative z-10 text-white">
-     {/* Your content here */}
-  {/*</div> 
-</div> */}
+    <footer className="relative bg-white dark:bg-slate-900  text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
+      
       {/* 1. Floating Newsletter Card */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl px-4">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl  px-4">
         <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/noise.svg')] rounded-3xl p-8 md:p-12 mx-4 md:mx-0 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
           {/* abstract customer service */}
           <div className="w-64 h-48 -mt-24 left-8 mb-18 md:mb-0 relative z-10">
@@ -80,10 +66,12 @@ const Footer = () => {
               />
               <Button
                 type="submit"
-                btnBgColor="bg-white px-3"
-                btnTxtColor="text-blue-600 group-hover:text-white px-5"
-                btnBgHover="bg-blue-600"
-                size="15"
+                btnBgColor="bg-white"
+                btnTxtColor="text-blue-600 w-30"
+                btnBgHover="bg-blue-100"
+                size={15}
+                iconBgColor="bg-blue-500 "
+                icon={<TbBellRinging className='text-white' size={16}/>}
               >
                 Subscribe
               </Button>
@@ -103,11 +91,10 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="md:col-span-2">
             <Link 
-            className=""
             to="/">
               <Logo className="mb-4 w-15 h-auto " />
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">
+            <p className=" leading-relaxed max-w-sm">
               Transforming businesses through innovative technology solutions,
               thoughtful design, and strategic research.
             </p>

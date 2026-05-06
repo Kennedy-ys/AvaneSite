@@ -1,4 +1,4 @@
-import CardImg from "../assets/Chameleon.jpg";
+import CardImg from "../assets/NewsLetter.png";
 
 const team = [
   { id: 1, name: "Marcus", role: "Director", image: CardImg },
