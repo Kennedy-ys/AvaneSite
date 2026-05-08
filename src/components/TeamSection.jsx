@@ -10,7 +10,8 @@ const teamMembers = [
     description:
       "Bridging the gap between high-frequency engineering and premium editorial design for over a decade.",
     initial: "MT",
-    accent: "border-dashed border-2 border-blue-300 dark:border-blue-700",
+    image:"",
+    
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const teamMembers = [
     description:
       "Expert in distributed ledgers and low-latency systems. Architect of our proprietary kinetic framework.",
     initial: "SV",
-    accent: "",
+    image:"",
+    
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const teamMembers = [
     description:
       "Transforming static concepts into fluid, responsive experiences that defy standard UI conventions.",
     initial: "EB",
-    accent: "",
+    image:"",
+    
   },
   {
     id: 4,
@@ -40,7 +43,8 @@ const teamMembers = [
     description:
       "Crafting micro-interactions and animated sequences that breathe life into complex interfaces.",
     initial: "LH",
-    accent: "",
+    image:"",
+    
   },
   {
     id: 5,
@@ -50,7 +54,8 @@ const teamMembers = [
     description:
       "Specializing in seamless API architecture and high-throughput data pipelines for enterprise clients.",
     initial: "KO",
-    accent: "",
+    image:"",
+    
   },
   {
     id: 6,
@@ -60,7 +65,8 @@ const teamMembers = [
     description:
       "Aligning technical precision with narrative craft to build brands that resonate across every touchpoint.",
     initial: "VS",
-    accent: "",
+    image:"",
+    
   },
 ];
 
@@ -131,15 +137,14 @@ function TeamCard({ member, index }) {
     >
       {/* Card border (dashed for first) */}
       <div
-        className={`absolute inset-0 rounded-2xl pointer-events-none z-10 ${member.accent}`}
-      />
+        className={`absolute inset-0 rounded-2xl pointer-events-none z-10`} />
 
       {/* Main card bg */}
       <motion.div
         className="rounded-2xl overflow-hidden"
         animate={{
           boxShadow: hovered
-            ? "0 24px 60px rgba(37,99,235,0.28), 0 8px 20px rgba(37,99,235,0.18)"
+            ? "0 24px 60px rgba(37,99,235,0.16), 0 8px 20px rgba(37,99,235,0.18)"
             : "0 2px 12px rgba(0,0,0,0.08)",
         }}
         transition={{ duration: 0.35 }}
@@ -162,7 +167,18 @@ function TeamCard({ member, index }) {
             animate={{ filter: hovered ? "none" : "grayscale(100%)" }}
             transition={{ duration: 0.4 }}
           >
-            <AvatarSVG initial={member.initial} isHovered={hovered} />
+            <motion.img
+  src={member.image}
+  alt={member.name}
+  className="absolute inset-0 h-full w-full object-cover"
+  animate={{
+    scale: hovered ? 1.06 : 1,
+    filter: hovered
+      ? "grayscale(0%) brightness(1)"
+      : "grayscale(100%) brightness(0.82)",
+  }}
+  transition={{ duration: 0.45 }}
+/>
           </motion.div>
 
           {/* Subtle overlay grid pattern */}
@@ -186,7 +202,7 @@ function TeamCard({ member, index }) {
         >
           <motion.div
             className="dark:bg-gray-900 bg-white"
-            animate={{ backgroundColor: hovered ? "#f0f7ff" : "" }}
+            animate={{ backgroundColor: hovered ? "" : "" }}
           >
             <h3
               className={`text-lg font-bold tracking-tight mb-1 transition-colors duration-300 ${
@@ -247,7 +263,7 @@ export default function AvaneTeamSection() {
           <div className="flex items-center gap-3 mb-5">
             <div className="h-px w-8 bg-orange-500" />
             <span className="text-orange-500 text-xs font-semibold uppercase tracking-widest">
-              The Team
+              Meet The Team
             </span>
           </div>
 
