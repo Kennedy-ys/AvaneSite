@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FaFacebookF,
   FaXTwitter,
@@ -7,7 +7,7 @@ import {
   FaGoogle,
 } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
-import { FaRegEnvelope } from "react-icons/fa";
+import { FaRegEnvelope, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import NewsLetter from "../assets/NewsLetter.png";
 import Button from "./Button";
 import Logo from "./Logo";
@@ -35,17 +35,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-white dark:bg-slate-900  text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
-      
-      {/* 1. Floating Newsletter Card */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl  px-4">
-        <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/noise.svg')] rounded-3xl p-8 md:p-12 mx-4 md:mx-0 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
-          {/* abstract customer service */}
-          <div className="w-64 h-48 -mt-24 left-8 mb-18 md:mb-0 relative z-10">
+    <footer className="relative overflow-hidden bg-white dark:bg-slate-900  text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
+      {/* 1. Newsletter Card */}
+      <div className=" w-full max-w-5xl px-4 mx-auto">
+        <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/noise.svg')] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
+          {/* Image section:  customer service */}
+          <div className="w-64 h-48 mb-10 md:mb-0 z-10">
             <img
               src={NewsLetter}
               alt="Man checking email"
-              className="object-contain w-full h-full scale-180"
+              className="object-contain w-full h-full scale-130"
             />
           </div>
 
@@ -55,7 +54,7 @@ const Footer = () => {
               Subscribe to Our Weekly Newsletter
             </h2>
 
-            <div className="flex bg-blue-500/50 rounded-full p-1 border border-blue-400">
+            <form className="flex bg-blue-500/50 rounded-full p-1 border border-blue-400">
               <div className="flex items-center pl-4 text-blue-200">
                 <FaRegEnvelope size={18} />
               </div>
@@ -65,17 +64,17 @@ const Footer = () => {
                 className="bg-transparent border-none outline-none text-white placeholder-blue-200 w-full px-3 py-2 text-sm autofill:shadow-[inset_0_0_0px_1000px_#abbfff00]  rounded-md autofill:text-fill-white autofill:transition-[background-color_9999s_ease-in-out_0s]"
               />
               <Button
-                type="submit"
+              onclick={() => alert("This is a demo. No actual subscription will occur.")}
                 btnBgColor="bg-white"
-                btnTxtColor="text-blue-600 w-30"
+                btnTxtColor="text-blue-600 w-40"
                 btnBgHover="bg-blue-100"
                 size={15}
                 iconBgColor="bg-blue-500 "
-                icon={<TbBellRinging className='text-white' size={16}/>}
+                icon={<TbBellRinging className="text-white" size={16} />}
               >
                 Subscribe
               </Button>
-            </div>
+            </form>
             <p className="mt-4 text-xs text-blue-200">
               You will be able to unsubscribe at any time.{" "}
               <a href="#" className="underline">
@@ -85,16 +84,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mt-40 md:mt-35 mx-9">
+      <div className="max-w-7xl mt-10 mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-12 justift-center mb-12">
+        <div className="grid md:grid-cols-4 gap-12 justify-center mb-12">
           {/* Brand Column */}
-          <div className="md:col-span-2">
-            <Link 
-            to="/">
+          <div className="">
+            <Link to="/">
               <Logo className="mb-4 w-15 h-auto " />
             </Link>
-            <p className=" leading-relaxed max-w-sm">
+            <p className=" leading-relaxed text-md ">
               Transforming businesses through innovative technology solutions,
               thoughtful design, and strategic research.
             </p>
@@ -108,6 +106,8 @@ const Footer = () => {
                     className="w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-all hover:bg-linear-to-r hover:from-orange-500 hover:to-amber-500 hover:text-white bg-gray-600 dark:bg-slate-50 text-white dark:text-gray-600"
                     href={social.link}
                     key={index}
+                    aria-label={social.name}
+                    target="_blank"
                   >
                     <IconComponent size={17} />
                   </a>
@@ -131,7 +131,7 @@ const Footer = () => {
               );
             })}
           </div>
-          
+
           {/* Service Column */}
           <div className="flex flex-col space-y-3">
             <h4 className="font-semibold dark:text-white mb-4">Our Services</h4>
@@ -147,6 +147,41 @@ const Footer = () => {
               );
             })}
           </div>
+
+          {/* Contact Information */}
+          <div className="flex flex-col space-y-3">
+            <h4 className="font-semibold dark:text-white mb-4">Contact Us</h4>
+            {[
+              {
+                type: "Email",
+                value: "contact@avane.com",
+                link: "mailto:contact@avane.com",
+                icon: FaEnvelope,
+              },
+              {
+                type: "number",
+                value: "+234 700 000 0000",
+                link: "tel:+234700000000",
+                icon: FaPhoneAlt,
+              },
+            ].map((contact, index) => {
+              const IconComponent = contact.icon;
+              return (
+                <a
+                  href={contact.link}
+                  key={index}
+                  type={contact.type}
+                  className=" group w-full hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
+                >
+                  <IconComponent
+                    className="inline-block mr-2 text-gray-500 dark:text-gray-400 group-hover:text-orange-500"
+                    size={15}
+                  />
+                  {contact.value}
+                </a>
+              );
+            })}
+          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -155,7 +190,10 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} Avane. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm">
-            <a href="#privacy" className="hover:text-slate-700 dark:hover:text-white transition-colors">
+            <a
+              href="#privacy"
+              className="hover:text-slate-700 dark:hover:text-white transition-colors"
+            >
               Privacy Policy
             </a>
             <a

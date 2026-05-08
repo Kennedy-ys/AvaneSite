@@ -1,54 +1,213 @@
 import CardImg from "../assets/NewsLetter.png";
-
-const team = [
-  { id: 1, name: "Marcus", role: "Director", image: CardImg },
-  { id: 2, name: "Sienna", role: "Architect", image: CardImg },
-  { id: 3, name: "Elias", role: "Engineer", image: CardImg },
-  { id: 4, name: "Elia", role: "Engineer", image: CardImg },
-  { id: 5, name: "Eli", role: "Engineer", image: CardImg },
-  { id: 6, name: "El", role: "Engineer", image: CardImg },
-  { id: 7, name: "Eias", role: "Engineer", image: CardImg },
-  { id: 8, name: "Elas", role: "Engineer", image: CardImg },
-  { id: 9, name: "Lias", role: "Engineer", image: CardImg },
-  { id: 10, name: "ELlias", role: "Engineer", image: CardImg },
-  { id: 11, name: "EiLas", role: "Engineer", image: CardImg },
-  { id: 12, name: "EliaLs", role: "Engineer", image: CardImg },
-];
+import TeamSection from "../components/TeamSection";
+import { motion } from "motion/react";
+import { PiLightbulbLight } from "react-icons/pi";
+import AboutSection from "../components/AboutSection";
+import VisionImg from "../assets/Vision.webp";
+import BreadCrums from "../components/BreadCrums";
+import GetStarted from "../components/GetStarted";
 
 const About = () => {
   return (
-    <div className="mb-88 mt-5">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-slate-950 py-20">
-        <div className="max-w-6xl px-6 flex flex-col md:flex-row items-center gap-12">
-          {/* Text Content */}
-          <div className="text-center md:text-left flex-1">
-            <h1 className="text-4xl mb-6 md:text-5xl font-bold text-black dark:text-white">
-              Meet The <span className="text-orange-500">Team</span>
-            </h1>
-            <p className="text-lg text-gray-800 dark:text-gray-400 mb-0 text-left w-1/2">
-              We are a team of passionate professionals dedicated to providing
-              top-notch services in web development, design and digital
-              marketing. Our mission is to help businesses thrive in the digital
-              world by delivering innovative solutions tailored to their unique
-              needs.
+    <div className="mb-8 mt-55">
+
+    <BreadCrums />
+
+      <AboutSection />
+      {/* Vision Section */}
+      <section className="relative overflow-hidden bg-[#f5f5f5] py-20 dark:bg-[#0f1115]">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-10">
+        <div className="absolute -left-40 top-0 h-150 w-150 rotate-45 bg-white dark:bg-white/5" />
+        <div className="absolute right-0 top-0 h-125 w-125 rotate-45 bg-white/60 dark:bg-white/3" />
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+        {/* Left Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          
+
+          {/* Vision */}
+          <div className="mb-6 flex items-center gap-4">
+            <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10">
+              <PiLightbulbLight className="h-5 w-5 text-orange-500" />
+            </div>
+
+            <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-700 dark:text-zinc-300">
+              Our Vision
+            </h3>
+          </div>
+
+          <div className="mb-8 h-px w-full bg-zinc-300 dark:bg-white/10" />
+
+          {/* Paragraphs */}
+          <div className="space-y-8 text-[17px] leading-9 text-zinc-600 dark:text-zinc-400">
+            <p>
+              To enhance society by providing human-centered,
+              customer-centric technology solutions. We understand that
+              fulfilling our vision requires us to embark on a mission of
+              attracting, developing, and retaining employees from a rich
+              variety of experiences which is our starting point to enhancing
+              society.
+            </p>
+
+            <p>
+              Much of our strategies and plans rely on building up local
+              Nigerian-African based culture and competencies, sustaining that
+              through home grown technical ingenuity. We are passionate about
+              partnerships that allow us build great products. We listen, we
+              pay attention to details and above all, we always understand your
+              needs. This enables us to deliver solutions that not only meet
+              your needs, but also surpass your expectations.
             </p>
           </div>
-        </div>
-      </section>
+        </motion.div>
 
-      <div className="grid grid-cols-3 grid-rows-4 gap-6 bg-gray-200 p-6 pt-16 mt-0 dark:bg-gray-900">
+        {/* Right Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Accent Border */}
+          <motion.div
+  animate={{
+    borderColor: [
+      "rgb(255 165 0)",
+      "rgb(255 255 255)",
+      "rgb(0 0 0)",
+      "rgb(0 0 255)",
+    ],
+  }}
+  transition={{
+    duration: 6,
+    repeat: Infinity,
+    ease: "linear",
+  }}
+  className="absolute -bottom-4 -left-4 h-full w-full border rounded-2xl"
+/>
 
-        {team.map((member) => (
-          <div key={member.id} className="m-4 group bg-white grayscale hover:grayscale-0 rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out hover:-translate-y-2 hover:shadow-l shadow-amber-700/50 dark:bg-slate-950">
-            <img src={member.image} alt={member.name} className="w-full h-48 transition duration-300 object-cover" />
-            <div className="p-4">
-              <h3 className="text-xl font-bold text-black dark:text-white">{member.name}</h3>
-              <p className="text-gray-800 dark:text-gray-400">{member.role}</p>
-            </div>
+          {/* Image Wrapper */}
+          <div className="relative overflow-hidden border border-zinc-300 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-900 rounded-2xl">
+            <motion.img
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.5 }}
+              src={VisionImg}
+              alt="Team collaboration"
+              className="h-full w-full object-cover"
+            />
           </div>
-        ))}
+        </motion.div>
       </div>
+    </section>
+
+      {/* Mission Section */}
+      <section className="relative overflow-hidden bg-[#f5f5f5] py-20 dark:bg-[#0f1115]">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-10">
+        <div className="absolute -left-40 top-0 h-150 w-150 rotate-45 bg-white dark:bg-white/5" />
+        <div className="absolute right-0 top-0 h-125 w-125 rotate-45 bg-white/60 dark:bg-white/3" />
+      </div>
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
+
+        {/* Left Image */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Accent Border */}
+          <motion.div
+  animate={{
+    borderColor: [
+      "rgb(255 165 0)",
+      "rgb(255 255 255)",
+      "rgb(0 0 0)",
+      "rgb(0 0 255)",
+    ],
+  }}
+  transition={{
+    duration: 6,
+    repeat: Infinity,
+    ease: "linear",
+  }}
+  className="absolute -bottom-4 -left-4 h-full w-full border rounded-2xl"
+/>
+
+          {/* Image Wrapper */}
+          <div className="relative overflow-hidden border border-zinc-300 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-900 rounded-2xl">
+            <motion.img
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.5 }}
+              src={VisionImg}
+              alt="Team collaboration"
+              className="h-full w-full object-cover"
+            />
+          </div>
+        </motion.div>
+        {/* Right Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          
+
+          {/* Mission */}
+          <div className="mb-6 flex items-center gap-4">
+            <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10">
+              <PiLightbulbLight className="h-5 w-5 text-orange-500" />
+            </div>
+
+            <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-700 dark:text-zinc-300">
+              Our Mission
+            </h3>
+          </div>
+
+          <div className="mb-8 h-px w-full bg-zinc-300 dark:bg-white/10" />
+
+          {/* Paragraphs */}
+          <div className="space-y-8 text-[17px] leading-9 text-zinc-600 dark:text-zinc-400">
+            <p>
+              To enhance society by providing human-centered,
+              customer-centric technology solutions. We understand that
+              fulfilling our vision requires us to embark on a mission of
+              attracting, developing, and retaining employees from a rich
+              variety of experiences which is our starting point to enhancing
+              society.
+            </p>
+
+            <p>
+              Much of our strategies and plans rely on building up local
+              Nigerian-African based culture and competencies, sustaining that
+              through home grown technical ingenuity. We are passionate about
+              partnerships that allow us build great products. We listen, we
+              pay attention to details and above all, we always understand your
+              needs. This enables us to deliver solutions that not only meet
+              your needs, but also surpass your expectations.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+
+
+      <TeamSection/>
+
+      <GetStarted />
+      
+      
     </div>
   );
 };

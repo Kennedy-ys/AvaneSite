@@ -1,13 +1,32 @@
 import React from "react";
 
 export default function Hero() {
+  
   return (
     <section className="relative w-full min-h-screen dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#0a0f1c] bg-linear-to-br from-[#ecf1fc] to-[#ecf3f8] text-white overflow-hidden">
-      
+      <style>
+        {`
+        .stripe-bg{
+        background: repeating-linear-gradient(-45deg, transparent, transparent 6px, rgba(251,146,60,0.07) 6px, rgba(251,146,60,0.07) 7px);}
+        
+        .dark .stripe-bg {
+          background: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 6px,
+            rgba(251,146,60,0.05) 6px,
+            rgba(251,146,60,0.05) 7px
+          );
+        }
+        `}
+      </style>
       {/* Glow Effects */}
       <div className="absolute -top-25 -left-25 w-100 h-100 bg-blue-600/20 blur-[120px] rounded-full"></div>
       <div className="absolute -bottom-25 -right-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full"></div>
 
+    {/* Decorative Blobs */}
+    <div
+    className="stripe-bg pointer-events-none absolute top-0 right-0 w-48 h-48 opacity-60 "/>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-2 gap-12 items-center">
 
         {/* LEFT CONTENT */}

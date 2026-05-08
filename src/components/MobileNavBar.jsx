@@ -44,7 +44,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="lg:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] z-50 overflow-y-auto border-b border-gray-300 dark:border-gray-400 rounded-2xl"
+          className="lg:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] z-50 overflow-y-auto border-b border-gray-300 dark:border-gray-400 rounded-b-2xl"
         >
           <ul className="flex flex-col items-start p-8 space-y-6">
             {navLinks.map((item, index) => (
@@ -73,7 +73,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                       <motion.button
                         onClick={() => setServicesExpanded(!servicesExpanded)}
                         animate={{ rotate: servicesExpanded ? 180 : 0 }}
-                        className="p-2"
+                        className="p-2 hover:cursor-pointer"
                       >
                         <LuChevronDown size={24} />
                       </motion.button>
