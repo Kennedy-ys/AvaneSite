@@ -1,4 +1,5 @@
 import CardImg from "../assets/NewsLetter.png";
+import TeamSection from "../components/TeamSection";
 
 const team = [
   { id: 1, name: "Marcus", role: "Director", image: CardImg },
@@ -17,7 +18,8 @@ const team = [
 
 const About = () => {
   return (
-    <div className="mb-88 mt-5">
+    <div className="mb-88 mt-55">
+      <TeamSection/>
       {/* Hero Section */}
       <section className="bg-white dark:bg-slate-950 py-20">
         <div className="max-w-6xl px-6 flex flex-col md:flex-row items-center gap-12">

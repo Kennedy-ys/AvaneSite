@@ -1,3 +1,4 @@
+import Hero  from "../components/Foot";
 import React from "react";
 import heroIImg from "../assets/hero1.png";
 import { LiaTelegramPlane } from "react-icons/lia";
@@ -9,6 +10,7 @@ import Button from "../components/Button";
 import ServiceCard from "../components/ServiceCard";
 import GetStarted from "../components/GetStarted";
 import AboutSection from "../components/AboutSection";
+import TestimonialSection from "../components/TestimonialSection";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -63,10 +65,10 @@ const Home = () => {
   return (
     <div className="mt-17 md:mt-15">
       {/* Hero Section*/}
-      <section className="bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#0a0f1c]">
+      <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#0a0f1c]">
         {/* Glow Effects */}
       <div className="absolute -top-25 -left-25 w-100 h-100 bg-blue-600/20 blur-[120px] rounded-full"/>
-      <div className="absolute -bottom-25 right-2 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full"/>
+      <div className="absolute -bottom-25 right-2 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full"/>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content Section */}
@@ -131,6 +133,8 @@ const Home = () => {
         </div>
       </section>
 
+
+
       {/* Services Section */}
 
       <section className="bg-white dark:bg-slate-950 py-20">
@@ -149,7 +153,7 @@ const Home = () => {
               <span className="text-orange-500">Expert</span> Services
             </h2>
 
-            <p className="text-slate-500 dark:text-slate-400 mt-4 max-w-md">
+            <p className="text-slate-500 dark:text-slate-400 mt-4 text-lg">
               Discover tailored solutions built for your goals.
             </p>
           </div>
@@ -165,6 +169,9 @@ const Home = () => {
 
       {/* About Us Section */}
       <AboutSection />
+
+      {/* Testimonial Section */}
+      <TestimonialSection />
 
       <GetStarted />
     </div>
