@@ -31,7 +31,7 @@ const ServiceCard = ({ link, title, description, icon, offerings, color1, color2
   const toClass = colorTo2Map[color2];
 
   return (
-    <div className="group relative h-117 rounded-2xl border bg-[#fdfdfd] dark:bg-slate-900 border-slate-200 dark:border-slate-800 p-6 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+    <div className="group relative h-fit md:max-[910px]:h-150 min-[911px]:max-xl:h-135 xl:h-117 rounded-2xl border bg-[#fdfdfd] dark:bg-slate-900 border-slate-200 dark:border-slate-800 p-6 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
 
       {/* Top bar */}
       <div className={`absolute rounded-full top-0 left-0 h-1 w-12 ${c.bar} group-hover:w-full transition-all duration-300`} />
@@ -66,7 +66,7 @@ const ServiceCard = ({ link, title, description, icon, offerings, color1, color2
       </ul>
 
       {/* CTA */}
-      <div className="absolute bottom-6 left-6">
+      <div className="md:absolute md:bottom-6 md:left-6 ">
         <Button
           as={Link}
           to={`./service/${link}`}

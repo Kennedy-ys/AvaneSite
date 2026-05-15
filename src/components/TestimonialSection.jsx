@@ -9,7 +9,7 @@ const testimonials = [
     author: "Daniel A.",
     company: "FinCore",
     initials: "DA",
-    color: "bg-orange-500",
+    color: "bg-linear-to-r from-orange-500 to-amber-500",
   },
   {
     rating: 5,
@@ -200,10 +200,10 @@ const ScrollColumn = ({ items, speed = 30, direction = 1 }) => {
 };
 
 const Badge = ({ label, sub }) => (
-  <div className="flex flex-col items-center justify-center border-2 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 w-24 text-center hover:border-orange-300 dark:hover:border-orange-700 transition-colors duration-300">
+  <div className="flex flex-col items-center justify-center border-2 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 w-24 text-center hover:border-orange-300 dark:hover:border-orange-500 transition-colors duration-300">
     <div className="flex items-center gap-0.5 mb-1">
       {[...Array(3)].map((_, i) => (
-        <div key={i} className={`w-2 h-2 rounded-full ${i === 1 ? "bg-orange-500" : "bg-blue-500"}`} />
+        <div key={i} className={`w-2 h-2 rounded-full ${i === 1 ? "bg-linear-to-r from-orange-500 to-amber-500" : "bg-linear-to-r from-blue-500 to-cyan-500"}`} />
       ))}
     </div>
     <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide leading-tight">
@@ -227,8 +227,9 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full px-3.5 py-1.5 mb-6 shadow-sm">
-            <div className="w-4 h-4 rounded-full bg-orange-500 flex items-center justify-center">
+            <div className="w-4 h-4 rounded-full bg-linear-to-r from-orange-500 to-amber-500 flex items-center justify-center">
               <FaStar className="w-2.5 h-2.5 text-white" />
             </div>
             <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">

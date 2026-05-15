@@ -63,17 +63,25 @@ const services = [
 
 const Home = () => {
   return (
-    <div className="mt-17 md:mt-15">
+    <div className="mt-14 md:mt-12">
       {/* Hero Section*/}
-      <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#0a0f1c]">
+      <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#050816]">
         {/* Glow Effects */}
       <div className="absolute -top-25 -left-25 w-100 h-100 bg-blue-600/20 blur-[120px] rounded-full"/>
       <div className="absolute -bottom-25 right-2 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full"/>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 grid lg:grid-cols-2 gap-12 items-center">
+
           {/* Text Content Section */}
-          <div className="space-y-8 md:space-y-5 flex flex-col justify-center items-center text-center md:text-left md:items-start z-200">
-            <div className="bg-linear-to-r from-orange-500 to-blue-700 p-[2.8px] w-15 rounded" />
+          <div className="space-y-8 md:space-y-5 flex flex-col  text-left md:items-start z-200">
+
+            {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full w-fit
+            bg-amber-50/50 border border-amber-50 text-black text-sm 
+            dark:bg-white/5 dark:border-white/10 dark:text-gray-300">
+            <span className="w-2 h-2 bg-linear-to-r from-orange-500 to-amber-500 rounded-full"></span>
+            SOLUTIONS THAT CREATE IMPACT
+          </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold dark:text-gray-200">
               Technology that{" "}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
@@ -91,7 +99,7 @@ const Home = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col w-full sm:flex-row justify-center-safe md:justify-start gap-7 animate-[fadeIn_0.8s_ease-out_0.8s_forwards] ">
+            <div className="flex flex-wrap items-center w-full gap-7 animate-[fadeIn_0.8s_ease-out_0.8s_forwards] ">
               <Button
                 as={Link}
                 to="/services"
@@ -122,18 +130,15 @@ const Home = () => {
             </div>
           </div>
           {/* Hero Image Section */}
-          <div className="hidden md:flex justify-center items-center z-200">
+          <div className="absolute top-0 bottom-0 left-0 right-0 lg:static lg:flex justify-center items-center lg:z-200 opacity-10 dark:opacity-3 lg:opacity-100 dark:lg:opacity-100">
             <img
               className="object-cover h-4/5 w-full"
               src={heroIImg}
               alt="Hero Image"
-              srcSet=""
             />
           </div>
         </div>
       </section>
-
-
 
       {/* Services Section */}
 
@@ -173,6 +178,7 @@ const Home = () => {
       {/* Testimonial Section */}
       <TestimonialSection />
 
+      {/* Get Started Section */}
       <GetStarted />
     </div>
   );

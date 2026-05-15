@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
 
@@ -16,7 +16,6 @@ const itemVariants = {
 };
 
 const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
-  const navigate = useNavigate();
   // Local state to toggle the services sub-menu
   const [servicesExpanded, setServicesExpanded] = useState(false);
 
@@ -25,7 +24,6 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
     { name: "About", link: "/about" },
     {
       name: "Services",
-      link: "/services",
       // Sub-links for the dropdown
       subServices: [
         { name: "Research", link: "/services/research" },
@@ -44,7 +42,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="lg:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-white dark:bg-[#0b1220] z-50 overflow-y-auto border-b border-gray-300 dark:border-gray-400 rounded-b-2xl"
+          className="lg:hidden fixed top-20 left-0 w-full h-[calc(100vh-80px)] bg-white/70 dark:bg-black/70 backdrop-blur-md border z-50 overflow-y-auto border-b border-gray-300 dark:border-gray-800 rounded-b-2xl shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
         >
           <ul className="flex flex-col items-start p-8 space-y-6">
             {navLinks.map((item, index) => (
@@ -52,16 +50,12 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                 {item.subServices ? (
                   <div className="flex flex-col w-full">
                     <div className="flex items-center justify-between w-full text-2xl font-bold dark:text-white">
-                      {/* 
-          If already expanded, this acts as a Link. 
-          If not, it just opens the dropdown. 
-      */}
+                     
                       <div
                         className={`cursor-pointer w-full hover:text-blue-700 hover:translate-x-1 transition-colors duration-200 ${servicesExpanded ? "text-blue-700" : ""}`}
                         onClick={() => {
                           if (servicesExpanded) {
                             setMenuOpen(false); // Close mobile menu
-                            navigate(item.link); // Navigate
                           } else {
                             setServicesExpanded(true); // Just open dropdown
                           }
@@ -90,13 +84,13 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                         >
                           {item.subServices.map((sub, subIdx) => (
                             <li
-                              className="group hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded p-2"
+                              className="group hover:bg-blue-50/70 dark:hover:bg-blue-900/30 rounded p-2"
                               key={subIdx}
                             >
                               <Link
                                 to={sub.link}
                                 onClick={() => setMenuOpen(false)} // Close menu on click
-                                className="inline-block text-xl text-gray-700 dark:text-gray-200 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-200"
+                                className="inline-block text-xl text-gray-900 font-semibold dark:text-gray-200 group-hover:text-blue-700 group-hover:translate-x-1 transition-all duration-200"
                               >
                                 {sub.name}
                               </Link>
@@ -128,7 +122,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                 btnBgHover="bg-linear-to-r from-orange-500 to-amber-500"
                 size={20}
                 btnTxtColor="text-white"
-                icon={<LuArrowUpRight className="text-blue-500" size={19} />}
+                icon={<LuArrowUpRight className="text-blue-500 group-hover:text-orange-500" size={19} />}
               >
                 Get In Touch
               </Button>

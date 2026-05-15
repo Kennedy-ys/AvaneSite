@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const GetStarted = () => {
   return (
-    <section className="">
+    <section>
       <div 
       style={{backgroundImage: `url(${Img1})`}}
       className={`w-full h-screen flex justify-center items-center relative inset-0 bg-cover bg-center bg-no-repeat`}>

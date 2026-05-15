@@ -18,7 +18,6 @@ const NavBar = () => {
     { name: "About", link: "/about" },
     {
       name: "Services",
-      link: "/services",
       // Sub-links for the dropdown
       subServices: [
         { name: "Research", link: "/services/research" },
@@ -48,7 +47,8 @@ const NavBar = () => {
   };
 
   return (
-    <header className="bg-white dark:bg-gray-950 fixed top-0 left-0 w-full z-1000">
+    <>
+    <header className="bg-white/90 dark:bg-gray-950/90 backdrop-blur-md fixed top-0 left-0 w-full z-1000">
       <nav className="drop-shadow-sm flex items-center justify-between py-3 px-7 max-w-7xl mx-auto">
         <Link to="/">
           <Logo className="w-20 h-auto" />
@@ -129,8 +129,9 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
-      <MobileNavBar MenuOpen={MenuOpen} setMenuOpen={setMenuOpen} />
     </header>
+      <MobileNavBar MenuOpen={MenuOpen} setMenuOpen={setMenuOpen} />
+    </>
   );
 };
 

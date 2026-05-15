@@ -24,7 +24,6 @@ const Footer = () => {
 
   const navLinks = [
     { name: "About", link: "/about" },
-    { name: "Services", link: "/services" },
     { name: "Contact", link: "/contact" },
     { name: "Testimonials", link: "#" },
   ];
@@ -64,7 +63,7 @@ const Footer = () => {
                 className="bg-transparent border-none outline-none text-white placeholder-blue-200 w-full px-3 py-2 text-sm autofill:shadow-[inset_0_0_0px_1000px_#abbfff00]  rounded-md autofill:text-fill-white autofill:transition-[background-color_9999s_ease-in-out_0s]"
               />
               <Button
-              onclick={() => alert("This is a demo. No actual subscription will occur.")}
+              onClick={() => alert("This is a demo. No actual subscription will occur.")}
                 btnBgColor="bg-white"
                 btnTxtColor="text-blue-600 w-40"
                 btnBgHover="bg-blue-100"
@@ -86,7 +85,7 @@ const Footer = () => {
       </div>
       <div className="max-w-7xl mt-10 mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-12 justify-center mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12">
           {/* Brand Column */}
           <div className="">
             <Link to="/">
@@ -98,7 +97,7 @@ const Footer = () => {
             </p>
 
             {/* Social Media Links */}
-            <div className="flex space-x-4 mt-4">
+            <div className="flex flex-wrap space-y-2 space-x-4 mt-4">
               {socialMediaLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 return (
@@ -124,7 +123,7 @@ const Footer = () => {
                 <Link
                   to={item.link}
                   key={index}
-                  className="w-fit hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
+                  className="hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
                 >
                   {item.name}
                 </Link>
@@ -140,7 +139,7 @@ const Footer = () => {
                 <Link
                   to={item.link}
                   key={index}
-                  className="w-fit hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
+                  className="hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
                 >
                   {item.name}
                 </Link>

@@ -80,9 +80,8 @@ const About = () => {
           <motion.div
   animate={{
     borderColor: [
-      "rgb(255 165 0)",
+      "rgb(255 115 0)",
       "rgb(255 255 255)",
-      "rgb(0 0 0)",
       "rgb(0 0 255)",
     ],
   }}
@@ -130,9 +129,8 @@ const About = () => {
           <motion.div
   animate={{
     borderColor: [
-      "rgb(255 165 0)",
+      "rgb(255 115 0)",
       "rgb(255 255 255)",
-      "rgb(0 0 0)",
       "rgb(0 0 255)",
     ],
   }}

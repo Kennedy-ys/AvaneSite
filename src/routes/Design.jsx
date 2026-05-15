@@ -2,7 +2,7 @@ import React from 'react'
 import BreadCrums from "../components/BreadCrums";
 
 
-const Services = () => {
+const Design = () => {
   return (
     <div className="mb-8 mt-55">
         <BreadCrums />
@@ -11,4 +11,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Design

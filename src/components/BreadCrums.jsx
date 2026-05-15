@@ -27,7 +27,7 @@ const Breadcrumbs = () => {
 
           return (
             <li key={routeTo} className="inline-flex items-center">
-              <span className="mx-2">/</span>
+              <span className="mx-1.5">/</span>
 
               {isLast ? (
                 <span className="font-medium text-gray-500 capitalize">

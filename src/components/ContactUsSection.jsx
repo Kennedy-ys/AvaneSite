@@ -3,10 +3,10 @@ import { motion, useInView, AnimatePresence } from "motion/react";
 import Img from "../assets/ContactUs.webp";
 import Button from "./Button";
 import { LiaTelegramPlane } from "react-icons/lia";
-import { FaRegEnvelope, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const inputBase =
-  "w-full bg-white/15 dark:bg-white/10 backdrop-blur-sm text-white placeholder-white/60 dark:placeholder-white/40 border border-white/25 dark:border-white/15 rounded-2xl px-5 py-3.5 text-sm outline-none transition-all duration-300 focus:bg-white/25 focus:border-white/60 focus:shadow-[0_0_0_3px_rgba(255,255,255,0.12)] autofill:bg-transparent";
+  "w-full bg-white/15 dark:bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/25 dark:border-white/15 rounded-2xl px-5 py-3.5 text-sm outline-none transition-all duration-300 focus:bg-white/25 focus:border-white/60 focus:shadow-[0_0_0_3px_rgba(255,255,255,0.12)] autofill:bg-transparent";
 
 function FloatingInput({ label, type = "text", className = "", textarea = false }) {
   const [focused, setFocused] = useState(false);
@@ -34,7 +34,7 @@ function FloatingInput({ label, type = "text", className = "", textarea = false 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 6, scale: 0.9 }}
             transition={{ duration: 0.18 }}
-            className="absolute -top-2.5 left-4 text-[11px] font-semibold text-white/80 bg-blue-600 dark:bg-blue-700 px-2 py-0.5 rounded-full pointer-events-none"
+            className="absolute -top-2.5 left-4 text-[11px] font-semibold text-white bg-blue-600 dark:bg-blue-700 px-2 py-0.5 rounded-full pointer-events-none"
           >
             {label}
           </motion.label>
@@ -203,7 +203,7 @@ export default function ContactSection() {
           variants={stagger}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="relative flex-1 dark:bg-(image:--background-stripe) bg-(image:--dark-background-stripe) bg-blue-600/90 dark:bg-blue-700/5 px-8 sm:px-12 py-12 flex flex-col justify-center overflow-hidden"
+          className="relative flex-1 dark:bg-(image:--background-stripe) bg-(image:--dark-background-stripe) bg-blue-600/90  px-8 sm:px-12 py-12 flex flex-col justify-center overflow-hidden"
         >
           {/* Decorative blobs */}
           <div className="absolute -top-20 -left-20 w-64 h-64 bg-blue-500/30 rounded-full blur-3xl pointer-events-none" />
@@ -211,7 +211,7 @@ export default function ContactSection() {
           <div className="absolute top-1/2 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
           {/* Label */}
-          <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-4">
+          <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-4 z-10">
             <div className="w-5 h-px bg-orange-400" />
             <span className="text-orange-300 text-xs font-semibold uppercase tracking-[0.15em]">
               Get in Touch
@@ -221,7 +221,7 @@ export default function ContactSection() {
           {/* Heading */}
           <motion.h2
             variants={fadeUp}
-            className="text-white text-3xl sm:text-4xl font-bold leading-tight mb-8"
+            className="text-white text-3xl sm:text-4xl font-bold leading-tight mb-8 z-10"
           >
             Send Us a Message For
             <br />
