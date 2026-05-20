@@ -1,6 +1,5 @@
-
-const Logo = ({width= "14.88in", height = "11in", className = "" }) => (
-  <svg 
+const Logo = ({ width = "14.88in", height = "11in", className = "" }) => (
+  <svg
     xmlns="https://w3.org"
     viewBox="0 0 14880 11000"
     width={width}
@@ -11,7 +10,7 @@ const Logo = ({width= "14.88in", height = "11in", className = "" }) => (
     imageRendering="optimizeQuality"
     fillRule="evenodd"
     clipRule="evenodd"
-    >
+  >
     {/* Blue ARC */}
     <g id="arc">
       <path

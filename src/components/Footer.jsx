@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  FaFacebookF,
-  FaXTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaGoogle,
-} from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import { FaFacebookF, FaXTwitter, FaInstagram,  FaLinkedinIn, FaGoogle, } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
 import { FaRegEnvelope, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import NewsLetter from "../assets/NewsLetter.png";
 import Button from "./Button";
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
+import NewsLetter from "../assets/NewsLetter.png";
 
 const Footer = () => {
   const socialMediaLinks = [
@@ -65,11 +59,11 @@ const Footer = () => {
               <Button
               onClick={() => alert("This is a demo. No actual subscription will occur.")}
                 btnBgColor="bg-white"
-                btnTxtColor="text-blue-600 w-40"
-                btnBgHover="bg-blue-100"
+                btnTxtColor="text-blue-600 group-hover:text-white w-40"
+                btnBgHover="bg-blue-600"
                 size={15}
-                iconBgColor="bg-blue-500 "
-                icon={<TbBellRinging className="text-white" size={16} />}
+                iconBgColor="bg-blue-600 group-hover:bg-white"
+                icon={<TbBellRinging className="text-white group-hover:text-blue-600" size={16} />}
               >
                 Subscribe
               </Button>

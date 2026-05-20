@@ -1,7 +1,7 @@
-import Img1 from "../assets/GetStarted.webp";
+import { Link } from "react-router-dom";
 import Button from "./Button";
 import { IoArrowRedoOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import Img1 from "../assets/GetStarted.webp";
 
 const GetStarted = () => {
   return (
@@ -14,11 +14,11 @@ const GetStarted = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-center">Ready to Transform Your Future With Us?</h2>
           <Button
             as={Link}
-            icon={<IoArrowRedoOutline className="text-white" />}
-            btnTxtColor="text-orange-500"
-            btnBgColor="bg-white dark:shadow-white/20"
-            btnBgHover="bg-orange-200"
-            iconBgColor="bg-linear-to-r from-orange-500 to-amber-500"
+            icon={<IoArrowRedoOutline className="text-white group-hover:text-orange-500" />}
+            btnTxtColor="text-orange-500 group-hover:text-white"
+            btnBgColor="bg-white"
+            btnBgHover="bg-orange-500"
+            iconBgColor="bg-orange-500 group-hover:bg-white"
             to="/contact"
             size="22"
           >

@@ -98,9 +98,11 @@ const testimonialsCol2 = [
 
 const StarRating = ({ rating }) => (
   <div className="flex gap-0.5 mb-3">
-    {[1, 2, 3, 4, 5].map((s) => (
-      
-      <FaStar className={`w-4 h-4 ${s <= rating ? "text-orange-400 dark:text-orange-400" : "text-slate-200 dark:text-slate-600"}`} />
+    {[1, 2, 3, 4, 5].map((s, index) => (
+      <FaStar
+        key={index}
+        className={`w-4 h-4 ${s <= rating ? "text-orange-400 dark:text-orange-400" : "text-slate-200 dark:text-slate-600"}`}
+      />
     ))}
   </div>
 );
@@ -112,7 +114,9 @@ const TestimonialCard = ({ item }) => (
       {item.text}
     </p>
     <div className="flex items-center gap-2.5">
-      <div className={`w-8 h-8 rounded-lg ${item.color} flex items-center justify-center text-white text-xs font-bold shrink-0`}>
+      <div
+        className={`w-8 h-8 rounded-lg ${item.color} flex items-center justify-center text-white text-xs font-bold shrink-0`}
+      >
         {item.initials}
       </div>
       <div>
@@ -129,7 +133,6 @@ const TestimonialCard = ({ item }) => (
   </div>
 );
 
-
 const ScrollColumn = ({ items, speed = 30, direction = 1 }) => {
   const containerRef = useRef(null);
 
@@ -145,8 +148,7 @@ const ScrollColumn = ({ items, speed = 30, direction = 1 }) => {
     if (!containerRef.current) return;
 
     // height of ONE set of items
-    contentHeightRef.current =
-      containerRef.current.scrollHeight / 2;
+    contentHeightRef.current = containerRef.current.scrollHeight / 2;
   }, [items]);
 
   useAnimationFrame((t, delta) => {
@@ -187,10 +189,7 @@ const ScrollColumn = ({ items, speed = 30, direction = 1 }) => {
       {/* bottom fade */}
       <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-slate-50 dark:from-slate-900 to-transparent z-10 pointer-events-none" />
 
-      <motion.div
-        ref={containerRef}
-        style={{ y }}
-      >
+      <motion.div ref={containerRef} style={{ y }}>
         {duplicated.map((item, i) => (
           <TestimonialCard key={i} item={item} />
         ))}
@@ -203,7 +202,10 @@ const Badge = ({ label, sub }) => (
   <div className="flex flex-col items-center justify-center border-2 border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 w-24 text-center hover:border-orange-300 dark:hover:border-orange-500 transition-colors duration-300">
     <div className="flex items-center gap-0.5 mb-1">
       {[...Array(3)].map((_, i) => (
-        <div key={i} className={`w-2 h-2 rounded-full ${i === 1 ? "bg-linear-to-r from-orange-500 to-amber-500" : "bg-linear-to-r from-blue-500 to-cyan-500"}`} />
+        <div
+          key={i}
+          className={`w-2 h-2 rounded-full ${i === 1 ? "bg-linear-to-r from-orange-500 to-amber-500" : "bg-linear-to-r from-blue-500 to-cyan-500"}`}
+        />
       ))}
     </div>
     <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide leading-tight">
@@ -219,7 +221,6 @@ export default function TestimonialsSection() {
   return (
     <section className="bg-slate-50 dark:bg-slate-900 py-20 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-16 items-center">
-
         {/* Left */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -233,7 +234,7 @@ export default function TestimonialsSection() {
               <FaStar className="w-2.5 h-2.5 text-white" />
             </div>
             <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                Top-rated Digital Product & Software Agency
+              Top-rated Digital Product & Software Agency
             </span>
             <span className="flex items-center gap-1 text-xs font-bold text-blue-600 dark:text-blue-400">
               <FaStar className="w-3 h-3 text-orange-400" />
@@ -242,23 +243,24 @@ export default function TestimonialsSection() {
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-6">
-  Trusted by{" "}
-  <span className="relative">
-    <span className="relative z-10">innovative brands</span>
-    <motion.span
-      className="absolute bottom-1 left-0 w-full h-3 bg-orange-400/30 dark:bg-orange-500/25 z-0 rounded-sm"
-      initial={{ scaleX: 0 }}
-      whileInView={{ scaleX: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
-      style={{ originX: 0 }}
-    />
-  </span>
-  {" "}worldwide.
-</h2>
+            Trusted by{" "}
+            <span className="relative">
+              <span className="relative z-10">innovative brands</span>
+              <motion.span
+                className="absolute bottom-1 left-0 w-full h-3 bg-orange-400/30 dark:bg-orange-500/25 z-0 rounded-sm"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+                style={{ originX: 0 }}
+              />
+            </span>{" "}
+            worldwide.
+          </h2>
 
           <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed mb-10 max-w-sm">
-            Trusted by startups, business, and growing brands to deliver high-quality software, UI/UX design, and digital innovation.
+            Trusted by startups, business, and growing brands to deliver
+            high-quality software, UI/UX design, and digital innovation.
           </p>
 
           <div className="flex items-center gap-3 flex-wrap">
@@ -269,8 +271,16 @@ export default function TestimonialsSection() {
 
           <div className="mt-10 flex items-center gap-4">
             <div className="flex -space-x-2">
-              {["bg-orange-400", "bg-blue-500", "bg-orange-600", "bg-blue-700"].map((c, i) => (
-                <div key={i} className={`w-9 h-9 rounded-full border-2 border-slate-50 dark:border-slate-900 ${c}`} />
+              {[
+                "bg-orange-400",
+                "bg-blue-500",
+                "bg-orange-600",
+                "bg-blue-700",
+              ].map((c, i) => (
+                <div
+                  key={i}
+                  className={`w-9 h-9 rounded-full border-2 border-slate-50 dark:border-slate-900 ${c}`}
+                />
               ))}
             </div>
             <div>
@@ -278,10 +288,12 @@ export default function TestimonialsSection() {
                 120+ successful digital projects
               </p>
               <div className="flex items-center gap-1 mt-0.5">
-                {[1,2,3,4,5].map(s => (
+                {[1, 2, 3, 4, 5].map((s) => (
                   <FaStar key={s} className="w-3.5 h-3.5 text-orange-400" />
                 ))}
-                <span className="text-xs text-slate-500 dark:text-slate-400 ml-1 font-medium">4.8 / 5</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400 ml-1 font-medium">
+                  4.8 / 5
+                </span>
               </div>
             </div>
           </div>

@@ -25,7 +25,8 @@ export default function TeamSection() {
   ];
 
   return (
-      <section className="mx-auto max-w-7xl px-6 py-28">
+      <section className="bg-slate-50 dark:bg-slate-900">
+        <div className="mx-auto max-w-7xl px-6 py-28">
         <div className="mb-20 text-center">
           <h2 className="text-4xl font-black md:text-6xl">
             Meet The Team
@@ -85,6 +86,7 @@ export default function TeamSection() {
             </motion.div>
           ))}
         </div>
+      </div>
       </section>
   );
 }

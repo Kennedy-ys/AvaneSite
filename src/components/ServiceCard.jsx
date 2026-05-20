@@ -73,7 +73,7 @@ const ServiceCard = ({ link, title, description, icon, offerings, color1, color2
           size={16}
           btnTxtColor="text-white"
           btnBgColor={`bg-linear-to-r ${c.btnFrom} ${toClass}`}
-          btnBgHover=""
+          btnBgHover={`bg-${color1}-500`}
           iconBgColor="bg-white"
           icon={<LuArrowUpRight className={c.btnIcontxt} />}
         >

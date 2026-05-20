@@ -55,7 +55,7 @@ const Research = () => {
 
       </div>
 
-        <BreadCrums />
+        <div className='bg-white/50 dark:bg-gray-950/50 backdrop-blur-md p-4 rounded-full mx-auto w-fit'><BreadCrums /></div>
 
 
       </section>

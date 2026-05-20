@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Button({
   as: Component = "button", // default to <button>
   children,

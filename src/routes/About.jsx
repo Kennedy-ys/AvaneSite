@@ -1,18 +1,24 @@
 import CardImg from "../assets/NewsLetter.png";
 import TeamSection from "../components/TeamSection";
+import HeroImg from "../assets/TeamWork.webp";
 import { motion } from "motion/react";
 import { PiLightbulbLight } from "react-icons/pi";
 import AboutSection from "../components/AboutSection";
 import VisionImg from "../assets/Vision.webp";
-import BreadCrums from "../components/BreadCrums";
 import GetStarted from "../components/GetStarted";
+import HeroSection from "../components/HeroSection";
 
 const About = () => {
   return (
-    <div className="mb-8 mt-55">
+    <div className="mb-8 mt-20.5">
 
-    <BreadCrums />
+      {/* Hero Section */}
+      <HeroSection 
+      heading={'About Us'} 
+      subText={'Lorem ipsum dolor sit amet consectetur adipisicing elit.'} 
+      HeroImg={HeroImg} />
 
+      {/* About Us Section */}
       <AboutSection />
       {/* Vision Section */}
       <section className="relative overflow-hidden bg-[#f5f5f5] py-20 dark:bg-[#0f1115]">
@@ -20,7 +26,7 @@ const About = () => {
       <div className="absolute inset-0 opacity-40 dark:opacity-10">
         <div className="absolute -left-40 top-0 h-150 w-150 rotate-45 bg-white dark:bg-white/5" />
         <div className="absolute right-0 top-0 h-125 w-125 rotate-45 bg-white/60 dark:bg-white/3" />
-      </div>
+        </div>
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 lg:grid-cols-2 lg:px-10">
         {/* Left Content */}

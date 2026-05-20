@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import advisorImg from "../assets/aboutUs.webp";
 import Button from "./Button";
+import advisorImg from "../assets/aboutUs.webp";
 import { IoArrowRedoOutline, IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const checkItems = [
@@ -92,12 +92,12 @@ const AboutSection = () => {
             to="/about"
             icon={
               <IoArrowRedoOutline
-                className="text-blue-600 group-hover:text-orange-500"
+                className="text-blue-600"
                 size={19}
               />
             }
             btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500"
-            btnBgHover="bg-linear-to-r from-orange-500 to-amber-500"
+            btnBgHover="bg-blue-700"
             size={19}
           >
             Read More

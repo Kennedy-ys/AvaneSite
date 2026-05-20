@@ -1,14 +1,19 @@
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "motion/react";
-import Img from "../assets/ContactUs.webp";
-import Button from "./Button";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import Button from "./Button";
+import Img from "../assets/ContactUs.webp";
 
 const inputBase =
   "w-full bg-white/15 dark:bg-white/10 backdrop-blur-sm text-white placeholder-white border border-white/25 dark:border-white/15 rounded-2xl px-5 py-3.5 text-sm outline-none transition-all duration-300 focus:bg-white/25 focus:border-white/60 focus:shadow-[0_0_0_3px_rgba(255,255,255,0.12)] autofill:bg-transparent";
 
-function FloatingInput({ label, type = "text", className = "", textarea = false }) {
+function FloatingInput({
+  label,
+  type = "text",
+  className = "",
+  textarea = false,
+}) {
   const [focused, setFocused] = useState(false);
   const [value, setValue] = useState("");
 
@@ -44,106 +49,15 @@ function FloatingInput({ label, type = "text", className = "", textarea = false 
   );
 }
 
-function SendButton() {
-  const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleClick = () => {
-    if (sent || loading) return;
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSent(true);
-      setTimeout(() => setSent(false), 3000);
-    }, 1400);
-  };
-
-  return (
-    <motion.button
-      onClick={handleClick}
-      whileTap={{ scale: 0.97 }}
-      className="relative w-full flex items-center justify-between bg-gray-900 dark:bg-gray-950 hover:bg-gray-800 dark:hover:bg-gray-900 text-white font-semibold text-base rounded-2xl px-6 py-4 transition-colors duration-300 overflow-hidden group"
-    >
-      {/* Shimmer on hover */}
-      <motion.div
-        className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/5 to-transparent pointer-events-none"
-      />
-
-      <AnimatePresence mode="wait">
-        {sent ? (
-          <motion.span
-            key="sent"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="text-green-400 font-semibold"
-          >
-            Message sent! ✓
-          </motion.span>
-        ) : (
-          <motion.span
-            key="idle"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-          >
-            {loading ? "Sending..." : "Send Now"}
-          </motion.span>
-        )}
-      </AnimatePresence>
-
-      {/* Arrow circle */}
-      <motion.div
-        animate={{
-          backgroundColor: sent ? "#22c55e" : "#f97316",
-          x: loading ? 4 : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-      >
-        <AnimatePresence mode="wait">
-          {loading ? (
-            <motion.svg
-              key="spinner"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1, rotate: 360 }}
-              transition={{ rotate: { repeat: Infinity, duration: 0.8, ease: "linear" } }}
-              className="w-4 h-4 text-white"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" strokeLinecap="round" />
-            </motion.svg>
-          ) : (
-            <motion.svg
-              key="arrow"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="w-4 h-4 text-white"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
-          )}
-        </AnimatePresence>
-      </motion.div>
-    </motion.button>
-  );
-}
-
 function ImagePanel() {
   return (
     <div className="relative w-full h-full min-h-130 overflow-hidden">
-      
-
       {/* Image Section */}
-      <img src={Img} alt="Contact Us" className="absolute inset-0 w-full h-full object-cover"/>
+      <img
+        src={Img}
+        alt="Contact Us"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
       {/* Gradient placeholder mimicking a photo */}
 
@@ -162,8 +76,14 @@ function ImagePanel() {
         </p>
         <div className="flex flex-col gap-2.5">
           {[
-            { icon: <FaEnvelope className="text-orange-500" />, label: "contact@avane.com" },
-            { icon: <FaPhoneAlt className="text-orange-500" />, label: "+234 700 000 0000" },
+            {
+              icon: <FaEnvelope className="text-orange-500" />,
+              label: "contact@avane.com",
+            },
+            {
+              icon: <FaPhoneAlt className="text-orange-500" />,
+              label: "+234 700 000 0000",
+            },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-3">
               <div className="w-7 h-7 rounded-lg bg-orange-500/20 flex items-center justify-center shrink-0">
@@ -188,7 +108,11 @@ export default function ContactSection() {
   };
   const fadeUp = {
     hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+    },
   };
 
   return (
@@ -197,7 +121,6 @@ export default function ContactSection() {
       className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4 sm:p-8"
     >
       <div className="w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 dark:shadow-black/50 flex flex-col lg:flex-row min-h-150">
-
         {/* LEFT — Form panel */}
         <motion.div
           variants={stagger}
@@ -211,7 +134,10 @@ export default function ContactSection() {
           <div className="absolute top-1/2 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
           {/* Label */}
-          <motion.div variants={fadeUp} className="flex items-center gap-2.5 mb-4 z-10">
+          <motion.div
+            variants={fadeUp}
+            className="flex items-center gap-2.5 mb-4 z-10"
+          >
             <div className="w-5 h-px bg-orange-400" />
             <span className="text-orange-300 text-xs font-semibold uppercase tracking-[0.15em]">
               Get in Touch
@@ -250,8 +176,11 @@ export default function ContactSection() {
             {/* Submit */}
             <motion.div variants={fadeUp}>
               <Button
-              onClick={() => alert("This is a demo form. No message will be sent.")}
-              icon={<LiaTelegramPlane className="text-blue-500" />}>
+                onClick={() =>
+                  alert("This is a demo form. No message will be sent.")
+                }
+                icon={<LiaTelegramPlane className="text-blue-500" />}
+              >
                 Send Message
               </Button>
             </motion.div>
@@ -267,7 +196,6 @@ export default function ContactSection() {
         >
           <ImagePanel />
         </motion.div>
-
       </div>
     </div>
   );
