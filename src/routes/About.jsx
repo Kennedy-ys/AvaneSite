@@ -10,7 +10,7 @@ import HeroSection from "../components/HeroSection";
 
 const About = () => {
   return (
-    <div className="mb-8 mt-20.5">
+    <div className="mb-8">
 
       {/* Hero Section */}
       <HeroSection 
@@ -209,7 +209,7 @@ const About = () => {
 
       <TeamSection/>
 
-      <GetStarted />
+      <GetStarted text="We replace traditional client relationships with true partnerships" ctaText="Let's Build Together" />
       
       
     </div>

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
+import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaShieldAlt, FaBook, FaPenNib, FaComments, FaSearch } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import Logo from "./Logo";
 import AnimatedMenu from "./AnimatedMenu";
@@ -10,29 +11,78 @@ import Button from "./Button";
 import MobileNavBar from "./MobileNavBar";
 
 const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [MenuOpen, setMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const location = useLocation();
 
-  // Get the current path directly from react-router-dom
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const currentPath = location.pathname || "/";
 
-  // Navigation links with sub-services for dropdown
+  // Structured navigation data with nested subcategories for "Services"
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
     {
       name: "Services",
-      subServices: [
-        { name: "Research", link: "/services/research" },
-        { name: "UI/UX Design", link: "/services/design" },
-        { name: "Software Development", link: "/services/development" },
+      subCategories: [
+        {
+          title: "DEVELOPMENT & DESIGN",
+          items: [
+            { name: "Software & Web Development ",
+              link: "/services/development",
+              icon: <FaCode /> },
+            { name: "UI/UX Design", link: "/services/ui-ux-design",
+              icon: <FaPalette /> },
+          ],
+        },
+        {
+          title: "STRATEGY & ANALYSIS",
+          items: [
+            { name: "Data Analysis", link: "/services/analysis",
+              icon: <FaDatabase /> },
+            { name: "Project Management", link: "/services/product-management",
+              icon: <FaBriefcase /> },
+            { name: "Research & Insights", link: "/services/research",
+              icon: <FaSearch /> },
+          ],
+        },
+        {
+          title: "CONTENT & MARKETING",
+          items: [
+            { name: "Graphics Design", link: "/services/graphics-design",
+              icon: <FaPenNib /> },
+            { name: "Social Media Management", link: "/services/social-media-management",
+              icon: <FaComments /> },
+          ],
+        },
+        {
+          title: "SECURITY & OTHERS",
+          items: [
+            { name: "Cybersecurity", link: "/services/cybersecurity",
+              icon: <FaShieldAlt /> },
+            { name: "Training & Certification ",
+              link: "/services/training&certification",
+              icon: <FaBook /> },
+          ],
+        },
       ],
     },
     { name: "Contact", link: "/contact" },
   ];
 
-  // Variants for dropdown animation
   const dropDownVariants = {
     hidden: { opacity: 0, y: 10, scale: 0.95 },
     visible: {
@@ -51,8 +101,10 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="bg-white/90 dark:bg-gray-950/90 backdrop-blur-md fixed top-0 left-0 w-full z-1000">
-        <nav className="drop-shadow-sm flex items-center justify-between py-3 px-7 max-w-7xl mx-auto">
+      <header
+        className={`fixed top-0 left-0 right-0 ${isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md" : "bg-transparent"} w-full z-1000`}
+      >
+        <nav className="flex items-center justify-between py-3 px-7 max-w-7xl mx-auto">
           <Link to="/">
             <Logo className="w-20 h-auto" />
           </Link>
@@ -60,10 +112,13 @@ const NavBar = () => {
           {/* Desktop Links */}
           <div className="hidden lg:flex transition-all items-center gap-5 lg:gap-7">
             {navLinks.map((item, index) => {
-              // Check if any child dropdown matches the current URL route
+              // Deep match active subcategories routes to highlight "Services" parent
               const isActiveParent =
-                item.subServices &&
-                item.subServices.some((sub) => sub.link === currentPath);
+                item.subCategories &&
+                item.subCategories.some((subCategory) =>
+                  subCategory.items.some((sub) => sub.link === currentPath),
+                );
+
               const isCurrentRoute = currentPath === item.link;
 
               return (
@@ -71,18 +126,18 @@ const NavBar = () => {
                   key={index}
                   className="relative py-2"
                   onMouseEnter={() =>
-                    item.subServices && setIsServicesOpen(true)
+                    item.subCategories && setIsServicesOpen(true)
                   }
                   onMouseLeave={() =>
-                    item.subServices && setIsServicesOpen(false)
+                    item.subCategories && setIsServicesOpen(false)
                   }
                 >
-                  {item.subServices ? (
-                    // Dropdown Trigger
+                  {item.subCategories ? (
+                    // Dropdown Trigger 
                     <div
-                      className={`flex items-center gap-1 cursor-pointer font-medium ${isActiveParent ? "text-blue-700" : "text-gray-700 dark:text-gray-100 hover:text-blue-700"} transition-all`}
+                      className={`flex items-center gap-1 cursor-pointer font-medium ${isActiveParent ? "text-blue-600" : "text-gray-700 dark:text-gray-100 hover:text-blue-700"} transition-all`}
                     >
-                      <Link to={item.link}>{item.name}</Link>
+                      <span>{item.name}</span>
                       <motion.span
                         animate={{ rotate: isServicesOpen ? 180 : 0 }}
                       >
@@ -97,24 +152,31 @@ const NavBar = () => {
                             initial="hidden"
                             animate="visible"
                             exit="exit"
-                            className="absolute top-full left-0 mt-2 w-52 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg shadow-lg z-50 overflow-hidden"
+                            className="absolute top-full left-0 mt-2 w-150 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-2xl z-50 p-6"
                           >
-                            <div className="py-2 flex flex-col">
-                              {item.subServices.map((sub, subIdx) => (
-                                <div
-                                  className="hover:bg-blue-50 dark:hover:bg-blue-900/30"
-                                  key={subIdx}
-                                >
-                                  <Link
-                                    to={sub.link}
-                                    className={`inline-block w-full px-4 py-2 text-sm transition-all duration-200 hover:translate-x-1 ${
-                                      currentPath === sub.link
-                                        ? "text-blue-700 font-semibold"
-                                        : "text-gray-700 dark:text-gray-200 hover:text-blue-700"
-                                    }`}
-                                  >
-                                    {sub.name}
-                                  </Link>
+                            {/* Grid columns logic to pull from item context */}
+                            <div className="grid grid-cols-2 gap-x-9 gap-y-6">
+                              {item.subCategories.map((category, catIdx) => (
+                                <div key={catIdx} className="space-y-3">
+                                  <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider whitespace-nowrap">
+                                    {category.title}
+                                  </h3>
+                                  <div className="flex flex-col space-y-1">
+                                    {category.items.map((sub, subIdx) => (
+                                      <Link
+                                        key={subIdx}
+                                        to={sub.link}
+                                        className={`w-full flex items-center gap-3 px-3 py-2 text-sm rounded-md hover:text-blue-600 hover:bg-blue-100 hover:translate-x-1 dark:hover:bg-blue-900/30 transition-all duration-200 ${currentPath === sub.link ? "text-blue-600 bg-blue-100 dark:bg-blue-900/30 font-semibold": "text-gray-700 dark:text-gray-200"} `}
+                                      >
+                                        <span className="text-blue-500">
+                                          {sub.icon}
+                                        </span>
+                                        <span className="whitespace-nowrap">
+                                          {sub.name}
+                                        </span>
+                                      </Link>
+                                    ))}
+                                  </div>
                                 </div>
                               ))}
                             </div>
@@ -128,8 +190,8 @@ const NavBar = () => {
                       to={item.link}
                       className={`font-medium transition-all duration-150 ${
                         isCurrentRoute
-                          ? "text-blue-700"
-                          : "dark:text-gray-100 text-gray-700 hover:text-blue-700"
+                          ? "text-blue-600"
+                          : "dark:text-gray-100 text-gray-700 hover:text-blue-600"
                       }`}
                     >
                       {item.name}
@@ -149,12 +211,7 @@ const NavBar = () => {
                 btnBgHover="bg-blue-700"
                 size={20}
                 btnTxtColor="text-white"
-                icon={
-                  <LuArrowUpRight
-                    className="text-blue-500"
-                    size={19}
-                  />
-                }
+                icon={<LuArrowUpRight className="text-blue-500" size={19} />}
               >
                 Get In Touch
               </Button>

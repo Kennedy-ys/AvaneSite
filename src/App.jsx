@@ -3,12 +3,19 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import Development from "./routes/Development";
-import Design from "./routes/Design";
+import UIUXDesign from "./routes/UIUXDesign";
 import Research from "./routes/Research";
 import Contact from "./routes/Contact";
+import DataAnalysis from "./routes/DataAnalysis";
+import ProductManagement from "./routes/ProductManagement";
+import GraphicsDesign from "./routes/GraphicsDesign";
+import SocialMediaManagement from "./routes/SocialMediaManagement";
+import ComingSoon from "./routes/ComingSoon";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ThemeProvider from "./providers/ThemeProviders";
+import Cybersecurity from "./routes/Cybersecurity";
+import TrainingCert from "./routes/TrainingCert";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light
@@ -65,9 +72,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services/development" element={<Development />} />
-        <Route path="/services/design" element={<Design />} />
+        <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
         <Route path="/services/research" element={<Research />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+        <Route path="/services/analysis" element={<DataAnalysis />} />
+        <Route path="/services/graphics-design" element={<GraphicsDesign />} />
+        <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
+        <Route path="/services/training&certification" element={<TrainingCert />} />
+        <Route path="/services/product-management" element={<ProductManagement />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
       <Footer />
     </ThemeProvider>

@@ -4,11 +4,11 @@ import HeroImg from "../assets/Teamwork.webp";
 
 const Contact = () => {
   return (
-    <div className="mt-20.5">
+    <div className="">
       {/* Hero Section */}
       <HeroSection
         heading={"Contact Us"}
-        subText={"Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+        subText={"We'd love to hear from you."}
         HeroImg={HeroImg}
       />
 

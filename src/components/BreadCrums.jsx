@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
       <ol className="inline-flex items-center space-x-2 text-sm">
         {/* Home */}
         <li className="inline-flex items-center">
-          <Link to="/" className="font-medium text-white hover:text-blue-500">
+          <Link to="/" className="font-medium dark:text-white text-gray-800 hover:text-blue-500">
             Home
           </Link>
         </li>
@@ -28,7 +28,7 @@ const Breadcrumbs = () => {
               </span>
 
               {isLast ? (
-                <span className="font-medium text-blue-500 capitalize">
+                <span className="font-medium text-blue-700 dark:text-blue-500 capitalize">
                   {name}
                 </span>
               ) : (

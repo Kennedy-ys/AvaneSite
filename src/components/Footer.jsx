@@ -24,11 +24,11 @@ const Footer = () => {
   const servicesLinks = [
     { name: "Research", link: "/services/research" },
     { name: "Software Development", link: "/services/development" },
-    { name: "UI/UX Design", link: "/services/design" },
+    { name: "UI/UX Design", link: "/services/ui-ux-design" },
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-white dark:bg-slate-900  text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
+    <footer className="relative overflow-hidden bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
       {/* 1. Newsletter Card */}
       <div className=" w-full max-w-5xl px-4 mx-auto">
         <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/noise.svg')] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
@@ -79,13 +79,13 @@ const Footer = () => {
       </div>
       <div className="max-w-7xl mt-10 mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12 text-base md:text-lg leading-relaxed font-light">
           {/* Brand Column */}
           <div className="">
             <Link to="/">
               <Logo className="mb-4 w-15 h-auto " />
             </Link>
-            <p className=" leading-relaxed text-md ">
+            <p className=" leading-relaxed text-md">
               Transforming businesses through innovative technology solutions,
               thoughtful design, and strategic research.
             </p>
