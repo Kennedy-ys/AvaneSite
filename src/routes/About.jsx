@@ -1,6 +1,6 @@
 import CardImg from "../assets/NewsLetter.png";
 import TeamSection from "../components/TeamSection";
-import HeroImg from "../assets/TeamWork.webp";
+import HeroImg from "../assets/Teamwork.webp";
 import { motion } from "motion/react";
 import { PiLightbulbLight } from "react-icons/pi";
 import AboutSection from "../components/AboutSection";
