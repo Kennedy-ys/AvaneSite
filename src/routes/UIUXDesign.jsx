@@ -7,15 +7,15 @@ import LogoMarquee from "../components/LogoMarquee";
 import GetStarted from "../components/GetStarted";
 import Timeline from "../components/Timeline"
 import { IoArrowForwardOutline, IoSearchOutline, IoLayersOutline, IoColorPaletteOutline, IoPhonePortraitOutline, IoAccessibilityOutline, IoGitBranchOutline, IoEyeOutline, IoGitCommitOutline, IoLaptopOutline, IoRocketOutline } from "react-icons/io5";
-import {
-  SiFigma, SiMiro, SiNotion, SiFramer, SiMaze, SiMural, SiInvision } from "react-icons/si";
+import { SiMiro, SiNotion, SiFramer, SiMaze, SiMural, SiInvision } from "react-icons/si";
   import { FaPalette, FaSketch } from "react-icons/fa";
 import { BiLogoAdobe } from "react-icons/bi";
 import { TbBrandAdobeXd } from "react-icons/tb";
+import { Figma } from "@lobehub/icons";
 
 // Structured data for Marquee Tool Stack
 const tools = [
-   { name: 'Figma', icon: <SiFigma size={26} className="text-[#F24E1E]" />, role: "Core Design & Prototyping" },
+   { name: 'Figma', icon: <Figma.Color size={26} />, role: "Core Design & Prototyping" },
   { name: 'Miro', icon: <SiMiro size={26} className="text-[#FFD02F]" />, role: "Research & Ideation" },
   { name: 'Notion', icon: <SiNotion size={26} className="text-[#000000] dark:text-white" />, role: "Documentation" },
   { name: 'Framer', icon: <SiFramer size={24} className="text-[#0055FF] dark:text-white" />, role: "Interactive Design" },

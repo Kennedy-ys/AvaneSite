@@ -547,8 +547,8 @@ const Development = () => {
       
             {/* Tool Stack */}
              <LogoMarquee
-              row1Data={devTools}
-              row2Data={devTools}
+              row1Data={devTools.slice(7, 15)}
+              row2Data={devTools.slice(0, 6)}
               subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
               title="Our Development Toolkit"
             />

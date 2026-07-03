@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
-import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaSearch, FaShieldAlt, FaBook, FaPenNib, FaComments } from 'react-icons/fa';
+import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaSearch, FaShieldAlt, FaPenNib, FaComments } from 'react-icons/fa';
 import Button from "./Button";
 
 const containerVariants = {
@@ -42,7 +42,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
           title: "STRATEGY & ANALYSIS",
           items: [
             { name: "Data Analysis", link: "/services/analysis", icon: <FaDatabase /> },
-            { name: "Project Management", link: "/services/product-management", icon: <FaBriefcase /> },
+            { name: "Project Management", link: "/services/project-management", icon: <FaBriefcase /> },
             { name: "Research & Insights", link: "/services/research", icon: <FaSearch /> },
           ]
         },
@@ -56,13 +56,14 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
         {
           title: "SECURITY & OTHERS",
           items: [
-            { name: "Cybersecurity", link: "/services/Cybersecurity", icon: <FaShieldAlt /> },
-            { name: "Training & Certifications", link: "/services/training&certification", icon: <FaBook /> },
+            { name: "Cybersecurity", link: "/services/Cybersecurity", icon: <FaShieldAlt /> }
           ]
         }
       ],
     },
-    { name: "Contact", link: "/contact" },
+    { name: "Blog", link: "/blog" },
+    { name: "Academy", link: "/academy" },
+    { name: "Contact", link: "/contact" }
   ];
 
   return (

@@ -223,6 +223,7 @@ const projects = [
 
   return (
     <>
+    {/* Hero Section */}
     <section className="relative min-h-[90vh] flex items-center justify-center py-20 pt-32 px-6 lg:px-12 bg-linear-to-b from-white to-slate-50 dark:from-[#080f1e] dark:to-[#060a15] transition-colors duration-300 overflow-hidden">
       
       {/* 1. Structural Dot Matrix Background Grid Texture */}
@@ -271,9 +272,9 @@ const projects = [
           {/* Call-To-Action Button Loops */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
             
-              <Button as={Link} to="./contact" btnBgColor="bg-emerald-600" btnBgHover="bg-emerald-700" icon={<IoTrendingUpOutline className="text-emerald-600" />}>Request Data Audit</Button>
+              <Button as={Link} to="/contact" btnBgColor="bg-emerald-600" btnBgHover="bg-emerald-700" icon={<IoTrendingUpOutline className="text-emerald-600" />}>Request Data Audit</Button>
 
-              <Button as="a" to="#stack" btnBgColor="bg-white" btnBgHover="bg-emerald-700" btnTxtColor="text-emerald-600 group-hover:text-white" iconBgColor="bg-emerald-600 group-hover:bg-white" icon={<TbArrowDownRight className="text-white group-hover:text-emerald-600" />}>Our Analysis Stack</Button>
+              <Button as="a" href="#stack" btnBgColor="bg-white" btnBgHover="bg-emerald-700" btnTxtColor="text-emerald-600 group-hover:text-white" iconBgColor="bg-emerald-600 group-hover:bg-white" icon={<TbArrowDownRight className="text-white group-hover:text-emerald-600" />}>Our Analysis Stack</Button>
             
           </div>
         </motion.div>
@@ -377,10 +378,8 @@ const projects = [
       </div>
     </section>
 
-
-
-
-    <section className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#080f1e] transition-colors duration-300">
+    {/* Capabilities Matrix Section */}
+    <section id="stack" className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#080f1e] transition-colors duration-300">
       
       {/* Background Structural Ambient Shadows */}
       <div className="absolute left-1/4 top-1/4 w-125 h-125 bg-emerald-500/5 blur-[160px] rounded-full pointer-events-none" />

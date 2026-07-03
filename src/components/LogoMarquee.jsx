@@ -8,13 +8,14 @@ import {
   SiApple 
 } from 'react-icons/si';
 import { TbCircleLetterT, TbBrandDisney } from "react-icons/tb"; 
-import { FaAmazon, FaMeta, FaMicrosoft, FaXbox } from 'react-icons/fa6';
+import { FaAmazon, FaMeta, FaXbox } from 'react-icons/fa6';
+import { Microsoft } from '@lobehub/icons';
 
 // DEFAULT DATA STACKS (Fallback configurations if no props are supplied)
 const DEFAULT_ROW_1 = [
   { name: 'Amazon', icon: <FaAmazon size={26} className="text-[#FF9900]" />, role: "" },
   { name: 'Disney+', icon: <TbBrandDisney size={34} className="text-[#001A9C] dark:text-[#00E5FF]" />, role: "" },
-  { name: 'Microsoft', icon: <FaMicrosoft size={22} className="text-[#F25022]" />, role: "" },
+  { name: 'Microsoft', icon: <Microsoft.Color size={22} />, role: "" },
   { name: 'Accenture', icon: <SiAccenture size={24} className="text-[#A100FF]" />, role: "" },
   { name: 'Meta', icon: <FaMeta size={32} className="text-[#0051ff]" />, role: "" },
   { name: 'Toyota', icon: <SiToyota size={28} className="text-[#EB0A1E]" />, role: "" },

@@ -78,7 +78,7 @@ function ImagePanel() {
           {[
             {
               icon: <FaEnvelope className="text-orange-500" />,
-              label: "contact@avane.com",
+              label: "info@avane.com",
             },
             {
               icon: <FaPhoneAlt className="text-orange-500" />,

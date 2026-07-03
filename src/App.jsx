@@ -7,7 +7,7 @@ import UIUXDesign from "./routes/UIUXDesign";
 import Research from "./routes/Research";
 import Contact from "./routes/Contact";
 import DataAnalysis from "./routes/DataAnalysis";
-import ProductManagement from "./routes/ProductManagement";
+import ProjectManagement from "./routes/ProjectManagement";
 import GraphicsDesign from "./routes/GraphicsDesign";
 import SocialMediaManagement from "./routes/SocialMediaManagement";
 import ComingSoon from "./routes/ComingSoon";
@@ -15,7 +15,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ThemeProvider from "./providers/ThemeProviders";
 import Cybersecurity from "./routes/Cybersecurity";
-import TrainingCert from "./routes/TrainingCert";
+import Academy from "./routes/Academy";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light
@@ -71,16 +71,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/academy" element={<Academy />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/services/development" element={<Development />} />
         <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
         <Route path="/services/research" element={<Research />} />
-        <Route path="/contact" element={<Contact />} />
         <Route path="/services/cybersecurity" element={<Cybersecurity />} />
         <Route path="/services/analysis" element={<DataAnalysis />} />
         <Route path="/services/graphics-design" element={<GraphicsDesign />} />
         <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
-        <Route path="/services/training&certification" element={<TrainingCert />} />
-        <Route path="/services/product-management" element={<ProductManagement />} />
+        <Route path="/services/project-management" element={<ProjectManagement />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
       <Footer />

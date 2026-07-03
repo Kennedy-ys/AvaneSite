@@ -22,7 +22,7 @@ export default function Button({
     <Component
       {...props}
       className={`
-        ${btnBgColor} group relative overflow-hidden inline-flex items-center ${icon ? "justify-between" : "justify-center"} font-semibold cursor-pointer border-0 outline-none select-none transition-[filter] duration-200 hover:brightness-110 shadow-lg 
+        ${btnBgColor} group relative overflow-hidden inline-flex items-center ${icon ? "justify-between" : "justify-center"} font-semibold cursor-pointer outline-none select-none transition-[filter] duration-200 hover:brightness-110 shadow-lg 
       `}
       style={{
         fontSize: fs,
@@ -42,7 +42,7 @@ export default function Button({
       />
 
       {/* Label */}
-      <span className={`z-10 ${btnTxtColor}`} style={{ whiteSpace: "nowrap" }}>
+      <span className={`z-10 capitalize ${btnTxtColor}`} style={{ whiteSpace: "nowrap" }}>
         {children}
       </span>
 

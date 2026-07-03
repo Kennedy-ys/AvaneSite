@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
-import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaShieldAlt, FaBook, FaPenNib, FaComments, FaSearch } from "react-icons/fa";
+import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaShieldAlt, FaPenNib, FaComments, FaSearch } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import Logo from "./Logo";
 import AnimatedMenu from "./AnimatedMenu";
@@ -53,7 +53,7 @@ const NavBar = () => {
           items: [
             { name: "Data Analysis", link: "/services/analysis",
               icon: <FaDatabase /> },
-            { name: "Project Management", link: "/services/product-management",
+            { name: "Project Management", link: "/services/project-management",
               icon: <FaBriefcase /> },
             { name: "Research & Insights", link: "/services/research",
               icon: <FaSearch /> },
@@ -72,15 +72,14 @@ const NavBar = () => {
           title: "SECURITY & OTHERS",
           items: [
             { name: "Cybersecurity", link: "/services/cybersecurity",
-              icon: <FaShieldAlt /> },
-            { name: "Training & Certification ",
-              link: "/services/training&certification",
-              icon: <FaBook /> },
+              icon: <FaShieldAlt /> }
           ],
         },
       ],
     },
-    { name: "Contact", link: "/contact" },
+    { name: "Blog", link: "/blog" },
+    { name: "Academy", link: "/academy" },
+    { name: "Contact", link: "/contact" }
   ];
 
   const dropDownVariants = {
@@ -209,7 +208,7 @@ const NavBar = () => {
               <Button
                 btnBgColor="bg-linear-60 from-blue-700 to-cyan-500"
                 btnBgHover="bg-blue-700"
-                size={20}
+                size={18}
                 btnTxtColor="text-white"
                 icon={<LuArrowUpRight className="text-blue-500" size={19} />}
               >

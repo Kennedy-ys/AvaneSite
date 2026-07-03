@@ -1,16 +1,13 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
-import ServiceCard from "../components/ServiceCard";
+import ServiceSection from "../components/ServiceSection";
 import GetStarted from "../components/GetStarted";
 import AboutSection from "../components/AboutSection";
 import TestimonialSection from "../components/TestimonialSection";
 import LogoMarquee from "../components/LogoMarquee"
 import { LiaTelegramPlane } from "react-icons/lia";
 import { IoArrowRedoOutline } from "react-icons/io5";
-import { FaCode } from "react-icons/fa6";
-import { BsSearch } from "react-icons/bs";
-import { LuPalette } from "react-icons/lu";
 import heroIImg from "../assets/hero1.png";
 
 const contentContainerVariants = {
@@ -32,54 +29,6 @@ const textFadeVariants = {
     transition: { duration: 0.7, ease: "easeOut" },
   },
 };
-
-const services = [
-  {
-    link: "research",
-    title: "Research",
-    description:
-      "Data-driven insights that inform strategic decisions and uncover opportunities.",
-    offerings: [
-      "Market Analysis & Competitive Research",
-      "User Research & Behavioral Studies",
-      "Technology Assessment & Feasibility Studies",
-      "Strategic Planning & Roadmapping",
-    ],
-    color2: "amber",
-    color1: "orange",
-    icon: BsSearch,
-  },
-  {
-    link: "design",
-    title: "UI/UX Design",
-    description:
-      "Beautiful, intuitive interfaces that delight users and drive engagement.",
-    offerings: [
-      "User Interface Design",
-      "User Experience Strategy",
-      "Design Systems & Component Libraries",
-      "Prototyping & User Testing",
-    ],
-    color2: "cyan",
-    color1: "blue",
-    icon: LuPalette,
-  },
-  {
-    link: "development",
-    title: "Software Development",
-    description:
-      "Robust, scalable solutions built with modern technologies and best practices.",
-    offerings: [
-      "Custom Web & Mobile Applications",
-      "API Development & Integration",
-      "Cloud Architecture & DevOps",
-      "Legacy System Modernization",
-    ],
-    color2: "amber",
-    color1: "orange",
-    icon: FaCode,
-  },
-];
 
 const Home = () => {
   return (
@@ -163,18 +112,8 @@ const Home = () => {
             variants={textFadeVariants}
             className="flex flex-wrap items-center w-full gap-5 pt-2"
           >
-            <Button
-              as={Link}
-              to="#services"
-              icon={
-                <IoArrowRedoOutline
-                  className="text-blue-600"
-                  size={21}
-                />
-              }
-              btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500 dark:shadow-blue-700/20"
-              btnBgHover="bg-blue-700"
-              size="22"
+            <Button as="a" herf="#services" icon={<IoArrowRedoOutline className="text-blue-600" size={21}/>}
+              btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500 dark:shadow-blue-700/20" btnBgHover="bg-blue-700" size="22"
             >
               Explore our Services
             </Button>
@@ -226,34 +165,8 @@ const Home = () => {
     <LogoMarquee />
 
       {/* Services Section */}
-      <section id="services" className="bg-white dark:bg-slate-950 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          {/* Header */}
-          <div className="mb-12 text-center md:text-left">
-            <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-              <span className="w-6 h-0.5 bg-orange-500" />
-              <span className="text-orange-500 text-xs font-bold uppercase tracking-widest">
-                What We Do
-              </span>
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-              Explore Our Range of{" "}
-              <span className="text-orange-500">Expert</span> Services
-            </h2>
-
-            <p className="text-slate-500 dark:text-slate-400 mt-4 text-lg">
-              Discover tailored solutions built for your goals.
-            </p>
-          </div>
-
-          {/* Cards */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
-        </div>
+      <section id="services" >
+        <ServiceSection />
       </section>
 
       {/* About Us Section */}

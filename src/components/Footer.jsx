@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaXTwitter, FaInstagram,  FaLinkedinIn, FaGoogle, } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter, FaInstagram,  FaLinkedinIn, } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
 import { FaRegEnvelope, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Button from "./Button";
 import Logo from "./Logo";
 import NewsLetter from "../assets/NewsLetter.png";
+import { Google } from "@lobehub/icons";
 
 const Footer = () => {
   const socialMediaLinks = [
-    { link: "facebook.com", name: "Facebook", icon: FaFacebookF },
-    { link: "twitter.com", name: "Twitter", icon: FaXTwitter },
-    { link: "Instagram.com", name: "Instagram", icon: FaInstagram },
-    { link: "Linkedin.com", name: "Linkedin", icon: FaLinkedinIn },
-    { link: "Google.com", name: "Google", icon: FaGoogle },
+    { link: "https://www.facebook.com", name: "Facebook", icon: FaFacebookF, color: "text-blue-500" },
+    { link: "https://www.x.com", name: "Twitter", icon: FaXTwitter, color: "text-black dark:text-white" },
+    { link: "https://www.instagram.com", name: "Instagram", icon: FaInstagram, color: "text-rose-600" },
+    { link: "https://www.linkedin.com", name: "Linkedin", icon: FaLinkedinIn, color: "text-[#0A66C2]" },
+    { link: "https://www.google.com", name: "Google", icon: Google.Color, color: "" },
   ];
 
   const navLinks = [
@@ -44,8 +45,9 @@ const Footer = () => {
           {/* Text & Input Area */}
           <div className="md:w-1/2 text-white z-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-2">
-              Subscribe to Our Weekly Newsletter
+              Stay Updated
             </h2>
+            <p className="mb-4 text-sm md:text-base">Get the latest insights on startups and tech delivered to your inbox.</p>
 
             <form className="flex bg-blue-500/50 rounded-full p-1 border border-blue-400">
               <div className="flex items-center pl-4 text-blue-200">
@@ -79,13 +81,13 @@ const Footer = () => {
       </div>
       <div className="max-w-7xl mt-10 mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12 text-base md:text-lg leading-relaxed font-light">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12 text-base md:text-lg leading-relaxed font-normal">
           {/* Brand Column */}
           <div className="">
             <Link to="/">
               <Logo className="mb-4 w-15 h-auto " />
             </Link>
-            <p className=" leading-relaxed text-md">
+            <p className=" leading-relaxed ">
               Transforming businesses through innovative technology solutions,
               thoughtful design, and strategic research.
             </p>
@@ -96,13 +98,13 @@ const Footer = () => {
                 const IconComponent = social.icon;
                 return (
                   <a
-                    className="w-9 h-9 rounded-full flex items-center justify-center hover:scale-110 transition-all hover:bg-linear-to-r hover:from-orange-500 hover:to-amber-500 hover:text-white bg-gray-600 dark:bg-slate-50 text-white dark:text-gray-600"
+                    className="group w-9 h-9 rounded-full flex items-center justify-center border hover:scale-110 hover:border-slate-300 dark:hover:border-white/10 border-slate-200/40 dark:border-white/5 backdrop-blur-md hover:shadow-md dark:hover:shadow-none select-none transition-all bg-amber-50/60 dark:bg-slate-800/60"
                     href={social.link}
                     key={index}
                     aria-label={social.name}
                     target="_blank"
                   >
-                    <IconComponent size={17} />
+                    <IconComponent className={`grayscale opacity-90 dark:opacity-90 group-hover:grayscale-0 group-hover:opacity-100 ${social.color}`} size={19} />
                   </a>
                 );
               })}
@@ -147,8 +149,8 @@ const Footer = () => {
             {[
               {
                 type: "Email",
-                value: "contact@avane.com",
-                link: "mailto:contact@avane.com",
+                value: "info@avane.com",
+                link: "mailto:info@avane.com",
                 icon: FaEnvelope,
               },
               {
