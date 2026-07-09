@@ -34,8 +34,7 @@ const Home = () => {
   return (
     <>
       {/* Hero Section*/}
- 
-    <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#050816]">
+ <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#050816]">
       {/* Glow Effects */}
       <motion.div
         animate={{
@@ -113,20 +112,13 @@ const Home = () => {
             className="flex flex-wrap items-center w-full gap-5 pt-2"
           >
             <Button as="a" herf="#services" icon={<IoArrowRedoOutline className="text-blue-600" size={21}/>}
-              btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500 dark:shadow-blue-700/20" btnBgHover="bg-blue-700" size="22"
+              btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500 dark:shadow-blue-700/20" btnBgHover="bg-blue-700" size="18"
             >
               Explore our Services
             </Button>
             
             <Button
-              as={Link}
-              icon={<LiaTelegramPlane className="text-white group-hover:text-orange-500" />}
-              btnTxtColor="text-orange-500 group-hover:text-white"
-              btnBgColor="bg-white border border-slate-200 dark:border-transparent dark:shadow-white/5"
-              btnBgHover="bg-orange-500"
-              iconBgColor={"bg-orange-500 group-hover:bg-white"}
-              to="/contact"
-              size="22"
+              as={Link} icon={<LiaTelegramPlane className="text-white group-hover:text-orange-500" />} btnTxtColor="text-orange-500 group-hover:text-white" btnBgColor="bg-white border border-slate-200 dark:border-transparent dark:shadow-white/5" btnBgHover="bg-orange-500" iconBgColor={"bg-orange-500 group-hover:bg-white"} to="/contact" size="18"
             >
               Contact Us
             </Button>
