@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import ThemeProvider from "./providers/ThemeProviders";
 import Cybersecurity from "./routes/Cybersecurity";
 import Academy from "./routes/Academy";
+import Blog from "./routes/blog";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light
@@ -72,6 +73,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/academy" element={<Academy />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/development" element={<Development />} />
         <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
