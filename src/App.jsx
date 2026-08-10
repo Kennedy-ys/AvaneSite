@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./routes/Home";
-import About from "./routes/About";
-import Development from "./routes/Development";
-import UIUXDesign from "./routes/UIUXDesign";
-import Research from "./routes/Research";
-import Contact from "./routes/Contact";
-import DataAnalysis from "./routes/DataAnalysis";
-import ProjectManagement from "./routes/ProjectManagement";
-import GraphicsDesign from "./routes/GraphicsDesign";
-import SocialMediaManagement from "./routes/SocialMediaManagement";
-import ComingSoon from "./routes/ComingSoon";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Development from "./pages/Development";
+import UIUXDesign from "./pages/UIUXDesign";
+import Research from "./pages/Research";
+import Contact from "./pages/Contact";
+import DataAnalysis from "./pages/DataAnalysis";
+import ProjectManagement from "./pages/ProjectManagement";
+import GraphicsDesign from "./pages/GraphicsDesign";
+import SocialMediaManagement from "./pages/SocialMediaManagement";
+import ComingSoon from "./pages/ComingSoon";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ThemeProvider from "./providers/ThemeProviders";
-import Cybersecurity from "./routes/Cybersecurity";
-import Academy from "./routes/Academy";
-import Blog from "./routes/blog";
+import Cybersecurity from "./pages/Cybersecurity";
+import Academy from "./pages/Academy";
+import Blog from "./pages/blog";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light

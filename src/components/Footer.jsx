@@ -1,26 +1,27 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaXTwitter, FaInstagram,  FaLinkedinIn, } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
-import { FaRegEnvelope, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { FaRegEnvelope, FaPhoneAlt, FaEnvelope, FaTiktok } from "react-icons/fa";
 import Button from "./Button";
 import Logo from "./Logo";
 import NewsLetter from "../assets/NewsLetter.png";
-import { Google } from "@lobehub/icons";
 
 const Footer = () => {
   const socialMediaLinks = [
-    { link: "https://www.facebook.com", name: "Facebook", icon: FaFacebookF, color: "text-blue-500" },
-    { link: "https://www.x.com", name: "Twitter", icon: FaXTwitter, color: "text-black dark:text-white" },
-    { link: "https://www.instagram.com", name: "Instagram", icon: FaInstagram, color: "text-rose-600" },
-    { link: "https://www.linkedin.com", name: "Linkedin", icon: FaLinkedinIn, color: "text-[#0A66C2]" },
-    { link: "https://www.google.com", name: "Google", icon: Google.Color, color: "" },
-  ];
-
+    { link: "https://www.facebook.com", name: "Facebook", icon: FaFacebookF, },
+    { link: "https://www.x.com", name: "Twitter", icon: FaXTwitter, },
+    { link: "https://www.instagram.com", name: "Instagram", icon: FaInstagram, },
+    { link: "https://www.linkedin.com", name: "Linkedin", icon: FaLinkedinIn, }, 
+    { link: "https://www.tiktok.com", name: "Tiktok", icon: FaTiktok, }
+    ]
+      
   const navLinks = [
     { name: "About", link: "/about" },
     { name: "Contact", link: "/contact" },
-    { name: "Testimonials", link: "#" },
+    { name: "Blog", link: "/blog" },
+    { name: "Academy", link: "/academy" },
   ];
   const servicesLinks = [
     { name: "Research", link: "/services/research" },
@@ -97,15 +98,18 @@ const Footer = () => {
               {socialMediaLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 return (
-                  <a
-                    className="group w-9 h-9 rounded-full flex items-center justify-center border hover:scale-110 hover:border-slate-300 dark:hover:border-white/10 border-slate-200/40 dark:border-white/5 backdrop-blur-md hover:shadow-md dark:hover:shadow-none select-none transition-all bg-amber-50/60 dark:bg-slate-800/60"
+                  <motion.a
+                  whileHover={{ y: -5, scale: 1.08, rotate: 3, }}
+                  whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                    className="group w-10 h-10 rounded-full flex items-center justify-center border dark:hover:border-white/10 border-gray-300 dark:border-white/5 backdrop-blur-md hover:shadow-md dark:hover:shadow-none select-none transition-colors bg-amber-50/40 dark:bg-slate-800/60"
                     href={social.link}
                     key={index}
                     aria-label={social.name}
                     target="_blank"
                   >
-                    <IconComponent className={`grayscale opacity-90 dark:opacity-90 group-hover:grayscale-0 group-hover:opacity-100 ${social.color}`} size={19} />
-                  </a>
+                    <IconComponent className="group-hover:text-amber-500" size={19} />
+                  </motion.a>
                 );
               })}
             </div>
@@ -144,7 +148,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="flex flex-col space-y-3">
+          <motion.div className="flex flex-col space-y-3">
             <h4 className="font-semibold dark:text-white mb-4">Contact Us</h4>
             {[
               {
@@ -176,7 +180,7 @@ const Footer = () => {
                 </a>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}

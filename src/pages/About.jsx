@@ -202,8 +202,8 @@ const About = () => {
       <TeamSection />
 
       <GetStarted
-        text="We replace traditional client relationships with true partnerships"
-        ctaText="Let's Build Together"
+        text="Interested in joining our team?"
+        ctaText="Write to us"
       />
     </div>
   );
