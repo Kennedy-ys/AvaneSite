@@ -89,6 +89,7 @@ const Blog = () => {
       verified: true,
       readTime: "6 min read",
       commentsCount: 42,
+      image: "https://pbs.twimg.com/media/HLpLMM8WEAAxctB?format=jpg&name=small",
       imageCaption: "Not just a platform. A home revolution.",
     },
     {
