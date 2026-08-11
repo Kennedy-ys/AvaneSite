@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css">
+    <title>avane-website</title>
+    <script>
+      // Immediately check for saved theme preference or system preference before React loads (The 'Anti-Flicker' Fix)
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('themeMode');
+          const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // Check system preference
+
+          if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+
+        } catch (e) {}
+      }) ();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
