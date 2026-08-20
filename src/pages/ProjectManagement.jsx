@@ -1,283 +1,22 @@
 import React from "react";
 import { motion } from "motion/react";
-import {
-  IoCalendarOutline,
-  IoSpeedometerOutline,
-  IoPeopleOutline,
-  IoShieldCheckmarkOutline,
-  IoTrendingUpOutline,
-  IoSyncOutline,
-  IoCompassOutline,
-  IoCalendarClearOutline,
-  IoGitCommitOutline,
-  IoCheckmarkDoneOutline,
-  IoCheckmarkDoneCircleOutline,
-  IoRocketOutline,
-  IoTimeOutline,
-} from "react-icons/io5";
-import {
-  SiJira,
-  SiLinear,
-  SiConfluence,
-  SiNotion,
-  SiMiro,
-  SiTrello,
-  SiSlack,
-  SiAsana,
-  SiClickup,
-} from "react-icons/si";
-import { FiActivity, FiClock } from "react-icons/fi";
-import Timeline from "../components/Timeline";
-import Projects from "../components/Projects";
-import LogoMarquee from "../components/LogoMarquee";
-import { BsMicrosoftTeams } from "react-icons/bs";
-import GetStarted from "../components/GetStarted";
-import Button from "../components/Button";
+import { IoCheckmarkDoneCircleOutline, IoRocketOutline, IoTimeOutline } from "react-icons/io5";
+import Timeline from "../components/sections/Timeline";
+import Projects from "../components/sections/Projects";
+import LogoMarquee from "../components/sections/LogoMarquee";
+import CTA from "../components/sections/Call-To-Action";
+import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
 import { TbArrowDownRight } from "react-icons/tb";
+import { pmHighlights } from "../data/highlights";
+import { pmCapabilities } from "../data/capabilities";
+import { pManagementTools } from "../data/marquee";
+import { pmProjects, pmProjectContext } from "../data/projects";
+import { pmTimelineSteps, pmTimelineContext } from "../data/timeline";
+
 
 const ProjectManagement = () => {
-  const pmCapabilities = [
-    {
-      icon: <IoCalendarOutline size={24} />,
-      title: "Agile Sprint Architecture & Scoping",
-      description:
-        "Breaking complex, multi-quarter milestones into predictable 2-week delivery cycles. We manage backlogs, author detailed epic ticket requirements, and isolate strict MVP definitions to eliminate scope creep.",
-      tags: [
-        "Epic Breakdown",
-        "Backlog Grooming",
-        "MVP Definition",
-        "User Stories",
-      ],
-      gridSpan: "lg:col-span-7",
-      accent: "from-indigo-500 to-purple-500",
-    },
-    {
-      icon: <IoSpeedometerOutline size={24} />,
-      title: "Velocity Tracking & Burndown",
-      description:
-        "Monitoring engineering output metrics with mathematical precision. We establish baseline sprint points and optimize team velocity curves to guarantee your deadlines are systematically realistic.",
-      tags: [
-        "Velocity Tuning",
-        "Burndown Charts",
-        "Cycle Time KPI",
-        "Jira Automation",
-      ],
-      gridSpan: "lg:col-span-5",
-      accent: "from-purple-500 to-blue-500",
-    },
-    {
-      icon: <IoPeopleOutline size={24} />,
-      title: "Fractional Scrum & Resource Balancing",
-      description:
-        "Aligning product designers, frontend engineers, and cloud architects under unified daily communication standups. We continuously optimize resource allocations to prevent dev cross-dependencies or engineering burnout.",
-      tags: [
-        "Capacity Planning",
-        "Standup Rhythm",
-        "Dependency Auditing",
-        "Slack Loops",
-      ],
-      gridSpan: "lg:col-span-5",
-      accent: "from-blue-500 to-indigo-600",
-    },
-    {
-      icon: <IoShieldCheckmarkOutline size={24} />,
-      title: "Quality Assurance & Risk Mitigation",
-      description:
-        "Enforcing strict Definition of Done parameters before any code passes to production. We manage user acceptance testing (UAT) tracks, coordinate staging code reviews, and map fallback strategies for high-risk updates.",
-      tags: [
-        "Definition of Done",
-        "UAT Testing",
-        "Staging Gateways",
-        "Risk Matrices",
-      ],
-      gridSpan: "lg:col-span-7",
-      accent: "from-purple-600 to-indigo-500",
-    },
-  ];
-
-  const pmHighlights = [
-    {
-      icon: <IoTrendingUpOutline className="text-indigo-500" />,
-      text: "Average 94.2% on-time milestone fulfillment across enterprise-scale software suites.",
-    },
-    {
-      icon: <IoSyncOutline className="text-purple-500" />,
-      text: "Complete transparency with continuous, asynchronous stakeholder progress reports.",
-    },
-  ];
-
-  // For Roadmap Timeline Section
-  const timelineSteps = [
-    {
-      phase: "01",
-      icon: <IoCompassOutline className="text-indigo-500" size={22} />,
-      accent: "border-indigo-500/20 text-indigo-500 bg-indigo-500/5",
-      title: "Discovery & Requirements Alignment",
-      description:
-        "We map your strategic product goals into manageable project deliverables. Our team works with stakeholders to define the absolute Minimum Viable Product (MVP), author technical specs, identify operational blockers, and draft explicit acceptance parameters.",
-      details: [
-        "MVP Boundary Definition",
-        "Technical Dependency Mapping",
-        "User Story Matrixing",
-      ],
-    },
-    {
-      phase: "02",
-      icon: <IoCalendarClearOutline className="text-purple-500" size={22} />,
-      accent: "border-purple-500/20 text-purple-500 bg-purple-500/5",
-      title: "Agile Estimation & Sprint Planning",
-      description:
-        "Next, we transform the product backlog into executable tasks. We establish a team capacity framework, lead collaborative story point estimation sessions, organize task allocations inside Jira, and lock down explicit 2-week sprint boundaries.",
-      details: [
-        "Backlog Story Pointing",
-        "Jira Epic Structuring",
-        "Capacity & Load Balancing",
-      ],
-    },
-    {
-      phase: "03",
-      icon: <IoGitCommitOutline className="text-blue-500" size={22} />,
-      accent: "border-blue-500/20 text-blue-500 bg-blue-500/5",
-      title: "Active Sprint Execution & Velocity Monitoring",
-      description:
-        "During active execution, we unblock technical development. We moderate daily asynchronous or synchronous standups, monitor team velocity burn-down metrics closely, isolate scope expansion attempts, and keep project timelines tightly on track.",
-      details: [
-        "Daily Standup Moderation",
-        "Velocity Burndown Audits",
-        "Scope Creep Mitigation",
-      ],
-    },
-    {
-      phase: "04",
-      icon: <IoCheckmarkDoneOutline className="text-indigo-400" size={22} />,
-      accent: "border-indigo-400/20 text-indigo-400 bg-indigo-400/5",
-      title: "UAT Sign-off & Delivery Retrospective",
-      description:
-        "We lead the final delivery validation gateway. Our team manages user acceptance testing loops against the baseline requirements, handles feature handoffs to production environments, and coordinates retrospectives to optimize future team output speed.",
-      details: [
-        "User Acceptance Sign-off",
-        "Production Release Gates",
-        "Process Optimization Audits",
-      ],
-    },
-  ];
-
-  const timelineContext = {
-    title: "Delivery Roadmap",
-    heading1: "Our Strategic",
-    heading2: "Execution Loop",
-    description:
-      "A predictable, point-driven delivery timeline engineered to eliminate deadline variance and guarantee reliable software releases.",
-    color: "indigo",
-    gradientHeadingClasses: "from-indigo-500 via-purple-500 to-blue-500",
-  };
-
-  // Structured data for Project Management Showcase Section
-  const projects = [
-    {
-      title: "Enterprise Core Banking Release Management",
-      category: "Scale & Delivery Optimization",
-      metric: "100% On-Time Phase Gates",
-      imageUrl:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-      link: "work/banking-release-management",
-      accentColor: "from-indigo-600 to-purple-500",
-    },
-    {
-      title: "SaaS Platform Modernization Sprint Strategy",
-      category: "Agile Process Transformation",
-      metric: "+38% Team Sprint Velocity",
-      imageUrl:
-        "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
-      link: "work/saas-agile-transformation",
-      accentColor: "from-purple-600 to-blue-500",
-    },
-    {
-      title: "Global Supply Chain Ecosystem Alignment",
-      category: "Cross-Functional Governance",
-      metric: "-0% Deadline Overruns",
-      imageUrl:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-      link: "work/supply-chain-governance",
-      accentColor: "from-blue-600 to-indigo-500",
-    },
-  ];
-
-  // Context definitions for the Project Management header block
-  const ProjectContext = {
-    title: "Delivery Proofs",
-    heading1: "Predictable",
-    heading2: "Execution Lifecycles",
-    headerLineColor: "bg-indigo-600",
-    gradientHeadingClasses: "from-indigo-500 via-purple-500 to-blue-500",
-    description:
-      "Explore structured agile frameworks, optimized scrum architectures, and high-velocity development pipelines engineered to deliver complex software suites on schedule.",
-  };
-
-  const devTools = [
-    {
-      name: "Jira Software",
-      icon: <SiJira size={26} className="text-[#0052CC]" />,
-      role: "Epic & Backlog Tracking",
-    },
-    {
-      name: "Linear",
-      icon: <SiLinear size={24} className="text-[#000000] dark:text-white" />,
-      role: "High-Velocity Issue Tracking",
-    },
-    {
-      name: "Confluence",
-      icon: <SiConfluence size={26} className="text-[#0052CC]" />,
-      role: "Requirements & Spec Wiki",
-    },
-    {
-      name: "Notion",
-      icon: <SiNotion size={26} className="text-[#000000] dark:text-white" />,
-      role: "Knowledge Base Management",
-    },
-    {
-      name: "Miro",
-      icon: <SiMiro size={26} className="text-[#FFD02F]" />,
-      role: "User Story Mapping",
-    },
-    {
-      name: "Slack",
-      icon: <SiSlack size={24} className="text-[#4A154B]" />,
-      role: "Asynchronous Standups",
-    },
-    {
-      name: "Asana",
-      icon: <SiAsana size={24} className="text-[#F06A6A]" />,
-      role: "Milestone Scheduling",
-    },
-    {
-      name: "ClickUp",
-      icon: <SiClickup size={24} className="text-[#7B68EE]" />,
-      role: "Task Architecture",
-    },
-    {
-      name: "Trello",
-      icon: <SiTrello size={26} className="text-[#0079BF]" />,
-      role: "Visual Kanban Boards",
-    },
-    {
-      name: "MS Teams",
-      icon: <BsMicrosoftTeams size={26} className="text-[#6264A7]" />,
-      role: "Stakeholder Communications",
-    },
-    {
-      name: "Velocity Monitor",
-      icon: <FiActivity size={24} className="text-[#6366F1]" />,
-      role: "Sprint Burndown Analytics",
-    },
-    {
-      name: "Toggl Track",
-      icon: <FiClock size={24} className="text-[#E57CD8]" />,
-      role: "Capacity Utilization Planning",
-    },
-  ];
-
+  
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 bg-linear-to-b from-white to-slate-50 dark:from-[#070a13] dark:to-[#04060c] transition-colors duration-300 overflow-hidden">
@@ -341,7 +80,7 @@ const ProjectManagement = () => {
             </p>
 
             {/* Call-To-Action Button Loops */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-auto sm:w-full pt-4">
               
               <Button as={Link} to="/contact" btnBgColor="bg-linear-to-r from-indigo-600 to-purple-500" btnBgHover="bg-indigo-500" icon={<IoRocketOutline className="text-indigo-600" />}>Optimize Our Delivery</Button>
 
@@ -494,7 +233,9 @@ const ProjectManagement = () => {
 
           {/* Asymmetric Bento Grid Layer */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
-            {pmCapabilities.map((item, index) => (
+            {pmCapabilities.map((item, index) => {
+              const { Icon, title, description } = item;
+              return (
               <motion.div
                 key={index}
                 className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/20 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
@@ -510,17 +251,17 @@ const ProjectManagement = () => {
                 {/* Top Row: Icon Container */}
                 <div className="flex items-start justify-between relative z-10">
                   <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300 shadow-xs">
-                    {item.icon}
+                    <Icon size={24} />
                   </div>
                 </div>
 
                 {/* Central Information Stack */}
                 <div className="mt-8 relative z-10 space-y-3">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                    {item.title}
+                    {title}
                   </h3>
                   <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                    {item.description}
+                    {description}
                   </p>
                 </div>
 
@@ -541,44 +282,47 @@ const ProjectManagement = () => {
                   className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                 />
               </motion.div>
-            ))}
+              )})}
           </div>
 
           {/* Bottom Metric Reassurance Row */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-white/10 bg-slate-50/20 dark:bg-slate-900/5 backdrop-blur-xs text-left">
-            {pmHighlights.map((highlight, index) => (
+            {pmHighlights.map((highlight, index) => {
+              const { Icon, iconColor, text} = highlight;
+              return (
               <div key={index} className="flex items-center gap-3 max-w-md">
                 <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                  {highlight.icon}
+                  <Icon className={iconColor} />
                 </div>
                 <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                  {highlight.text}
+                  {text}
                 </p>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
 
       {/* Roadmap Timeline Section */}
       <Timeline
-        timelineContext={timelineContext}
-        timelineSteps={timelineSteps}
+        timelineContext={pmTimelineContext}
+        timelineSteps={pmTimelineSteps}
       />
 
       {/* Project Section */}
-      <Projects ProjectContext={ProjectContext} projects={projects} />
+      <Projects ProjectContext={pmProjectContext} projects={pmProjects} />
 
       {/* Tool Stack Section */}
       <LogoMarquee
-        row1Data={devTools.slice(0, 6)}
-        row2Data={devTools.slice(6, 12)}
+        row1Data={pManagementTools.slice(0, 6)}
+        row2Data={pManagementTools.slice(6, 12)}
         subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
         title="Our Development Toolkit"
       />
 
       {/* CTA Section */}
-      <GetStarted
+      <CTA
         text="Ready to build something great together?"
         ctaText="Send a Message"
       />

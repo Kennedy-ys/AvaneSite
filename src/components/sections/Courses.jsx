@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { IoBookOutline, IoTimeOutline, IoBarChartOutline, IoStar } from "react-icons/io5";
-import Button from "./Button";
+import Button from "../ui/Button";
 
 const Courses = () => {
   const [activeTab, setActiveTab] = useState("All Tracks");

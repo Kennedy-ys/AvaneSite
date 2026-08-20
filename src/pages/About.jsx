@@ -1,12 +1,12 @@
-import CardImg from "../assets/NewsLetter.png";
-import TeamSection from "../components/TeamSection";
-import HeroImg from "../assets/Teamwork.webp";
+import CardImg from "../assets/images/NewsLetter.png";
+import TeamSection from "../components/sections/TeamSection";
+import HeroImg from "../assets/images/Teamwork.webp";
 import { motion } from "motion/react";
 import { PiLightbulbLight } from "react-icons/pi";
-import AboutSection from "../components/AboutSection";
-import VisionImg from "../assets/Vision.webp";
-import GetStarted from "../components/GetStarted";
-import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/sections/AboutSection";
+import VisionImg from "../assets/images/Vision.webp";
+import CTA from "../components/sections/Call-To-Action";
+import HeroSection from "../components/sections/HeroSection";
 
 const About = () => {
   return (
@@ -100,6 +100,7 @@ const About = () => {
             <div className="relative overflow-hidden border border-zinc-300 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-900 rounded-2xl">
               <motion.img
                 whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 1.04 }}
                 transition={{ duration: 0.5 }}
                 src={VisionImg}
                 alt="Team collaboration"
@@ -148,6 +149,7 @@ const About = () => {
             <div className="relative overflow-hidden border border-zinc-300 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-900 rounded-2xl">
               <motion.img
                 whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 1.04 }}
                 transition={{ duration: 0.5 }}
                 src={VisionImg}
                 alt="Team collaboration"
@@ -201,7 +203,7 @@ const About = () => {
 
       <TeamSection />
 
-      <GetStarted
+      <CTA
         text="Interested in joining our team?"
         ctaText="Write to us"
       />

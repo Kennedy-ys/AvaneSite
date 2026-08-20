@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import Button from "../ui/Button";
 import { LuArrowUpRight } from "react-icons/lu";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { LuGraduationCap, LuLayers, LuPalette, LuShare2, LuShieldAlert } from "react-icons/lu";

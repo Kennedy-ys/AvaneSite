@@ -1,168 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import Button from "../components/Button";
-import Projects from "../components/Projects";
-import LogoMarquee from "../components/LogoMarquee";
-import GetStarted from "../components/GetStarted";
-import Timeline from "../components/Timeline"
-import { IoArrowForwardOutline, IoSearchOutline, IoLayersOutline, IoColorPaletteOutline, IoPhonePortraitOutline, IoAccessibilityOutline, IoGitBranchOutline, IoEyeOutline, IoGitCommitOutline, IoLaptopOutline, IoRocketOutline } from "react-icons/io5";
-import { SiMiro, SiNotion, SiFramer, SiMaze, SiMural, SiInvision } from "react-icons/si";
-  import { FaPalette, FaSketch } from "react-icons/fa";
-import { BiLogoAdobe } from "react-icons/bi";
-import { TbBrandAdobeXd } from "react-icons/tb";
-import { Figma } from "@lobehub/icons";
+import Button from "../components/ui/Button";
+import Projects from "../components/sections/Projects";
+import LogoMarquee from "../components/sections/LogoMarquee";
+import CTA from "../components/sections/Call-To-Action";
+import Timeline from "../components/sections/Timeline"
+import { IoArrowForwardOutline, IoSearchOutline } from "react-icons/io5";
+import { FaPalette } from "react-icons/fa";
+import { uiUxTools } from "../data/marquee"
+import { uiUxFeatures } from "../data/capabilities"
+import { uiUxProjectContext,uiUxProjects } from "../data/projects"
+import { uiUxTimelineSteps,uiUxTimelineContext } from "../data/timeline"
 
-// Structured data for Marquee Tool Stack
-const tools = [
-   { name: 'Figma', icon: <Figma.Color size={26} />, role: "Core Design & Prototyping" },
-  { name: 'Miro', icon: <SiMiro size={26} className="text-[#FFD02F]" />, role: "Research & Ideation" },
-  { name: 'Notion', icon: <SiNotion size={26} className="text-[#000000] dark:text-white" />, role: "Documentation" },
-  { name: 'Framer', icon: <SiFramer size={24} className="text-[#0055FF] dark:text-white" />, role: "Interactive Design" },
-  { name: 'Adobe XD', icon: <TbBrandAdobeXd size={26} className="text-[#FF61F6]" />, role: "Vector Design" },
-   { name: 'Sketch', icon: <FaSketch size={26} className="text-[#FDB300]" />, role: "UI Design" },
-  { name: 'Maze', icon: <SiMaze size={24} className="text-[#7B61FF]" />, role: "User Testing" },
-  { name: 'Mural', icon: <SiMural size={26} className="text-[#E61F25]" />, role: "Brainstorming" },
-  { name: 'InVision', icon: <SiInvision size={26} className="text-[#FF3366]" />, role: "Legacy Prototyping" }
-]
-
-// structured data for timeline section
-const timelineSteps = [
-  {
-    phase: "01",
-    title: "Discovery & User Research",
-    description:
-      "We audit your existing data, survey users, map competitor gaps, and run stakeholder workshops to clarify the product strategy before pushing pixels.",
-    icon: <IoEyeOutline className="text-orange-500" size={22} />,
-    accent: "border-orange-500/20 text-orange-500 bg-orange-500/5",
-    details: ["User Surveys & Audits", "Competitor Gap Mapping", "Stakeholder Workshops"]
-  },
-  {
-    phase: "02",
-    title: "Information Architecture & Wireframes",
-    description:
-      "We establish content hierarchies, interaction layouts, and structural skeletal wireframes to perfect user journeys without distraction.",
-    icon: <IoGitCommitOutline className="text-blue-500" size={22} />,
-    accent: "border-blue-500/20 text-blue-500 bg-blue-500/5",
-    details: ["Content Hierarchy Maps", "Interaction Layouts", "Skeletal Wireframes"]
-  },
-  {
-    phase: "03",
-    title: "Interactive Prototyping",
-    description:
-      "Turning logic into stunning high-fidelity visual UI designs. We integrate rich micro-interactions, layout components, and motion workflows to mimic the exact live code experience.",
-    icon: <IoLaptopOutline className="text-cyan-500" size={22} />,
-    accent: "border-cyan-500/20 text-cyan-500 bg-cyan-500/5",
-    details: ["High-Fidelity UI Design", "Micro-Interaction Rules", "Motion Workflow Demos"]
-  },
-  {
-    phase: "04",
-    title: "Developer Handoff & Specifications",
-    description:
-      "We bundle complete, highly structured production design systems inside Figma, complete with dynamic tokens, responsive auto-layouts, and component specs for clean asset handoffs.",
-    icon: <IoRocketOutline className="text-emerald-500" size={22} />,
-    accent: "border-emerald-500/20 text-emerald-500 bg-emerald-500/5",
-    details: ["Production Design Systems", "Dynamic Token Bundles", "Auto-Layout Component Specs"]
-  },
-];
-
-const timelineContext = {
-  title: "Our Design Process",
-  heading1: "From concept to",
-  heading2: "production handoff", 
-  description: "We follow a rigorous, agile roadmap engineered to protect speed-to-market loops while keeping human-design principles center.",
-  color: "orange",
-  gradientHeadingClasses: "from-orange-500 to-amber-500",
-}
-
-// Structured data for features section
-const features = [
-  {
-    icon: <IoSearchOutline className="text-orange-500" size={24} />,
-    title: "User Research & Discovery",
-    description:
-      "We dive deep into user behavior, target demographics, and competitor analysis to align your product with real market needs.",
-    badge: "Strategy",
-    className: "md:col-span-2 lg:col-span-2",
-  },
-  {
-    icon: <IoLayersOutline className="text-blue-500" size={24} />,
-    title: "Wireframing & Architecture",
-    description:
-      "Mapping out low-fidelity structural blueprints to define clean user journeys and content priority blueprints.",
-    badge: "Structure",
-    className: "md:col-span-1 lg:col-span-1",
-  },
-  {
-    icon: <IoPhonePortraitOutline className="text-cyan-500" size={24} />,
-    title: "High-Fidelity UI Design",
-    description:
-      "Transforming layouts into premium, pixel-perfect interfaces designed uniquely around your core visual brand identity.",
-    badge: "Visuals",
-    className: "md:col-span-1 lg:col-span-1",
-  },
-  {
-    icon: <IoColorPaletteOutline className="text-amber-500" size={24} />,
-    title: "Scalable Design Systems",
-    description:
-      "Building production-ready component libraries in Figma, complete with reusable design tokens, typography scales, and UI assets for your development ecosystem.",
-    badge: "Systems",
-    className: "md:col-span-2 lg:col-span-2",
-  },
-  {
-    icon: <IoAccessibilityOutline className="text-purple-500" size={24} />,
-    title: "Accessibility Testing (WCAG)",
-    description:
-      "Optimizing interfaces for absolute inclusivity, ensuring contrast, screen-reader compatibility, and focus states clear rigorous compliance audits.",
-    badge: "Compliance",
-    className: "md:col-span-1 lg:col-span-1",
-  },
-  {
-    icon: <IoGitBranchOutline className="text-emerald-500" size={24} />,
-    title: "Interactive Prototyping",
-    description:
-      "Connecting complex micro-interactions and motion flows to test click-through parameters before shipping any live code lines.",
-    badge: "Testing",
-    className: "md:col-span-1 lg:col-span-1",
-  },
-];
-
-// Structured data for Project section
-const projects = [
-  {
-    title: "Fintech Dashboard Redesign",
-    category: "Web Application",
-    metric: "-40% Onboarding Drop-off",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80", // Replace with your project asset path
-    link: "/work/fintech-dashboard",
-    accentColor: "from-blue-600 to-cyan-500"
-  },
-  {
-    title: "E-Commerce Mobile Workspace",
-    category: "iOS & Android App",
-    metric: "+125% Conversion Boost",
-    imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80", // Replace with your project asset path
-    link: "/work/ecommerce-app",
-    accentColor: "from-orange-500 to-amber-500"
-  },
-  {
-    title: "SaaS Analytics Platform UI",
-    category: "Complex Web Portal",
-    metric: "2.4x User Engagement",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", // Replace with your project asset path
-    link: "/work/saas-analytics",
-    accentColor: "from-purple-600 to-indigo-500"
-  }
-];
-
-const ProjectContext = {
-  title: "Case studies",
-  heading1: "Selected",
-  heading2: "Design Proof", 
-  description: "Real products built for real users, proving that human-centric experiences catalyze massive business scale.",
-  headerLineColor: "bg-orange-600",
-  gradientHeadingClasses: "from-orange-600 to-amber-500",
-}
 
 // Stagger orchestration for the features section cards
 const containerVariants = {
@@ -270,7 +120,7 @@ const Design = () => {
             </motion.div>
 
             {/* Action CTAs */}
-            <motion.div variants={fadeInUp} className="pt-2">
+            <motion.div variants={fadeInUp} className="pt-2 w-auto sm:w-full">
               <Button
                 as={Link}
                 to="/contact"
@@ -279,7 +129,7 @@ const Design = () => {
                 }
                 btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500 shadow-md shadow-blue-700/10"
                 btnBgHover="bg-blue-800"
-                size="20"
+                size="18"
               >
                 Start a Project
               </Button>
@@ -400,30 +250,33 @@ const Design = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
           >
-            {features.map((feature, index) => (
+            {uiUxFeatures.map((feature, index) => {
+              const { Icon, iconColor, title, description, badge, className } = feature;
+              return (
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className={`${feature.className} p-8 rounded-2xl border bg-slate-50/50 dark:bg-slate-900/30 border-slate-200/80 dark:border-white/5 backdrop-blur-xs flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/40 dark:hover:shadow-none transition-shadow duration-300`}
+                whileHover={{ y: -6}} transition= {{ duration: 0.2 }}
+                whileTap={{ y: -6 }}
+                className={`${className} p-8 rounded-2xl border bg-slate-50/50 dark:bg-slate-900/30 border-slate-200/80 dark:border-white/5 backdrop-blur-xs flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/40 dark:hover:shadow-none transition-shadow duration-300`}
               >
                 <div>
                   {/* Icon Header Row */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 shadow-xs border border-slate-200/60 dark:border-white/10 flex items-center justify-center transition-colors duration-300">
-                      {feature.icon}
+                      <Icon className={iconColor} size={24} />
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-200/50 dark:bg-white/5 text-slate-500 dark:text-gray-400">
-                      {feature.badge}
+                      {badge}
                     </span>
                   </div>
 
                   {/* Content */}
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-cyan-400">
-                    {feature.title}
+                    {title}
                   </h3>
                   <p className="text-slate-600 dark:text-gray-400 text-sm font-light leading-relaxed">
-                    {feature.description}
+                    {description}
                   </p>
                 </div>
 
@@ -434,27 +287,27 @@ const Design = () => {
                   </span>
                 </div>
               </motion.div>
-            ))}
+            )})}
           </motion.div>
         </div>
       </section>
 
       {/* Design Timeline Process Section */}
-      <Timeline timelineSteps={timelineSteps} timelineContext={timelineContext}  />
+      <Timeline timelineSteps={uiUxTimelineSteps} timelineContext={uiUxTimelineContext}  />
 
       {/* Project Section */}
-      <Projects projects={projects} ProjectContext={ProjectContext} />
+      <Projects projects={uiUxProjects} ProjectContext={uiUxProjectContext} />
 
       {/* Tool Stack */}
       <LogoMarquee
-        row1Data={tools}
-        row2Data={tools}
+        row1Data={uiUxTools}
+        row2Data={uiUxTools}
         subText="Utilizing a suite of advanced design software, we craft visually captivating and highly functional user experiences."
         title="Our Integrated Design Ecosystem"
       />
 
       {/* CTA Section */}
-      <GetStarted
+      <CTA
         text="Have a Vision? Let's design it together"
         ctaText="Let's Chat"
       />

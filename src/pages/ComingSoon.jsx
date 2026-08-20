@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Button from '../components/Button';
+import Button from '../components/ui/Button';
 import { IoArrowRedoOutline } from "react-icons/io5";
-import HeroImg from "../assets/Vision.webp";
+import HeroImg from "../assets/images/Vision.webp";
 
 const ComingSoon = () => {
   return (

@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@custom-variant hover (&:hover);
+
 @theme {
   --background-stripe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M-1 1l2-2M0 6l6-6M5 7l2-2' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E");
   --dark-background-stripe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M-1 1l2-2M0 6l6-6M5 7l2-2' stroke='rgba(0,0,0,0.07)' stroke-width='1'/%3E%3C/svg%3E");
@@ -30,6 +32,7 @@
   animation: 700ms cubic-bezier(0.4, 0, 0.2, 1) both clip-reveal;
 }
 
+/* Animation for toggle */
 @keyframes clip-reveal {
   from{
     /* Starts from the top-right where your toggle likely is */
@@ -46,4 +49,29 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Marquee Animations */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marqueeLeft {
+  animation: marqueeLeft 30s linear infinite;
+}
+
+.animate-marqueeRight {
+  animation: marqueeRight 32s linear infinite;
+}
+
+/* Edge Fading Mask */
+.mask-fade-edges {
+  mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
 }

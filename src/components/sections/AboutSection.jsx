@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import Button from "./Button";
-import advisorImg from "../assets/aboutUs.webp";
+import Button from "../ui/Button";
+import advisorImg from "../../assets/images/aboutUs.webp";
 import { IoArrowRedoOutline, IoCheckmarkDoneSharp } from "react-icons/io5";
 
 const checkItems = [

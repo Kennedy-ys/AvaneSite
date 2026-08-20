@@ -45,9 +45,8 @@ export default function TeamSection() {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
-              whileHover={{
-                y: -12,
-              }}
+              whileHover={{ y: -12 }}
+              whileTap={{ y: -12 }}
               className="group relative overflow-hidden rounded-4xl border border-white/10 bg-white/5 backdrop-blur-2xl"
             >
               <div className="relative h-105 overflow-hidden">

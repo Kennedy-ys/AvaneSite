@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { GoSearch } from "react-icons/go";
-import HeroSection from "../components/HeroSection";
-import heroimg from "../assets/Teamwork.webp";
-import BlogImg1 from "../assets/BlogImg1.webp";
-import BlogImg2 from "../assets/BlogImg2.webp";
-import BlogImg3 from "../assets/BlogImg3.webp";
+import HeroSection from "../components/sections/HeroSection";
+import heroimg from "../assets/images/Teamwork.webp";
+import BlogImg1 from "../assets/images/BlogImg1.webp";
+import BlogImg2 from "../assets/images/BlogImg2.webp";
+import BlogImg3 from "../assets/images/BlogImg3.webp";
 import { motion, AnimatePresence } from "motion/react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 import { IoTimeOutline, IoChatbubbleOutline, IoCheckmarkCircle } from "react-icons/io5";

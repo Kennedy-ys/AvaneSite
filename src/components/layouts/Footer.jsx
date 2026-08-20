@@ -1,39 +1,80 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaXTwitter, FaInstagram,  FaLinkedinIn, } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
-import { FaRegEnvelope, FaPhoneAlt, FaEnvelope, FaTiktok } from "react-icons/fa";
-import Button from "./Button";
-import Logo from "./Logo";
-import NewsLetter from "../assets/NewsLetter.png";
+import {
+  FaRegEnvelope,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaTiktok,
+} from "react-icons/fa";
+import Button from "../ui/Button";
+import Logo from "../ui/Logo";
+import NewsLetter from "../../assets/images/NewsLetter.png";
 
 const Footer = () => {
   const socialMediaLinks = [
-    { link: "https://www.facebook.com", name: "Facebook", icon: FaFacebookF, },
-    { link: "https://www.x.com", name: "Twitter", icon: FaXTwitter, },
-    { link: "https://www.instagram.com", name: "Instagram", icon: FaInstagram, },
-    { link: "https://www.linkedin.com", name: "Linkedin", icon: FaLinkedinIn, }, 
-    { link: "https://www.tiktok.com", name: "Tiktok", icon: FaTiktok, }
-    ]
-      
+    { link: "https://www.facebook.com", name: "Facebook", icon: FaFacebookF },
+    { link: "https://www.x.com", name: "Twitter", icon: FaXTwitter },
+    { link: "https://www.instagram.com", name: "Instagram", icon: FaInstagram },
+    { link: "https://www.linkedin.com", name: "Linkedin", icon: FaLinkedinIn },
+    { link: "https://www.tiktok.com", name: "Tiktok", icon: FaTiktok },
+  ];
+
   const navLinks = [
     { name: "About", link: "/about" },
-    { name: "Contact", link: "/contact" },
     { name: "Blog", link: "/blog" },
     { name: "Academy", link: "/academy" },
+    { name: "Contact", link: "/contact" },
   ];
   const servicesLinks = [
-    { name: "Research", link: "/services/research" },
-    { name: "Software Development", link: "/services/development" },
-    { name: "UI/UX Design", link: "/services/ui-ux-design" },
+    {
+      name: "Software & Web Development ",
+      link: "/services/development",
+    },
+    {
+      name: "UI/UX Design",
+      link: "/services/ui-ux-design",
+    },
+
+    {
+      name: "Data Analysis",
+      link: "/services/analysis",
+    },
+    {
+      name: "Project Management",
+      link: "/services/project-management",
+    },
+    {
+      name: "Research & Insights",
+      link: "/services/research",
+    },
+
+    {
+      name: "Graphics Design",
+      link: "/services/graphics-design",
+    },
+    {
+      name: "Social Media Management",
+      link: "/services/social-media-management",
+    },
+    {
+      name: "Cybersecurity",
+      link: "/services/cybersecurity",
+    },
   ];
 
   return (
     <footer className="relative overflow-hidden bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 py-16 pt-8 pb-6 lg:px-8 mx-auto">
       {/* 1. Newsletter Card */}
       <div className=" w-full max-w-5xl px-4 mx-auto">
-        <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/noise.svg')] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
+        <div className="bg-blue-600 bg-[linear-gradient(rgba(0,0,255,0.5),rgba(0,14,255,0.1)),url('./assets/svgs/noise.svg')] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between shadow-xl relative">
           {/* Image section:  customer service */}
           <div className="w-64 h-48 mb-10 md:mb-0 z-10">
             <img
@@ -48,7 +89,10 @@ const Footer = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-2">
               Stay Updated
             </h2>
-            <p className="mb-4 text-sm md:text-base">Get the latest insights on startups and tech delivered to your inbox.</p>
+            <p className="mb-4 text-sm md:text-base">
+              Get the latest insights on startups and tech delivered to your
+              inbox.
+            </p>
 
             <form className="flex bg-blue-500/50 rounded-full p-1 border border-blue-400">
               <div className="flex items-center pl-4 text-blue-200">
@@ -60,13 +104,20 @@ const Footer = () => {
                 className="bg-transparent border-none outline-none text-white placeholder-blue-200 w-full px-3 py-2 text-sm autofill:shadow-[inset_0_0_0px_1000px_#abbfff00]  rounded-md autofill:text-fill-white autofill:transition-[background-color_9999s_ease-in-out_0s]"
               />
               <Button
-              onClick={() => alert("This is a demo. No actual subscription will occur.")}
+                onClick={() =>
+                  alert("This is a demo. No actual subscription will occur.")
+                }
                 btnBgColor="bg-white"
                 btnTxtColor="text-blue-600 group-hover:text-white w-40"
                 btnBgHover="bg-blue-600"
                 size={15}
                 iconBgColor="bg-blue-600 group-hover:bg-white"
-                icon={<TbBellRinging className="text-white group-hover:text-blue-600" size={16} />}
+                icon={
+                  <TbBellRinging
+                    className="text-white group-hover:text-blue-600"
+                    size={16}
+                  />
+                }
               >
                 Subscribe
               </Button>
@@ -99,8 +150,8 @@ const Footer = () => {
                 const IconComponent = social.icon;
                 return (
                   <motion.a
-                  whileHover={{ y: -5, scale: 1.08, rotate: 3, }}
-                  whileTap={{ scale: 0.95 }}
+                    whileHover={{ y: -5, scale: 1.08, rotate: 3 }}
+                    whileTap={{ scale: 0.95, y: -5, rotate: 3 }}
                     transition={{ type: "spring", stiffness: 400, damping: 15 }}
                     className="group w-10 h-10 rounded-full flex items-center justify-center border dark:hover:border-white/10 border-gray-300 dark:border-white/5 backdrop-blur-md hover:shadow-md dark:hover:shadow-none select-none transition-colors bg-amber-50/40 dark:bg-slate-800/60"
                     href={social.link}
@@ -108,7 +159,10 @@ const Footer = () => {
                     aria-label={social.name}
                     target="_blank"
                   >
-                    <IconComponent className="group-hover:text-amber-500" size={19} />
+                    <IconComponent
+                      className="group-hover:text-amber-500"
+                      size={19}
+                    />
                   </motion.a>
                 );
               })}
@@ -191,13 +245,13 @@ const Footer = () => {
           <div className="flex gap-6 text-sm">
             <a
               href="#privacy"
-              className="hover:text-slate-700 dark:hover:text-white transition-colors"
+              className="hover:text-orange-500 transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="#terms"
-              className="hover:text-slate-700 dark:hover:text-white transition-colors"
+              className="hover:text-orange-500 transition-colors"
             >
               Terms of Service
             </a>

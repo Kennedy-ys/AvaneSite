@@ -1,208 +1,20 @@
 import React from "react";
 import { motion } from "motion/react";
-import { IoBriefcaseOutline, IoCheckmarkDoneOutline, IoColorFilterOutline, IoColorPaletteOutline, IoLayersOutline, IoPrintOutline, IoShapesOutline, IoSparklesOutline, IoTextOutline } from "react-icons/io5";
-import { TbBrandAdobeIllustrator, TbBrandAdobeIndesign, TbBrandAdobePhotoshop, TbBrandAdobePremier, TbTypography } from "react-icons/tb";
-import Timeline from "../components/Timeline";
-import Projects from "../components/Projects";
-import LogoMarquee from "../components/LogoMarquee";
-import GetStarted from "../components/GetStarted";
-import { SiBehance, SiBlender, SiCanva, SiCoreldraw, SiGooglefonts, SiPinterest } from "react-icons/si";
-import { FiFeather, FiLayers } from "react-icons/fi";
-import Button from "../components/Button";
+import { IoColorPaletteOutline, IoLayersOutline,  IoSparklesOutline, } from "react-icons/io5";
+import Timeline from "../components/sections/Timeline";
+import Projects from "../components/sections/Projects";
+import LogoMarquee from "../components/sections/LogoMarquee";
+import CTA from "../components/sections/Call-To-Action";
+import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
-import { Figma } from "@lobehub/icons";
+import { designCapabilities } from "../data/capabilities";
+import { designHighlights } from "../data/highlights";
+import { graphicsDesignTools } from "../data/marquee";
+import { gdTimelineSteps, gdTimelineContext } from "../data/timeline";
+import { gdProjects, gdProjectContext } from "../data/projects";
 
-  const GraphicsDesign = () => {
 
-  const designCapabilities = [
-  {
-    icon: <IoColorPaletteOutline size={24} />,
-    title: "Brand Identity Systems & Stylebooks",
-    description: "Crafting foundational visual frameworks from scratch. We compile comprehensive design systems covering core logo marks, responsive brand typography layouts, mood boards, and complete usage guardrails.",
-    tags: ["Logo Architecture", "Color Strategy", "Brand Guidelines", "Asset Matrixing"],
-    gridSpan: "lg:col-span-7",
-    accent: "from-rose-500 to-fuchsia-500"
-  },
-  {
-    icon: <IoTextOutline size={24} />,
-    title: "Typography Systems & Layout Scale",
-    description: "Establishing structural text systems across print and digital media. We engineer highly legible typographic hierarchies, balancing display serif accents with clean body copy pairings to enhance visual reading flow.",
-    tags: ["Type Scaling", "Pairing Frameworks", "Kerning Precision", "Editorial Layouts"],
-    gridSpan: "lg:col-span-5",
-    accent: "from-fuchsia-500 to-violet-500"
-  },
-  {
-    icon: <IoLayersOutline size={24} />,
-    title: "Digital Vector Assets & Illustrative Systems",
-    description: "Creating infinite-scale SVG iconography arrays and custom geometric layout shapes. All design assets are meticulously built as clean vector groups, perfectly ready for front-end integration or presentation use.",
-    tags: ["Vector Engineering", "Custom Icon Sets", "UI Asset Toolkits", "Geometric Motifs"],
-    gridSpan: "lg:col-span-5",
-    accent: "from-violet-500 to-rose-600"
-  },
-  {
-    icon: <IoPrintOutline size={24} />,
-    title: "Premium Print Collateral & Physical Assets",
-    description: "Translating digital brand concepts onto high-end paper stocks and packaging. We handle complex pre-print layouts, coordinate exact CMYK/Pantone ink swatches, and set bleed specifications for error-free production.",
-    tags: ["CMYK/Pantone Tuning", "Packaging Prototypes", "Bleed & Cut Audits", "Corporate Stationeries"],
-    gridSpan: "lg:col-span-7",
-    accent: "from-fuchsia-600 to-rose-500"
-  }
-];
-
-  const designHighlights = [
-  { icon: <IoSparklesOutline className="text-rose-500" />, text: "Pixel-perfect visual design blueprints optimized for both high-end print houses and crisp multi-screen UI rendering." },
-  { icon: <IoCheckmarkDoneOutline className="text-violet-500" />, text: "Scalable brand vector files compiled under absolute layout organization with zero layer clutter." }
-];
-
-  const timelineSteps = [
-  {
-    phase: "01",
-    icon: <IoColorFilterOutline className="text-rose-500" size={22} />,
-    accent: "border-rose-500/20 text-rose-500 bg-rose-500/5",
-    title: "Mood Boarding & Visual Strategy",
-    description: "We define the creative direction before drafting vectors. Our team conducts market aesthetic audits, curates directional mood boards, explores primary color palettes, and aligns on core brand metaphors with your stakeholders.",
-    details: ["Aesthetic Competitor Audits", "Color Harmony Mapping", "Visual Vector Metaphors"]
-  },
-  {
-    phase: "02",
-    icon: <IoShapesOutline className="text-fuchsia-500" size={22} />,
-    accent: "border-fuchsia-500/20 text-fuchsia-500 bg-fuchsia-500/5",
-    title: "Logo Architecture & Asset Drafting",
-    description: "Next, we translate chosen concepts into concrete geometric symbols. We sketch, grid, and iterate raw logo structures inside high-precision vector frames, establishing balance, scalable outlines, and responsive asset layout limits.",
-    details: ["Geometric Grid Alignment", "Responsive Asset Framing", "Vector Anchor Optimizations"]
-  },
-  {
-    phase: "03",
-    icon: <TbTypography className="text-violet-500" size={22} />,
-    accent: "border-violet-500/20 text-violet-500 bg-violet-500/5",
-    title: "Typography Scale & Layout Engineering",
-    description: "We construct rigorous layout guardrails for the visual assets. Our designers build mathematical text scales, choose premium display and body font pairings, test editorial grids, and map print bleed parameters.",
-    details: ["Font Pairing Architecture", "Type Alignment Testing", "CMYK Print Bleed Scoping"]
-  },
-  {
-    phase: "04",
-    icon: <IoBriefcaseOutline className="text-rose-400" size={22} />,
-    accent: "border-rose-400/20 text-rose-400 bg-rose-400/5",
-    title: "Stylebook Compilation & Asset Handoff",
-    description: "We package your comprehensive visual brand system. We generate multi-page brand guidelines documentation, compile layered asset folders (SVG, EPS, PNG), and deliver print-ready color specifications.",
-    details: ["Brand Guidelines Publishing", "Layered Vector Distributions", "Pantone Production Matrices"]
-  }
-];
-
-  const timelineContext = {
-  title: "Creative Roadmap",
-  heading1: "Our Deliberate",
-  heading2: "Design Lifecycle", 
-  description: "A transparent, milestone-driven visual development pipeline engineered to strip away subjective guessing and deliver cohesive corporate asset systems.",
-  color: "rose",
-  gradientHeadingClasses: "from-rose-500 via-fuchsia-500 to-violet-500",
-};
-
-// Structured data for Graphic Design Showcase Section
-const projects = [
-  {
-    title: "Aurora Capital Identity Revamp",
-    category: "Brand Architecture",
-    metric: "100% Unified Branding",
-    imageUrl: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80",
-    link: "work/aurora-capital-identity",
-    accentColor: "from-rose-600 to-fuchsia-500"
-  },
-  {
-    title: "Vortex Labs Geometric Asset System",
-    category: "Industrial Identity",
-    metric: "300+ Infinite SVG Assets",
-    imageUrl: "https://images.unsplash.com/photo-11618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-    link: "work/vortex-labs-assets",
-    accentColor: "from-fuchsia-600 to-violet-500"
-  },
-  {
-    title: "Meridian Zero Sustainable Packaging",
-    category: "Print Collateral",
-    metric: "0% Bleed Press Runs",
-    imageUrl: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-    link: "work/meridian-zero-packaging",
-    accentColor: "from-violet-600 to-rose-500"
-  }
-];
-
-// Context definitions for the Graphic Design header block
-const ProjectContext = {
-  title: "Creative Proofs",
-  heading1: "Artistic",
-  heading2: "Identity Systems",
-  headerLineColor: "bg-rose-600",
-  gradientHeadingClasses: "from-rose-500 via-fuchsia-500 to-violet-500",
-  description: "Explore comprehensive stylebooks, infinite vector asset systems, and high-fidelity print collateral engineered to establish unmistakable visual market authority."
-};
-
-const devTools = [
-  { 
-    name: 'Adobe Illustrator', 
-    icon: <TbBrandAdobeIllustrator size={26} className="text-[#FF9A00]" />, 
-    role: "Vector Architecture & Marks" 
-  },
-  { 
-    name: 'Adobe Photoshop', 
-    icon: <TbBrandAdobePhotoshop size={26} className="text-[#31A8FF]" />, 
-    role: "Asset Compositing & Mockups" 
-  },
-  { 
-    name: 'Adobe InDesign', 
-    icon: <TbBrandAdobeIndesign size={26} className="text-[#FF3366]" />, 
-    role: "Stylebook & Print Layouts" 
-  },
-  { 
-    name: 'Figma', 
-    icon: <Figma.Color size={24} />, 
-    role: "Digital Design Systems" 
-  },
-  { 
-    name: 'Blender 3D', 
-    icon: <SiBlender size={26} className="text-[#EA7600]" />, 
-    role: "Dimensional Asset Modeling" 
-  },
-  { 
-    name: 'Google Fonts', 
-    icon: <SiGooglefonts size={24} className="text-[#F9AB00]" />, 
-    role: "Typography Sourcing" 
-  },
-  { 
-    name: 'FontLab', 
-    icon: <FiFeather size={24} className="text-[#EC4899]" />, 
-    role: "Custom Kerning & Type" 
-  },
-  { 
-    name: 'Adobe Premiere Pro', 
-    icon: <TbBrandAdobePremier size={26} className="text-[#9999FF]" />, 
-    role: "Motion Graphics Rendering" 
-  },
-  { 
-    name: 'Pantone Studio', 
-    icon: <FiLayers size={24} className="text-[#3B82F6]" />, 
-    role: "Ink Profile Configuration" 
-  },
-  { 
-    name: 'Pinterest', 
-    icon: <SiPinterest size={24} className="text-[#E60023]" />, 
-    role: "Visual Strategy Curation" 
-  },
-  { 
-    name: 'Behance', 
-    icon: <SiBehance size={26} className="text-[#0057FF]" />, 
-    role: "Asset Trend Benchmarking" 
-  },
-  { 
-    name: 'Canva Pro', 
-    icon: <SiCanva size={26} className="text-[#00C4CC]" />, 
-    role: "Template Distribution Packs" 
-  },
-  { 
-    name: 'CorelDRAW', 
-    icon: <SiCoreldraw size={26} className="text-[#00833E]" />, 
-    role: "Production Vector Geometry" 
-  }
-];
+const GraphicsDesign = () => {
 
   return (
     <>
@@ -253,7 +65,7 @@ const devTools = [
           </p>
 
           {/* Call-To-Action Button Loops */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-auto sm:w-full pt-4">
             
             <Button as={Link} to="/contact" btnBgColor="bg-linear-to-r from-rose-500 to-violet-500" btnBgHover="bg-fuchsia-500" icon={<IoSparklesOutline className="text-rose-600" />}>Initiate Design Loop</Button>
             
@@ -389,7 +201,9 @@ const devTools = [
 
         {/* Asymmetric Bento Grid Layer */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
-          {designCapabilities.map((item, index) => (
+          {designCapabilities.map((item, index) => {
+            const { Icon, title, description } = item;
+            return (
             <motion.div
               key={index}
               className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/10 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
@@ -401,17 +215,17 @@ const devTools = [
               {/* Top Row: Icon Container */}
               <div className="flex items-start justify-between relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors duration-300 shadow-xs">
-                  {item.icon}
+                  <Icon size={24} />
                 </div>
               </div>
 
               {/* Central Information Stack */}
               <div className="mt-8 relative z-10 space-y-3">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                  {item.title}
+                  {title}
                 </h3>
                 <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                  {item.description}
+                  {description}
                 </p>
               </div>
 
@@ -431,21 +245,23 @@ const devTools = [
               <div className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`} />
 
             </motion.div>
-          ))}
+  )})}
         </div>
 
         {/* Bottom Quality Row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-white/10 bg-slate-50/10 dark:bg-slate-900/5 backdrop-blur-xs text-left">
-          {designHighlights.map((highlight, index) => (
+          {designHighlights.map((highlight, index) => {
+            const { Icon, iconColor, text } = highlight;
+          return (
             <div key={index} className="flex items-center gap-3 max-w-md">
               <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                {highlight.icon}
+                <Icon className={iconColor} />
               </div>
               <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                {highlight.text}
+                {text}
               </p>
             </div>
-          ))}
+          )})}
         </div>
 
       </div>
@@ -453,23 +269,23 @@ const devTools = [
 
     {/* Roadmap Timeline Section */}
           <Timeline
-            timelineContext={timelineContext}
-            timelineSteps={timelineSteps}
+            timelineContext={gdTimelineContext}
+            timelineSteps={gdTimelineSteps}
           />
     
           {/* Project Section */}
-          <Projects ProjectContext={ProjectContext} projects={projects} />
+          <Projects ProjectContext={gdProjectContext} projects={gdProjects} />
     
           {/* Tool Stack Section */}
           <LogoMarquee
-            row1Data={devTools.slice(0, 6)}
-            row2Data={devTools.slice(6, 13)}
+            row1Data={graphicsDesignTools.slice(0, 6)}
+            row2Data={graphicsDesignTools.slice(6, 13)}
             subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
             title="Our Development Toolkit"
           />
     
           {/* CTA Section */}
-          <GetStarted
+          <CTA
             text="Ready to build something great together?"
             ctaText="Send a Message"
           />

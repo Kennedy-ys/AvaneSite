@@ -1,27 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  useInView,
-  motion,
-  useMotionValue,
-  useTransform,
-  animate,
-} from "motion/react";
-import {
-  IoLayersOutline,
-  IoColorPaletteOutline,
-  IoCodeSlashOutline,
-  IoGitBranchOutline,
-  IoPieChartOutline,
-  IoTerminalOutline,
-  IoRibbonOutline,
-  IoSchool,
-} from "react-icons/io5";
+import { useInView, motion, useMotionValue, useTransform, animate } from "motion/react";
+import { IoLayersOutline, IoColorPaletteOutline, IoCodeSlashOutline, IoGitBranchOutline, IoPieChartOutline, IoTerminalOutline, IoRibbonOutline, IoSchool } from "react-icons/io5";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
-import Button from "../components/Button";
-import Courses from "../components/Courses";
-import LMImage from "../assets/CertLight.webp";
-import DMImage from "../assets/CertDark.webp";
-import TrackImg from "../assets/CertDark.webp";
+import Button from "../components/ui/Button";
+import Courses from "../components/sections/Courses";
+import LMImage from "../assets/images/CertLight.webp";
+import DMImage from "../assets/images/CertDark.webp";
+import TrackImg from "../assets/images/CertDark.webp";
 import { BiSolidCustomize } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { FaQuoteLeft } from "react-icons/fa6";
@@ -374,7 +359,7 @@ const Academy = () => {
             </p>
 
             {/* Call-To-Action Button Loops */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-auto sm:w-full pt-4">
               <Button
                 btnBgColor="bg-blue-600"
                 btnBgHover="bg-blue-700"
@@ -503,7 +488,7 @@ const Academy = () => {
           transition={{ duration: 0.6 }}
           className="bg-slate-50/90 dark:bg-slate-900/10 rounded-2xl shadow-xl dark:shadow-slate-950 border border-slate-200/60 dark:border-white/5 p-8 md:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('/assets/noise.svg')] pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1)),url('./assets/svgs/noise.svg')] pointer-events-none z-0" />
           {statsData.map((stat, index) => (
             <div
               key={stat.id}
@@ -582,6 +567,7 @@ const Academy = () => {
                 key={category.id}
                 className="min-w-65 md:min-w-70 flex-1 snap-start group relative rounded-2xl border border-slate-100 dark:border-white/5 bg-linear-to-b from-slate-50 to-white dark:from-slate-900/40 dark:to-slate-950/20 p-8 flex flex-col items-center text-center justify-between shadow-xs hover:shadow-md hover:border-slate-200 dark:hover:border-white/10 transition-all duration-300"
                 whileHover={{ y: -4 }}
+                whileTap={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
                 {/* Overlapping Background Micro Glow Ring mapping back to image layouts */}

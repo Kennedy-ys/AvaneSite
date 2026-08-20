@@ -11,12 +11,12 @@ import ProjectManagement from "./pages/ProjectManagement";
 import GraphicsDesign from "./pages/GraphicsDesign";
 import SocialMediaManagement from "./pages/SocialMediaManagement";
 import ComingSoon from "./pages/ComingSoon";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
+import NavBar from "./components/layouts/NavBar";
+import Footer from "./components/layouts/Footer";
 import ThemeProvider from "./providers/ThemeProviders";
 import Cybersecurity from "./pages/Cybersecurity";
 import Academy from "./pages/Academy";
-import Blog from "./pages/blog";
+import Blog from "./pages/Blog";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light

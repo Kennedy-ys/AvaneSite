@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
 import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaSearch, FaShieldAlt, FaPenNib, FaComments } from 'react-icons/fa';
-import Button from "./Button";
+import Button from "../ui/Button";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -155,7 +155,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                     <Link
                       to={item.link}
                       onClick={() => setMenuOpen(false)}
-                      className={`inline-block text-2xl w-full font-bold hover:translate-x-1 transition-all duration-200 ${
+                      className={`inline-block text-2xl w-full font-bold hover:translate-x-1 hover:text-blue-600 transition-all duration-200 ${
                         isCurrentRoute
                           ? "text-blue-600"
                           : "text-gray-900 dark:text-white"
@@ -174,7 +174,7 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                 <Button
                   btnBgColor="bg-linear-60 from-blue-700 to-cyan-500"
                   btnBgHover="bg-blue-700"
-                  size={20}
+                  size={18}
                   btnTxtColor="text-white"
                   icon={<LuArrowUpRight className="text-blue-500" size={19} />}
                 >

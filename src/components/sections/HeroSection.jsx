@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import BreadCrums from "./BreadCrums";
+import BreadCrums from "../ui/BreadCrums";
 
 const AboutHero = ({ subText, heading, HeroImg }) => {
   return (

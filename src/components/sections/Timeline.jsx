@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 const Timeline = ({timelineSteps, timelineContext}) => {
 
    const TimelineStep = ({ step, index }) => {
+    const Icon = step.Icon;
    const isEven = index % 2 === 0;
 
   return (
@@ -54,7 +55,7 @@ const Timeline = ({timelineSteps, timelineContext}) => {
           viewport={{ once: true }}
           transition={{ type: "spring", stiffness: 120, delay: 0.2 }}
         >
-          {step.icon}
+          <Icon className={step.iconColor} size={22} />
         </motion.div>
       </div>
 

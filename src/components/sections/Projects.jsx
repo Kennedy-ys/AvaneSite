@@ -14,7 +14,7 @@ const Projects = ({projects = [], ProjectContext = {} }) => {
 
   // Use safe default text values if context tokens are omitted
   const {
-    title = "Case Studies", heading1 = "Selected", heading2 = "Design Proof", description = "Real products built for real users, proving that human-centric experiences catalyze massive business scale.", headerLineColor = "bg-orange-500", gradientHeadingClasses = "from-blue-600 to-cyan-500"
+    title = "Case Studies", heading1 = "Selected", heading2 = "Design Proof", description = "Real products built for real users, proving that human-centric experiences catalyze massive business scale.", headerLineColor = "orange", gradientHeadingClasses = "from-blue-600 to-cyan-500"
   } = ProjectContext;
   
   return (
@@ -30,7 +30,7 @@ const Projects = ({projects = [], ProjectContext = {} }) => {
           <div className="flex flex-col items-start text-left max-w-xl space-y-4">
             <div className="flex items-center gap-2">
               <span className={`block w-6 h-0.5 bg-${headerLineColor}-500`} />
-              <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
+              <span className={`text-xs font-bold uppercase tracking-widest text-${headerLineColor}-500`}>
                 {title}
               </span>
             </div>
@@ -62,9 +62,8 @@ const Projects = ({projects = [], ProjectContext = {} }) => {
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              whileHover={{
-                y: -12,
-              }}
+              whileHover={{ y: -12 }}
+              whileTap={{ y: -12 }}
               className="relative aspect-3/4 rounded-3xl overflow-hidden group shadow-lg border border-slate-100 dark:border-white/5 flex flex-col justify-end p-6 dark:shadow-none bg-slate-900"
             >
               

@@ -1,264 +1,20 @@
 import React from "react";
 import { motion } from "motion/react";
-import { IoShareSocialOutline, IoTrendingUpOutline, IoSparklesOutline, IoMegaphoneOutline, IoPieChartOutline, IoChatbubblesOutline, IoFlameOutline, IoStatsChartOutline } from "react-icons/io5";
-import Timeline from "../components/Timeline";
-import Projects from "../components/Projects";
-import LogoMarquee from "../components/LogoMarquee";
-import GetStarted from "../components/GetStarted";
-import { SiBuffer, SiGoogleanalytics, SiHootsuite, SiMeta, SiTiktok, SiX } from "react-icons/si";
-import { CapCut } from "@lobehub/icons";
-import Button from "../components/Button";
+import { IoShareSocialOutline, IoTrendingUpOutline, IoSparklesOutline, IoMegaphoneOutline } from "react-icons/io5";
+import Timeline from "../components/sections/Timeline";
+import Projects from "../components/sections/Projects";
+import LogoMarquee from "../components/sections/LogoMarquee";
+import CTA from "../components/sections/Call-To-Action";
+import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
-import { TbBrandAdobePhotoshop, TbBrandAdobePremier, TbBrandLinkedinFilled } from "react-icons/tb";
-import { FiTrendingUp } from "react-icons/fi";
-import { Figma } from "@lobehub/icons";
+import { smManagementTools } from "../data/marquee"
+import { smProjectContext, smProjects } from "../data/projects"
+import { smTimelineSteps, smTimelineContext } from "../data/timeline"
+import { smSocialCapabilities } from "../data/capabilities"
+import { smSocialHighlights } from "../data/highlights"
 
 const SocialMediaManagement = () => {
-  const socialCapabilities = [
-    {
-      icon: <IoSparklesOutline size={24} />,
-      title: "Visual Strategy & Brand Metaphor Sourcing",
-      description:
-        "Deep-diving into your industry's attention economy. We conduct comprehensive multi-channel aesthetic audits, construct systematic brand style sheets for corporate channels, and lock down high-converting creative themes.",
-      tags: [
-        "Aesthetic Audits",
-        "Style Sheet Framing",
-        "Asset Direction",
-        "Competitor Matrices",
-      ],
-      gridSpan: "lg:col-span-7",
-      accent: "from-orange-500 to-rose-500",
-    },
-    {
-      icon: <IoPieChartOutline size={24} />,
-      title: "Algorithmic Short-Form Video Production",
-      description:
-        "Engineering short-form and macro video assets calculated to capture algorithmic feeds. We script precise audience hooks, design dynamic overlays, and optimize pacing to keep viewer retention metrics exceptionally high.",
-      tags: [
-        "Retention Tuning",
-        "Hook Architecture",
-        "CapCut Engineering",
-        "Short-Form Spreads",
-      ],
-      gridSpan: "lg:col-span-5",
-      accent: "from-rose-500 to-indigo-500",
-    },
-    {
-      icon: <IoChatbubblesOutline size={24} />,
-      title: "Active Outbound Community Growth",
-      description:
-        "Transforming passive views into responsive brand communities. Our managers execute intentional outbound interactions, track profile brand mentions, and run persistent engagement plays to validate corporate authority.",
-      tags: [
-        "Voice Calibration",
-        "Outbound Triggers",
-        "Inbound Desk Sweeps",
-        "Trend Hijacking",
-      ],
-      gridSpan: "lg:col-span-5",
-      accent: "from-indigo-500 to-orange-600",
-    },
-    {
-      icon: <IoTrendingUpOutline size={24} />,
-      title: "Conversion Funnel Tracking & Data Logs",
-      description:
-        "Treating social networks as measurable acquisition layers. We build cross-platform destination links, measure true engagement velocities, capture user drop-off points, and adjust pacing based on verified conversions.",
-      tags: [
-        "Multi-Touch Funnels",
-        "GA4 Event Profiling",
-        "UTM Architecture",
-        "ROI Log Compilation",
-      ],
-      gridSpan: "lg:col-span-7",
-      accent: "from-rose-600 to-orange-500",
-    },
-  ];
-
-  const socialHighlights = [
-    {
-      icon: <IoFlameOutline className="text-orange-500" />,
-      text: "High-performance distribution architectures configured to run multi-channel assets concurrently without brand decay.",
-    },
-    {
-      icon: <IoStatsChartOutline className="text-indigo-500" />,
-      text: "Direct, conversion-focused analytics reporting that connects top-of-funnel impressions with actionable CRM pipeline paths.",
-    },
-  ];
-
-  // Structured data for Social Media Roadmap Timeline Section
-  const timelineSteps = [
-    {
-      phase: "01",
-      icon: <IoSparklesOutline className="text-orange-500" size={22} />,
-      accent: "border-orange-500/20 text-orange-500 bg-orange-500/5",
-      title: "Aesthetic Audit & Core Brand Metaphors",
-      description:
-        "We deep-dive into your market's attention landscape. Our team executes high-level visual competitor positioning matrices, designs structured platform style sheets, curates custom art directions, and aligns on core brand positioning hooks with your stakeholders.",
-      details: [
-        "Aesthetic Competitor Audits",
-        "Color Harmony Mapping",
-        "Platform Style Sheet Rules",
-      ],
-    },
-    {
-      phase: "02",
-      icon: <IoPieChartOutline className="text-rose-500" size={22} />,
-      accent: "border-rose-500/20 text-rose-500 bg-rose-500/5",
-      title: "Algorithmic Indexing & Content Design",
-      description:
-        "We engineer short-form and macro asset engines engineered to survive algorithmic updates. By building custom video hooks, content templates, and value-first written scripts, we maximize organic retention profiles across B2B and consumer channels.",
-      details: [
-        "Hook Retention Profiling",
-        "Template Layout Production",
-        "Platform Distribution Strategy",
-      ],
-    },
-    {
-      phase: "03",
-      icon: <IoChatbubblesOutline className="text-fuchsia-500" size={22} />,
-      accent: "border-fuchsia-500/20 text-fuchsia-500 bg-fuchsia-500/5",
-      title: "Active Community Nurturing & Engagement",
-      description:
-        "We transform loose impressions into real conversation nodes. Our managers handle continuous outbound community handshakes, inbound profile monitoring, brand voice alignment execution, and real-time social event responses to build long-term brand authority.",
-      details: [
-        "Real-time Inbound Control",
-        "Outbound Network Triggers",
-        "Brand Voice System Alignment",
-      ],
-    },
-    {
-      phase: "04",
-      icon: <IoTrendingUpOutline className="text-indigo-500" size={22} />,
-      accent: "border-indigo-500/20 text-indigo-500 bg-indigo-500/5",
-      title: "Funnel Optimization & Performance Logs",
-      description:
-        "Every channel is treated as a conversion loop. We hook deep multi-touch tracking links to measure brand velocity metrics, capture profile bounce attributes, and continually balance parameters to maximize real sales pipelines.",
-      details: [
-        "Multi-Touch Funnel Tracking",
-        "Inbound Loop Metrics",
-        "Conversion Performance Logs",
-      ],
-    },
-  ];
-
-  const timelineContext = {
-    title: "Creative Roadmap",
-    heading1: "Our Deliberate",
-    heading2: "Growth Lifecycle",
-    description:
-      "A transparent, milestone-driven visual development pipeline engineered to strip away subjective guessing and deliver cohesive, high-performance corporate asset systems.",
-    color: "orange",
-    gradientHeadingClasses: "from-orange-500 via-rose-500 to-indigo-500",
-  };
-
-  // Structured data for Social Media Showcase Section
-  const projects = [
-    {
-      title: "SaaS Enterprise Multichannel Organic Scale Campaign",
-      category: "Organic Distribution Scale",
-      metric: "4.8M Organic Impressions",
-      imageUrl:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      link: "work/saas-multichannel-scale",
-      accentColor: "from-orange-600 to-rose-500",
-    },
-    {
-      title: "FinTech Short-Form Video Asset Optimization Loop",
-      category: "Short-Form Attention Capture",
-      metric: "72% Watch-Time Retention",
-      imageUrl:
-        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=800&q=80",
-      link: "work/fintech-asset-optimization",
-      accentColor: "from-rose-600 to-indigo-500",
-    },
-    {
-      title: "Logistics Authority Content Funnel Engineering",
-      category: "Lead Inbound Optimization",
-      metric: "+244% Pipeline Generation",
-      imageUrl:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80",
-      link: "work/logistics-funnel-engineering",
-      accentColor: "from-indigo-600 to-orange-500",
-    },
-  ];
-
-  // Context definitions for the Social Media header block
-  const ProjectContext = {
-    title: "Distribution Proofs",
-    heading1: "Amplified",
-    heading2: "Market Attention",
-    headerLineColor: "bg-orange-600",
-    gradientHeadingClasses: "from-orange-500 via-rose-500 to-indigo-500",
-    description:
-      "Explore performance case studies tracking short-form retention optimization, high-converting B2B content editorial calendars, and aggregated brand audience generation assets.",
-  };
-
-  const devTools = [
-    {
-      name: "Figma",
-      icon: <Figma.Color size={24} />,
-      role: "Static Graphic Frameworks",
-    },
-    {
-      name: "CapCut Pro",
-      icon: <CapCut size={26} className="text-[#000000] dark:text-white" />,
-      role: "Shortform Mobile Cuts",
-    },
-    {
-      name: "Adobe Photoshop",
-      icon: <TbBrandAdobePhotoshop size={26} className="text-[#31A8FF]" />,
-      role: "Thumbnail Composition",
-    },
-    {
-      name: "Adobe Premiere Pro",
-      icon: <TbBrandAdobePremier size={26} className="text-[#9999FF]" />,
-      role: "High-Fidelity Audio & Cuts",
-    },
-    {
-      name: "Meta Business Suite",
-      icon: <SiMeta size={26} className="text-[#0668E1]" />,
-      role: "Paid Funnel Tracking",
-    },
-    {
-      name: "LinkedIn Campaign Manager",
-      icon: <TbBrandLinkedinFilled size={26} className="text-[#0A66C2]" />,
-      role: "B2B Authority Distribution",
-    },
-    {
-      name: "TikTok For Business",
-      icon: <SiTiktok size={24} className="text-[#000000] dark:text-white" />,
-      role: "Algorithmic Retention Tuning",
-    },
-    {
-      name: "X Professional",
-      icon: <SiX size={24} className="text-[#000000] dark:text-white" />,
-      role: "Real-Time Thread Engagement",
-    },
-    {
-      name: "Buffer",
-      icon: (
-        <SiBuffer size={24} className="text-[#2C3E50] dark:text-[#34495E]" />
-      ),
-      role: "Cadence Automation Hooks",
-    },
-    {
-      name: "Hootsuite Enterprise",
-      icon: (
-        <SiHootsuite size={26} className="text-[#1F1F1F] dark:text-[#E4A025]" />
-      ),
-      role: "Aggregated Inbound Queues",
-    },
-    {
-      name: "Google Analytics 4",
-      icon: <SiGoogleanalytics size={26} className="text-[#E37400]" />,
-      role: "Profile Conversion Logs",
-    },
-    {
-      name: "AnswerThePublic",
-      icon: <FiTrendingUp size={24} className="text-[#FF4F00]" />,
-      role: "Semantic Topic Auditing",
-    },
-  ];
-
+  
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 bg-linear-to-b from-white to-slate-50 dark:from-[#0c0503] dark:to-[#060201] transition-colors duration-300 overflow-hidden">
@@ -341,12 +97,12 @@ const SocialMediaManagement = () => {
             </p>
 
             {/* Call-To-Action Button Loops */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-auto sm:w-full pt-4">
               <Button
                 as={Link}
                 to="/contact"
                 btnBgColor="bg-linear-to-r from-orange-500 to-rose-500"
-                btnBgHover="bg-linear-to-r from-rose-500 to-orange-500"
+                btnBgHover="bg-linear-to-r from-rose-500 to-orange-500" size="18"
                 icon={<IoSparklesOutline className="text-orange-600" />}
               >
                 Scale Your Distribution
@@ -500,7 +256,9 @@ const SocialMediaManagement = () => {
 
           {/* Asymmetric Bento Grid System */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12">
-            {socialCapabilities.map((item, index) => (
+            {smSocialCapabilities.map((item, index) => {
+              const { Icon, title, description } = item;
+              return (
               <motion.div
                 key={index}
                 className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/10 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
@@ -516,17 +274,17 @@ const SocialMediaManagement = () => {
                 {/* Icon Container Layout */}
                 <div className="flex items-start justify-between relative z-10">
                   <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300 shadow-xs">
-                    {item.icon}
+                    <Icon size={24} />y
                   </div>
                 </div>
 
                 {/* Central Information Typography Stack */}
                 <div className="mt-8 relative z-10 space-y-3">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                    {item.title}
+                    {title}
                   </h3>
                   <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                    {item.description}
+                    {description}
                   </p>
                 </div>
 
@@ -547,44 +305,46 @@ const SocialMediaManagement = () => {
                   className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
                 />
               </motion.div>
-            ))}
+            )})}
           </div>
 
           {/* Footer Integrity Indicators Banner */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-white/10 bg-slate-50/10 dark:bg-slate-900/5 backdrop-blur-xs text-left">
-            {socialHighlights.map((highlight, index) => (
+            {smSocialHighlights.map((highlight, index) => {
+              const { Icon, iconColor, text } = highlight;
+              return (
               <div key={index} className="flex items-center gap-3 max-w-xl">
                 <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                  {highlight.icon}
+                  <Icon className={iconColor} />
                 </div>
                 <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                  {highlight.text}
+                  {text}
                 </p>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
 
       {/* Design Timeline Process Section */}
       <Timeline
-        timelineSteps={timelineSteps}
-        timelineContext={timelineContext}
+        timelineSteps={smTimelineSteps}
+        timelineContext={smTimelineContext}
       />
 
       {/* Project Section */}
-      <Projects ProjectContext={ProjectContext} projects={projects} />
+      <Projects ProjectContext={smProjectContext} projects={smProjects} />
 
       {/* Tool Stack */}
       <LogoMarquee
-        row1Data={devTools.slice(6, 12)}
-        row2Data={devTools.slice(0, 6)}
+        row1Data={smManagementTools.slice(6, 12)}
+        row2Data={smManagementTools.slice(0, 6)}
         subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
         title="Our Development Toolkit"
       />
 
       {/* CTA Section */}
-      <GetStarted
+      <CTA
         text="Ready to build something great together?"
         ctaText="Send a Message"
       />
