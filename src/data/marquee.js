@@ -1,11 +1,11 @@
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { FiActivity, FiClock, FiEye, FiFeather, FiLayers, FiPieChart, FiShield, FiTrendingUp } from "react-icons/fi";
-import { SiAsana, SiClickup, SiConfluence, SiJira, SiLinear, SiMiro, SiNotion, SiSlack, SiTrello, SiBehance, SiBlender, SiCanva, SiCoreldraw, SiGooglefonts, SiPinterest, SiKalilinux, SiWireshark, SiBurpsuite, SiVault, SiSplunk, SiMetasploit, SiCloudflare, SiDatadog, SiDocker, SiGnubash, SiLooker, SiGooglecloud, SiSnowflake, SiDatabricks, SiNumpy, SiRstudioide, SiPandas, SiJupyter, SiPython, SiZoom, SiTypeform, SiAirtable, SiGoogleanalytics, SiQualtrics, SiHotjar, SiMixpanel, SiGit, SiVite, SiGraphql, SiSupabase, SiMongodb, SiNodedotjs, SiTailwindcss, SiTypescript, SiNextdotjs, SiReact, SiMeta, SiTiktok, SiBuffer, SiHootsuite, SiX, SiFramer, SiMaze, SiMural, SiInvision } from "react-icons/si";
-import { TbBrandAdobeIllustrator, TbBrandAdobeIndesign, TbBrandAdobePhotoshop, TbBrandAdobePremier, TbBrandAdobeXd, TbBrandLinkedinFilled } from "react-icons/tb";
+import { SiAsana, SiClickup, SiConfluence, SiJira, SiLinear, SiMiro, SiNotion, SiTrello, SiBehance, SiBlender, SiCoreldraw, SiGooglefonts, SiPinterest, SiKalilinux, SiWireshark, SiBurpsuite, SiVault, SiSplunk, SiMetasploit, SiCloudflare, SiDatadog, SiDocker, SiGnubash, SiLooker, SiGooglecloud, SiSnowflake, SiDatabricks, SiNumpy, SiRstudioide, SiPandas, SiJupyter, SiPython, SiZoom, SiTypeform, SiAirtable, SiGoogleanalytics, SiQualtrics, SiHotjar, SiMixpanel, SiGit, SiVite, SiGraphql, SiSupabase, SiMongodb, SiNodedotjs, SiTailwindcss, SiTypescript, SiNextdotjs, SiReact, SiMeta, SiTiktok, SiBuffer, SiHootsuite, SiX, SiFramer, SiMaze, SiMural } from "react-icons/si";
+import { TbBrandAdobeIllustrator, TbBrandAdobeIndesign, TbBrandAdobePhotoshop, TbBrandAdobePremiere, TbBrandAdobeXd, TbBrandLinkedinFilled } from "react-icons/tb";
 import { CapCut, Figma } from "@lobehub/icons";
 import { IoLogoTableau, IoTerminal } from "react-icons/io5";
 import { BiLogoPostgresql, BiLogoVisualStudio } from "react-icons/bi";
-import { FaAws, FaSketch } from "react-icons/fa6";
+import { FaAws, FaSketch, FaSlack, FaInvision } from "react-icons/fa6";
 
 
 // Dev Tools for Project Management
@@ -42,7 +42,7 @@ export const pManagementTools = [
   },
   {
     name: 'Slack',
-    Icon: SiSlack,
+    Icon: FaSlack,
     iconColor: 'text-[#4A154B]',
     role: 'Asynchronous Standups',
   },
@@ -123,7 +123,7 @@ export const graphicsDesignTools = [
   },
   { 
     name: 'Adobe Premiere Pro', 
-    Icon: TbBrandAdobePremier, iconColor: "text-[#9999FF]", 
+    Icon: TbBrandAdobePremiere, iconColor: "text-[#9999FF]", 
     role: "Motion Graphics Rendering" 
   },
   { 
@@ -143,7 +143,7 @@ export const graphicsDesignTools = [
   },
   { 
     name: 'Canva Pro', 
-    Icon: SiCanva, iconColor: "text-[#00C4CC]", 
+    Icon: SiFramer, iconColor: "text-[#00C4CC]", // TODO: swap for a real Canva icon, see note
     role: "Template Distribution Packs" 
   },
   { 
@@ -327,7 +327,7 @@ export const smManagementTools = [
   },
   {
     name: "Adobe Premiere Pro",
-    Icon: TbBrandAdobePremier,
+    Icon: TbBrandAdobePremiere,
     iconColor: "text-[#9999FF]",
     role: "High-Fidelity Audio & Cuts",
   },
@@ -433,7 +433,7 @@ export const uiUxTools = [
   },
   {
     name: "InVision",
-    Icon: SiInvision,
+    Icon: FaInvision,
     iconColor: "text-[#FF3366]",
     role: "Legacy Prototyping",
   },

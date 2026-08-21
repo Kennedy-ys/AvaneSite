@@ -213,8 +213,8 @@ const Footer = () => {
               },
               {
                 type: "number",
-                value: "+234 700 000 0000",
-                link: "tel:+234700000000",
+                value: "+234 703 548 8268",
+                link: "tel:+2347035488268",
                 icon: FaPhoneAlt,
               },
             ].map((contact, index) => {
