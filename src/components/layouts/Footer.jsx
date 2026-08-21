@@ -217,6 +217,12 @@ const Footer = () => {
                 link: "tel:+2347035488268",
                 icon: FaPhoneAlt,
               },
+              {
+                type: "number",
+                value: "+1 437 343 2361",
+                link: "tel:+14373432361",
+                icon: FaPhoneAlt,
+              },
             ].map((contact, index) => {
               const IconComponent = contact.icon;
               return (
