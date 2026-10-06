@@ -124,88 +124,98 @@ const Contact = () => {
       />
 
       <section className="relative overflow-hidden bg-linear-60 to-white from-slate-50 dark:bg-linear-to-br dark:from-[#0b1220] dark:via-[#0d1b2a] dark:to-[#0a0f1c]">
-    <div
-      ref={ref}
-      className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4 sm:p-8"
-    >
-      <div className="w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 dark:shadow-black/50 flex flex-col lg:flex-row min-h-150">
-        {/* LEFT — Form panel */}
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="relative flex-1 dark:bg-(image:--background-stripe) bg-(image:--dark-background-stripe) bg-blue-600/90  px-8 sm:px-12 py-12 flex flex-col justify-center overflow-hidden"
+        <div
+          ref={ref}
+          className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4 sm:p-8"
         >
-          {/* Decorative blobs */}
-          <div className="absolute -top-20 -left-20 w-64 h-64 bg-blue-500/30 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-16 -right-10 w-48 h-48 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 dark:shadow-black/50 flex flex-col lg:flex-row min-h-150">
+            {/* LEFT — Form panel */}
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              className="relative flex-1 dark:bg-(image:--background-stripe) bg-(image:--dark-background-stripe) bg-blue-600/90  px-8 sm:px-12 py-12 flex flex-col justify-center overflow-hidden"
+            >
+              {/* Decorative blobs */}
+              <div className="absolute -top-20 -left-20 w-64 h-64 bg-blue-500/30 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-16 -right-10 w-48 h-48 bg-orange-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-1/2 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
 
-          {/* Label */}
-          <motion.div
-            variants={fadeUp}
-            className="flex items-center gap-2.5 mb-4 z-10"
-          >
-            <div className="w-5 h-px bg-orange-400" />
-            <span className="text-orange-300 text-xs font-semibold uppercase tracking-[0.15em]">
-              Get in Touch
-            </span>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h2
-            variants={fadeUp}
-            className="text-white text-3xl sm:text-4xl font-bold leading-tight mb-8 z-10"
-          >
-            Send Us a Message For
-            <br />
-            Any Inquiries
-          </motion.h2>
-
-          {/* Form */}
-          <motion.div variants={stagger} className="flex flex-col gap-4">
-            {/* Row 1 */}
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
-              <FloatingInput label="Name" />
-              <FloatingInput label="Phone" type="tel" />
-            </motion.div>
-
-            {/* Row 2 */}
-            <motion.div variants={fadeUp} className="grid grid-cols-2 gap-4">
-              <FloatingInput label="Email" type="email" />
-              <FloatingInput label="Subject" />
-            </motion.div>
-
-            {/* Message */}
-            <motion.div variants={fadeUp}>
-              <FloatingInput label="Message" textarea />
-            </motion.div>
-
-            {/* Submit */}
-            <motion.div variants={fadeUp}>
-              <Button
-                onClick={() =>
-                  alert("This is a demo form. No message will be sent.")
-                }
-                icon={<LiaTelegramPlane className="text-blue-500" />}
+              {/* Label */}
+              <motion.div
+                variants={fadeUp}
+                className="flex items-center gap-2.5 mb-4 z-10"
               >
-                Send Message
-              </Button>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+                <div className="w-5 h-px bg-orange-400" />
+                <span className="text-orange-300 text-xs font-semibold uppercase tracking-[0.15em]">
+                  Get in Touch
+                </span>
+              </motion.div>
 
-        {/* RIGHT — Image panel */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="relative lg:w-[45%] flexshrink-0"
-        >
-          <ImagePanel />
-        </motion.div>
-      </div>
-    </div>
+              {/* Heading */}
+              <motion.h2
+                variants={fadeUp}
+                className="text-white text-3xl sm:text-4xl font-bold leading-tight mb-8 z-10"
+              >
+                Send Us a Message For
+                <br />
+                Any Inquiries
+              </motion.h2>
+
+              {/* Form */}
+              <motion.div variants={stagger} className="flex flex-col gap-4">
+                {/* Row 1 */}
+                <motion.div
+                  variants={fadeUp}
+                  className="grid grid-cols-2 gap-4"
+                >
+                  <FloatingInput label="Name" />
+                  <FloatingInput label="Phone" type="tel" />
+                </motion.div>
+
+                {/* Row 2 */}
+                <motion.div
+                  variants={fadeUp}
+                  className="grid grid-cols-2 gap-4"
+                >
+                  <FloatingInput label="Email" type="email" />
+                  <FloatingInput label="Subject" />
+                </motion.div>
+
+                {/* Message */}
+                <motion.div variants={fadeUp}>
+                  <FloatingInput label="Message" textarea />
+                </motion.div>
+
+                {/* Submit */}
+                <motion.div variants={fadeUp}>
+                  <Button
+                    onClick={() =>
+                      alert("This is a demo form. No message will be sent.")
+                    }
+                    icon={<LiaTelegramPlane className="text-blue-500" />}
+                  >
+                    Send Message
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* RIGHT — Image panel */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+              transition={{
+                duration: 0.7,
+                delay: 0.25,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="relative lg:w-[45%] flexshrink-0"
+            >
+              <ImagePanel />
+            </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );

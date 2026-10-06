@@ -6,96 +6,38 @@ import BlogImg2 from "../assets/images/BlogImg2.webp";
 import BlogImg3 from "../assets/images/BlogImg3.webp";
 import { motion, AnimatePresence } from "motion/react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
-import { IoTimeOutline, IoChatbubbleOutline, IoCheckmarkCircle } from "react-icons/io5";
+import {
+  IoTimeOutline,
+  IoChatbubbleOutline,
+  IoCheckmarkCircle,
+} from "react-icons/io5";
 
 const Blog = () => {
-  // Mock data for the main grid cards
-  // const mainArticles = [
-  //   {
-  //     id: 1,
-  //     category: "Home Buying",
-  //     title: "Finding Your Dream Home Made Simple",
-  //     desc: "Explore verified property listings and discover homes that match your lifestyle and budget with ease",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 2,
-  //     category: "Food Connect",
-  //     title: "Connect with restaurants and other food vendors",
-  //     desc: "Book tables, order takeouts from the comfort of your home",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 3,
-  //     category: "Real Estate",
-  //     title: "Homxe",
-  //     desc: "Cutting off of Agents",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 4,
-  //     category: "Real Estate",
-  //     title: "Homxe",
-  //     desc: "Cutting off of Agents",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 5,
-  //     category: "Real Estate",
-  //     title: "Homxe",
-  //     desc: "Cutting off of Agents",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 6,
-  //     category: "Real Estate",
-  //     title: "Homxe",
-  //     desc: "Cutting off of Agents",
-  //     image: "",
-  //   },
-  // ];
-
-  // //Mock data for sidebar lists
-  // const sidebarArticles = [
-  //   {
-  //     id: 1,
-  //     date: "19th June, 2026",
-  //     title: "loremtyfyfgyhgfvghf",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 2,
-  //     date: "19th June, 2026",
-  //     title: "loremtyfyfgyhgfvghf",
-  //     image: "",
-  //   },
-  //   {
-  //     id: 3,
-  //     date: "19th June, 2026",
-  //     title: "loremtyfyfgyhgfvghf",
-  //     image: "",
-  //   },
-  // ];
 
   const featuredPosts = [
     {
       id: 1,
       tag: "Trending Today!",
       title: "Reimagining Housing in Africa: The HomXe Story",
-      excerpt: "Born in early 2023 from a simple yet powerful vision, HomXe set out to make home management smarter, easier, and more accessible for millions across Africa. Here's how a bold idea grew into a platform transforming the housing experience without the usual stress or expense.",
+      excerpt:
+        "Born in early 2023 from a simple yet powerful vision, HomXe set out to make home management smarter, easier, and more accessible for millions across Africa. Here's how a bold idea grew into a platform transforming the housing experience without the usual stress or expense.",
       author: "HomXe Editorial Team",
-      authorAvatar: "https://pbs.twimg.com/media/HPVcgLQWgAAG79k?format=jpg&name=large",
+      authorAvatar:
+        "https://pbs.twimg.com/media/HPVcgLQWgAAG79k?format=jpg&name=large",
       verified: true,
       readTime: "6 min read",
       commentsCount: 42,
-      image: "https://pbs.twimg.com/media/HLpLMM8WEAAxctB?format=jpg&name=small",
+      image:
+        "https://pbs.twimg.com/media/HLpLMM8WEAAxctB?format=jpg&name=small",
       imageCaption: "Not just a platform. A home revolution.",
     },
     {
       id: 2,
       tag: "Trending Today!",
-      title: "The Death of Monoliths: Micro-Frontends & Server-Driven UI in 2026",
-      excerpt: "Modern web architectures are shifting beyond simple SSR. We break down how top engineering teams orchestrate isolated runtime modules, cut bundle sizes by 60%, and deploy zero-downtime micro-frontends at scale.",
+      title:
+        "The Death of Monoliths: Micro-Frontends & Server-Driven UI in 2026",
+      excerpt:
+        "Modern web architectures are shifting beyond simple SSR. We break down how top engineering teams orchestrate isolated runtime modules, cut bundle sizes by 60%, and deploy zero-downtime micro-frontends at scale.",
       author: "Avane Tech Radar",
       verified: true,
       authorAvatar: "https://avatars.githubusercontent.com/u/105855634?v=4",
@@ -108,10 +50,12 @@ const Blog = () => {
       id: 3,
       tag: "Architecture Deep-Dive",
       title: "Tailwind v4 & Dynamic Design Systems: The Complete Layout Guide",
-      excerpt: "Explore the internal engine behind variable CSS container queries, subgrid setups, and zero-runtime micro-interactions. Learn how to construct hyper-responsive, dark-mode-first interfaces without style bloat.",
+      excerpt:
+        "Explore the internal engine behind variable CSS container queries, subgrid setups, and zero-runtime micro-interactions. Learn how to construct hyper-responsive, dark-mode-first interfaces without style bloat.",
       author: "UI System Labs",
       verified: true,
-      authorAvatar: "https://lh3.googleusercontent.com/a/ACg8ocLQP4l42cnK71y9NAfVbk6wYzw6z6yCrrwId5WPlAETnYyV7FLBuQ=s288-c-no",
+      authorAvatar:
+        "https://lh3.googleusercontent.com/a/ACg8ocLQP4l42cnK71y9NAfVbk6wYzw6z6yCrrwId5WPlAETnYyV7FLBuQ=s288-c-no",
       readTime: "12 min read",
       commentsCount: 42,
       image: BlogImg2,

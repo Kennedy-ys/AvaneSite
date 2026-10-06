@@ -1,6 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useInView, motion, useMotionValue, useTransform, animate } from "motion/react";
-import { IoLayersOutline, IoColorPaletteOutline, IoCodeSlashOutline, IoGitBranchOutline, IoPieChartOutline, IoTerminalOutline, IoRibbonOutline, IoSchool } from "react-icons/io5";
+import {
+  useInView,
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+} from "motion/react";
+import {
+  IoLayersOutline,
+  IoColorPaletteOutline,
+  IoCodeSlashOutline,
+  IoGitBranchOutline,
+  IoPieChartOutline,
+  IoTerminalOutline,
+  IoRibbonOutline,
+  IoSchool,
+} from "react-icons/io5";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
 import Button from "../components/ui/Button";
 import Courses from "../components/sections/Courses";

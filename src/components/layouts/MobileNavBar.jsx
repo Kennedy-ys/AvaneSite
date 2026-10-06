@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
-import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaSearch, FaShieldAlt, FaPenNib, FaComments } from 'react-icons/fa';
+import {
+  FaCode,
+  FaPalette,
+  FaDatabase,
+  FaBriefcase,
+  FaSearch,
+  FaShieldAlt,
+  FaPenNib,
+  FaComments,
+} from "react-icons/fa";
 import Button from "../ui/Button";
 
 const containerVariants = {
@@ -21,10 +30,14 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
   const currentPath = location.pathname || "/";
 
   const [servicesExpanded, setServicesExpanded] = useState(() => {
-    return currentPath.includes("/services") || currentPath === "/software" || currentPath === "/design";
+    return (
+      currentPath.includes("/services") ||
+      currentPath === "/software" ||
+      currentPath === "/design"
+    );
   });
 
-  // 
+  //
   const navLinks = [
     { name: "Home", link: "/" },
     { name: "About", link: "/about" },
@@ -34,36 +47,68 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
         {
           title: "DEVELOPMENT & DESIGN",
           items: [
-            { name: "Software & Web Development", link: "/services/development", icon: <FaCode /> },
-            { name: "UI/UX Design", link: "/services/ui-ux-design", icon: <FaPalette /> },
-          ]
+            {
+              name: "Software & Web Development",
+              link: "/services/development",
+              icon: <FaCode />,
+            },
+            {
+              name: "UI/UX Design",
+              link: "/services/ui-ux-design",
+              icon: <FaPalette />,
+            },
+          ],
         },
         {
           title: "STRATEGY & ANALYSIS",
           items: [
-            { name: "Data Analysis", link: "/services/analysis", icon: <FaDatabase /> },
-            { name: "Project Management", link: "/services/project-management", icon: <FaBriefcase /> },
-            { name: "Research & Insights", link: "/services/research", icon: <FaSearch /> },
-          ]
+            {
+              name: "Data Analysis",
+              link: "/services/analysis",
+              icon: <FaDatabase />,
+            },
+            {
+              name: "Project Management",
+              link: "/services/project-management",
+              icon: <FaBriefcase />,
+            },
+            {
+              name: "Research & Insights",
+              link: "/services/research",
+              icon: <FaSearch />,
+            },
+          ],
         },
         {
           title: "CONTENT & MARKETING",
           items: [
-            { name: "Graphics Design", link: "/services/graphics-design", icon: <FaPenNib /> },
-            { name: "Social Media Management", link: "/services/social-media-management", icon: <FaComments /> },
-          ]
+            {
+              name: "Graphics Design",
+              link: "/services/graphics-design",
+              icon: <FaPenNib />,
+            },
+            {
+              name: "Social Media Management",
+              link: "/services/social-media-management",
+              icon: <FaComments />,
+            },
+          ],
         },
         {
           title: "SECURITY & OTHERS",
           items: [
-            { name: "Cybersecurity", link: "/services/Cybersecurity", icon: <FaShieldAlt /> }
-          ]
-        }
+            {
+              name: "Cybersecurity",
+              link: "/services/Cybersecurity",
+              icon: <FaShieldAlt />,
+            },
+          ],
+        },
       ],
     },
     { name: "Blog", link: "/blog" },
     { name: "Academy", link: "/academy" },
-    { name: "Contact", link: "/contact" }
+    { name: "Contact", link: "/contact" },
   ];
 
   return (
@@ -82,20 +127,26 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
               const isActiveParent =
                 item.serviceCategories &&
                 item.serviceCategories.some((cat) =>
-                  cat.items.some((sub) => sub.link === currentPath)
+                  cat.items.some((sub) => sub.link === currentPath),
                 );
-              
+
               const isCurrentRoute = currentPath === item.link;
 
               return (
-                <motion.li key={index} variants={itemVariants} className="w-full">
+                <motion.li
+                  key={index}
+                  variants={itemVariants}
+                  className="w-full"
+                >
                   {item.serviceCategories ? (
                     <div className="flex flex-col w-full">
                       {/* One singular unified trigger area */}
                       <button
                         onClick={() => setServicesExpanded(!servicesExpanded)}
                         className={`flex items-center justify-between w-full text-2xl font-bold transition-all duration-200 text-left outline-none ${
-                          isActiveParent ? "text-blue-600" : "text-gray-900 dark:text-white"
+                          isActiveParent
+                            ? "text-blue-600"
+                            : "text-gray-900 dark:text-white"
                         }`}
                       >
                         <span>{item.name}</span>
@@ -112,8 +163,22 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                         {servicesExpanded && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1, transition: { height: { duration: 0.25 }, opacity: { duration: 0.2 } } }}
-                            exit={{ height: 0, opacity: 0, transition: { height: { duration: 0.2 }, opacity: { duration: 0.15 } } }}
+                            animate={{
+                              height: "auto",
+                              opacity: 1,
+                              transition: {
+                                height: { duration: 0.25 },
+                                opacity: { duration: 0.2 },
+                              },
+                            }}
+                            exit={{
+                              height: 0,
+                              opacity: 0,
+                              transition: {
+                                height: { duration: 0.2 },
+                                opacity: { duration: 0.15 },
+                              },
+                            }}
                             className="overflow-hidden flex flex-col pl-3 mt-4 space-y-5 border-l-2 border-blue-600/40"
                           >
                             {item.serviceCategories.map((category, catIdx) => (
@@ -122,17 +187,18 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
                                 <h4 className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-wider pl-2">
                                   {category.title}
                                 </h4>
-                                
+
                                 <ul className="flex flex-col space-y-1">
                                   {category.items.map((sub, subIdx) => {
-                                                                        return (
+                                    return (
                                       <li key={subIdx} className="w-full">
                                         <Link
                                           to={sub.link}
                                           onClick={() => setMenuOpen(false)}
                                           className={`flex items-center gap-3 w-full px-3 py-3 text-lg font-semibold rounded-md hover:text-blue-600 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:translate-x-1 transition-all duration-150 ${
                                             currentPath === sub.link
-                                              ? "text-blue-600 bg-blue-100 dark:bg-blue-900/30 font-semibold": "text-gray-700 dark:text-gray-200"
+                                              ? "text-blue-600 bg-blue-100 dark:bg-blue-900/30 font-semibold"
+                                              : "text-gray-700 dark:text-gray-200"
                                           }`}
                                         >
                                           <span className="text-blue-500">
@@ -170,7 +236,11 @@ const MobileNavBar = ({ MenuOpen, setMenuOpen }) => {
 
             {/* Action CTA Button */}
             <motion.div variants={itemVariants} className="pt-4 w-full">
-              <Link to="/contact" onClick={() => setMenuOpen(false)} className="inline-block">
+              <Link
+                to="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="inline-block"
+              >
                 <Button
                   btnBgColor="bg-linear-60 from-blue-700 to-cyan-500"
                   btnBgHover="bg-blue-700"

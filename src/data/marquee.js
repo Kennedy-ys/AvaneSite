@@ -1,308 +1,407 @@
 import { BsMicrosoftTeams } from "react-icons/bs";
-import { FiActivity, FiClock, FiEye, FiFeather, FiLayers, FiPieChart, FiShield, FiTrendingUp } from "react-icons/fi";
-import { SiAsana, SiClickup, SiConfluence, SiJira, SiLinear, SiMiro, SiNotion, SiSlack, SiTrello, SiBehance, SiBlender, SiCanva, SiCoreldraw, SiGooglefonts, SiPinterest, SiKalilinux, SiWireshark, SiBurpsuite, SiVault, SiSplunk, SiMetasploit, SiCloudflare, SiDatadog, SiDocker, SiGnubash, SiLooker, SiGooglecloud, SiSnowflake, SiDatabricks, SiNumpy, SiRstudioide, SiPandas, SiJupyter, SiPython, SiZoom, SiTypeform, SiAirtable, SiGoogleanalytics, SiQualtrics, SiHotjar, SiMixpanel, SiGit, SiVite, SiGraphql, SiSupabase, SiMongodb, SiNodedotjs, SiTailwindcss, SiTypescript, SiNextdotjs, SiReact, SiMeta, SiTiktok, SiBuffer, SiHootsuite, SiX, SiFramer, SiMaze, SiMural, SiInvision } from "react-icons/si";
-import { TbBrandAdobeIllustrator, TbBrandAdobeIndesign, TbBrandAdobePhotoshop, TbBrandAdobePremier, TbBrandAdobeXd, TbBrandLinkedinFilled } from "react-icons/tb";
+import {
+  FiActivity,
+  FiClock,
+  FiEye,
+  FiFeather,
+  FiLayers,
+  FiPieChart,
+  FiShield,
+  FiTrendingUp,
+} from "react-icons/fi";
+import {
+  SiAsana,
+  SiClickup,
+  SiConfluence,
+  SiJira,
+  SiLinear,
+  SiMiro,
+  SiNotion,
+  SiTrello,
+  SiBehance,
+  SiBlender,
+  SiCanvas,
+  SiCoreldraw,
+  SiGooglefonts,
+  SiPinterest,
+  SiKalilinux,
+  SiWireshark,
+  SiBurpsuite,
+  SiVault,
+  SiSplunk,
+  SiMetasploit,
+  SiCloudflare,
+  SiDatadog,
+  SiDocker,
+  SiGnubash,
+  SiLooker,
+  SiGooglecloud,
+  SiSnowflake,
+  SiDatabricks,
+  SiNumpy,
+  SiRstudioide,
+  SiPandas,
+  SiJupyter,
+  SiPython,
+  SiZoom,
+  SiTypeform,
+  SiAirtable,
+  SiGoogleanalytics,
+  SiQualtrics,
+  SiHotjar,
+  SiMixpanel,
+  SiGit,
+  SiVite,
+  SiGraphql,
+  SiSupabase,
+  SiMongodb,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiNextdotjs,
+  SiReact,
+  SiMeta,
+  SiTiktok,
+  SiBuffer,
+  SiHootsuite,
+  SiX,
+  SiFramer,
+  SiMaze,
+  SiMural,
+} from "react-icons/si";
+import {
+  TbBrandAdobeIllustrator,
+  TbBrandAdobeIndesign,
+  TbBrandAdobePhotoshop,
+  TbBrandAdobePremiere,
+  TbBrandAdobeXd,
+  TbBrandLinkedinFilled,
+} from "react-icons/tb";
 import { CapCut, Figma } from "@lobehub/icons";
 import { IoLogoTableau, IoTerminal } from "react-icons/io5";
 import { BiLogoPostgresql, BiLogoVisualStudio } from "react-icons/bi";
-import { FaAws, FaSketch } from "react-icons/fa6";
-
+import { FaAws, FaSketch, FaInvision } from "react-icons/fa6";
+import { FaSlack } from "react-icons/fa";
 
 // Dev Tools for Project Management
 export const pManagementTools = [
   {
-    name: 'Jira Software',
+    name: "Jira Software",
     Icon: SiJira,
-    iconColor: 'text-[#0052CC]',
-    role: 'Epic & Backlog Tracking',
+    iconColor: "text-[#0052CC]",
+    role: "Epic & Backlog Tracking",
   },
   {
-    name: 'Linear',
+    name: "Linear",
     Icon: SiLinear,
-    iconColor: 'text-[#000000] dark:text-white',
-    role: 'High-Velocity Issue Tracking',
+    iconColor: "text-[#000000] dark:text-white",
+    role: "High-Velocity Issue Tracking",
   },
   {
-    name: 'Confluence',
+    name: "Confluence",
     Icon: SiConfluence,
-    iconColor: 'text-[#0052CC]',
-    role: 'Requirements & Spec Wiki',
+    iconColor: "text-[#0052CC]",
+    role: "Requirements & Spec Wiki",
   },
   {
-    name: 'Notion',
+    name: "Notion",
     Icon: SiNotion,
-    iconColor: 'text-[#000000] dark:text-white',
-    role: 'Knowledge Base Management',
+    iconColor: "text-[#000000] dark:text-white",
+    role: "Knowledge Base Management",
   },
   {
-    name: 'Miro',
+    name: "Miro",
     Icon: SiMiro,
-    iconColor: 'text-[#FFD02F]',
-    role: 'User Story Mapping',
+    iconColor: "text-[#FFD02F]",
+    role: "User Story Mapping",
   },
   {
-    name: 'Slack',
-    Icon: SiSlack,
-    iconColor: 'text-[#4A154B]',
-    role: 'Asynchronous Standups',
+    name: "Slack",
+    Icon: FaSlack,
+    iconColor: "text-[#4A154B]",
+    role: "Asynchronous Standups",
   },
   {
-    name: 'Asana',
+    name: "Asana",
     Icon: SiAsana,
-    iconColor: 'text-[#F06A6A]',
-    role: 'Milestone Scheduling',
+    iconColor: "text-[#F06A6A]",
+    role: "Milestone Scheduling",
   },
   {
-    name: 'ClickUp',
+    name: "ClickUp",
     Icon: SiClickup,
-    iconColor: 'text-[#7B68EE]',
-    role: 'Task Architecture',
+    iconColor: "text-[#7B68EE]",
+    role: "Task Architecture",
   },
   {
-    name: 'Trello',
+    name: "Trello",
     Icon: SiTrello,
-    iconColor: 'text-[#0079BF]',
-    role: 'Visual Kanban Boards',
+    iconColor: "text-[#0079BF]",
+    role: "Visual Kanban Boards",
   },
   {
-    name: 'MS Teams',
+    name: "MS Teams",
     Icon: BsMicrosoftTeams,
-    iconColor: 'text-[#6264A7]',
-    role: 'Stakeholder Communications',
+    iconColor: "text-[#6264A7]",
+    role: "Stakeholder Communications",
   },
   {
-    name: 'Velocity Monitor',
+    name: "Velocity Monitor",
     Icon: FiActivity,
-    iconColor: 'text-[#6366F1]',
-    role: 'Sprint Burndown Analytics',
+    iconColor: "text-[#6366F1]",
+    role: "Sprint Burndown Analytics",
   },
   {
-    name: 'Toggl Track',
+    name: "Toggl Track",
     Icon: FiClock,
-    iconColor: 'text-[#E57CD8]',
-    role: 'Capacity Utilization Planning',
+    iconColor: "text-[#E57CD8]",
+    role: "Capacity Utilization Planning",
   },
 ];
 
 // Dev Tools for Graphics Design
 export const graphicsDesignTools = [
-  { 
-    name: 'Adobe Illustrator', 
-    Icon: TbBrandAdobeIllustrator, iconColor: "text-[#FF9A00]", 
-    role: "Vector Architecture & Marks" 
+  {
+    name: "Adobe Illustrator",
+    Icon: TbBrandAdobeIllustrator,
+    iconColor: "text-[#FF9A00]",
+    role: "Vector Architecture & Marks",
   },
-  { 
-    name: 'Adobe Photoshop', 
-    Icon: TbBrandAdobePhotoshop, iconColor: "text-[#31A8FF]", 
-    role: "Asset Compositing & Mockups" 
+  {
+    name: "Adobe Photoshop",
+    Icon: TbBrandAdobePhotoshop,
+    iconColor: "text-[#31A8FF]",
+    role: "Asset Compositing & Mockups",
   },
-  { 
-    name: 'Adobe InDesign', 
-    Icon: TbBrandAdobeIndesign, iconColor: "text-[#FF3366]", 
-    role: "Stylebook & Print Layouts" 
+  {
+    name: "Adobe InDesign",
+    Icon: TbBrandAdobeIndesign,
+    iconColor: "text-[#FF3366]",
+    role: "Stylebook & Print Layouts",
   },
-  { 
-    name: 'Figma', 
-    Icon: Figma, iconColor: "",
-    role: "Digital Design Systems" 
+  {
+    name: "Figma",
+    Icon: Figma,
+    iconColor: "",
+    role: "Digital Design Systems",
   },
-  { 
-    name: 'Blender 3D', 
-    Icon: SiBlender, iconColor: "text-[#EA7600]", 
-    role: "Dimensional Asset Modeling" 
+  {
+    name: "Blender 3D",
+    Icon: SiBlender,
+    iconColor: "text-[#EA7600]",
+    role: "Dimensional Asset Modeling",
   },
-  { 
-    name: 'Google Fonts', 
-    Icon: SiGooglefonts, iconColor: "text-[#F9AB00]", 
-    role: "Typography Sourcing" 
+  {
+    name: "Google Fonts",
+    Icon: SiGooglefonts,
+    iconColor: "text-[#F9AB00]",
+    role: "Typography Sourcing",
   },
-  { 
-    name: 'FontLab', 
-    Icon: FiFeather, iconColor: "text-[#EC4899]", 
-    role: "Custom Kerning & Type" 
+  {
+    name: "FontLab",
+    Icon: FiFeather,
+    iconColor: "text-[#EC4899]",
+    role: "Custom Kerning & Type",
   },
-  { 
-    name: 'Adobe Premiere Pro', 
-    Icon: TbBrandAdobePremier, iconColor: "text-[#9999FF]", 
-    role: "Motion Graphics Rendering" 
+  {
+    name: "Adobe Premiere Pro",
+    Icon: TbBrandAdobePremiere,
+    iconColor: "text-[#9999FF]",
+    role: "Motion Graphics Rendering",
   },
-  { 
-    name: 'Pantone Studio', 
-    Icon: FiLayers, iconColor: "text-[#3B82F6]", 
-    role: "Ink Profile Configuration" 
+  {
+    name: "Pantone Studio",
+    Icon: FiLayers,
+    iconColor: "text-[#3B82F6]",
+    role: "Ink Profile Configuration",
   },
-  { 
-    name: 'Pinterest', 
-    Icon: SiPinterest, iconColor: "text-[#E60023]", 
-    role: "Visual Strategy Curation" 
+  {
+    name: "Pinterest",
+    Icon: SiPinterest,
+    iconColor: "text-[#E60023]",
+    role: "Visual Strategy Curation",
   },
-  { 
-    name: 'Behance', 
-    Icon: SiBehance, iconColor: "text-[#0057FF]", 
-    role: "Asset Trend Benchmarking" 
+  {
+    name: "Behance",
+    Icon: SiBehance,
+    iconColor: "text-[#0057FF]",
+    role: "Asset Trend Benchmarking",
   },
-  { 
-    name: 'Canva Pro', 
-    Icon: SiCanva, iconColor: "text-[#00C4CC]", 
-    role: "Template Distribution Packs" 
+  {
+    name: "Canva Pro",
+    Icon: SiCanvas,
+    iconColor: "text-[#00C4CC]",
+    role: "Template Distribution Packs",
   },
-  { 
-    name: 'CorelDRAW', 
-    Icon: SiCoreldraw, iconColor: "text-[#00833E]", 
-    role: "Production Vector Geometry" 
-  }
+  {
+    name: "CorelDRAW",
+    Icon: SiCoreldraw,
+    iconColor: "text-[#00833E]",
+    role: "Production Vector Geometry",
+  },
 ];
 
 // Dev Tools for Cybersecurity
 export const cyberTools = [
-  { 
-    name: 'Kali Linux', 
-    Icon: SiKalilinux, iconColor: "text-[#8F8F8F]", 
-    role: "Offensive Audit Environment" 
+  {
+    name: "Kali Linux",
+    Icon: SiKalilinux,
+    iconColor: "text-[#8F8F8F]",
+    role: "Offensive Audit Environment",
   },
-  { 
-    name: 'Wireshark', 
-    Icon: SiWireshark, iconColor: "text-[#1679A7]", 
-    role: "Packet Level Tracing" 
+  {
+    name: "Wireshark",
+    Icon: SiWireshark,
+    iconColor: "text-[#1679A7]",
+    role: "Packet Level Tracing",
   },
-  { 
-    name: 'Burp Suite', 
-    Icon: SiBurpsuite, iconColor: "text-[#FF6600]", 
-    role: "Web Application Stressing" 
+  {
+    name: "Burp Suite",
+    Icon: SiBurpsuite,
+    iconColor: "text-[#FF6600]",
+    role: "Web Application Stressing",
   },
-  { 
-    name: 'HashiCorp Vault', 
-    Icon: SiVault, iconColor: "text-[#000000] dark:text-white", 
-    role: "Cryptographic Key Storage" 
+  {
+    name: "HashiCorp Vault",
+    Icon: SiVault,
+    iconColor: "text-[#000000] dark:text-white",
+    role: "Cryptographic Key Storage",
   },
-  { 
-    name: 'Splunk Enterprise', 
-    Icon: SiSplunk, iconColor: "text-[#000000] dark:text-[#FF7A00]", 
-    role: "SIEM Log Aggregation" 
+  {
+    name: "Splunk Enterprise",
+    Icon: SiSplunk,
+    iconColor: "text-[#000000] dark:text-[#FF7A00]",
+    role: "SIEM Log Aggregation",
   },
-  { 
-    name: 'Metasploit', 
-    Icon: SiMetasploit, iconColor: "text-[#3F5A94]", 
-    role: "Exploit Vector Simulation" 
+  {
+    name: "Metasploit",
+    Icon: SiMetasploit,
+    iconColor: "text-[#3F5A94]",
+    role: "Exploit Vector Simulation",
   },
-  { 
-    name: 'Cloudflare', 
-    Icon: SiCloudflare, iconColor: "text-[#F38020]", 
-    role: "DDoS Edge Defense Matrices" 
+  {
+    name: "Cloudflare",
+    Icon: SiCloudflare,
+    iconColor: "text-[#F38020]",
+    role: "DDoS Edge Defense Matrices",
   },
-  { 
-    name: 'Datadog Security', 
-    Icon: SiDatadog, iconColor: "text-[#632CA6]", 
-    role: "Cloud Posture Monitoring" 
+  {
+    name: "Datadog Security",
+    Icon: SiDatadog,
+    iconColor: "text-[#632CA6]",
+    role: "Cloud Posture Monitoring",
   },
-  { 
-    name: 'Docker Bench', 
-    Icon: SiDocker, iconColor: "text-[#2496ED]", 
-    role: "Runtime Kernel Hardening" 
+  {
+    name: "Docker Bench",
+    Icon: SiDocker,
+    iconColor: "text-[#2496ED]",
+    role: "Runtime Kernel Hardening",
   },
-  { 
-    name: 'OpenVAS', 
-    Icon: FiShield, iconColor: "text-[#00C4CC]", 
-    role: "Automated Vulnerability Indexing" 
+  {
+    name: "OpenVAS",
+    Icon: FiShield,
+    iconColor: "text-[#00C4CC]",
+    role: "Automated Vulnerability Indexing",
   },
-  { 
-    name: 'Bash Scripting', 
-    Icon: SiGnubash, iconColor: "text-[#4EAA25]", 
-    role: "Automated Patch Execution" 
-  }
+  {
+    name: "Bash Scripting",
+    Icon: SiGnubash,
+    iconColor: "text-[#4EAA25]",
+    role: "Automated Patch Execution",
+  },
 ];
 // Dev tools for Development
 export const devTools = [
   {
-    name: 'VS Code',
+    name: "VS Code",
     Icon: BiLogoVisualStudio,
     iconColor: "text-[#007ACC]",
-    role: "Primary IDE"
+    role: "Primary IDE",
   },
   {
-    name: 'React',
+    name: "React",
     Icon: SiReact,
     iconColor: "text-[#61DAFB]",
-    role: "Frontend Framework"
+    role: "Frontend Framework",
   },
   {
-    name: 'Next.js',
+    name: "Next.js",
     Icon: SiNextdotjs,
     iconColor: "text-[#000000] dark:text-white",
-    role: "Fullstack SSR Framework"
+    role: "Fullstack SSR Framework",
   },
   {
-    name: 'TypeScript',
+    name: "TypeScript",
     Icon: SiTypescript,
     iconColor: "text-[#3178C6]",
-    role: "Type Safety"
+    role: "Type Safety",
   },
   {
-    name: 'Tailwind CSS',
+    name: "Tailwind CSS",
     Icon: SiTailwindcss,
     iconColor: "text-[#06B6D4]",
-    role: "UI Styling"
+    role: "UI Styling",
   },
   {
-    name: 'Node.js',
+    name: "Node.js",
     Icon: SiNodedotjs,
     iconColor: "text-[#339933]",
-    role: "Runtime Environment"
+    role: "Runtime Environment",
   },
   {
-    name: 'PostgreSQL',
+    name: "PostgreSQL",
     Icon: BiLogoPostgresql,
     iconColor: "text-[#4169E1]",
-    role: "Relational Database"
+    role: "Relational Database",
   },
   {
-    name: 'MongoDB',
+    name: "MongoDB",
     Icon: SiMongodb,
     iconColor: "text-[#47A248]",
-    role: "NoSQL Database"
+    role: "NoSQL Database",
   },
   {
-    name: 'Supabase',
+    name: "Supabase",
     Icon: SiSupabase,
     iconColor: "text-[#3ECF8E]",
-    role: "Backend as a Service"
+    role: "Backend as a Service",
   },
   {
-    name: 'GraphQL',
+    name: "GraphQL",
     Icon: SiGraphql,
     iconColor: "text-[#E10098]",
-    role: "API Query Language"
+    role: "API Query Language",
   },
   {
-    name: 'Vite',
+    name: "Vite",
     Icon: SiVite,
     iconColor: "text-[#646CFF]",
-    role: "Frontend Build Tool"
+    role: "Frontend Build Tool",
   },
   {
-    name: 'Git',
+    name: "Git",
     Icon: SiGit,
     iconColor: "text-[#F05032]",
-    role: "Version Control"
+    role: "Version Control",
   },
   {
-    name: 'Docker',
+    name: "Docker",
     Icon: SiDocker,
     iconColor: "text-[#2496ED]",
-    role: "Containerization"
+    role: "Containerization",
   },
   {
-    name: 'AWS',
+    name: "AWS",
     Icon: FaAws,
     iconColor: "text-[#FF9900]",
-    role: "Cloud Infrastructure"
+    role: "Cloud Infrastructure",
   },
   {
-    name: 'Terminal',
+    name: "Terminal",
     Icon: IoTerminal,
     iconColor: "text-[#4AF626]",
-    role: "Command Line Scripting"
-  }
+    role: "Command Line Scripting",
+  },
 ];
 
 // Tools  for Social Media Management
@@ -327,7 +426,7 @@ export const smManagementTools = [
   },
   {
     name: "Adobe Premiere Pro",
-    Icon: TbBrandAdobePremier,
+    Icon: TbBrandAdobePremiere,
     iconColor: "text-[#9999FF]",
     role: "High-Fidelity Audio & Cuts",
   },
@@ -433,7 +532,7 @@ export const uiUxTools = [
   },
   {
     name: "InVision",
-    Icon: SiInvision,
+    Icon: FaInvision,
     iconColor: "text-[#FF3366]",
     role: "Legacy Prototyping",
   },
@@ -515,7 +614,7 @@ export const researchTools = [
   },
 ];
 
-//  Tools for Data Analytics 
+//  Tools for Data Analytics
 export const analyticsTools = [
   {
     name: "Python",

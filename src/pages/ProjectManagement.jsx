@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "motion/react";
-import { IoCheckmarkDoneCircleOutline, IoRocketOutline, IoTimeOutline } from "react-icons/io5";
+import {
+  IoCheckmarkDoneCircleOutline,
+  IoRocketOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
 import Timeline from "../components/sections/Timeline";
 import Projects from "../components/sections/Projects";
 import LogoMarquee from "../components/sections/LogoMarquee";
@@ -14,9 +18,7 @@ import { pManagementTools } from "../data/marquee";
 import { pmProjects, pmProjectContext } from "../data/projects";
 import { pmTimelineSteps, pmTimelineContext } from "../data/timeline";
 
-
 const ProjectManagement = () => {
-  
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 bg-linear-to-b from-white to-slate-50 dark:from-[#070a13] dark:to-[#04060c] transition-colors duration-300 overflow-hidden">
@@ -81,10 +83,27 @@ const ProjectManagement = () => {
 
             {/* Call-To-Action Button Loops */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-auto sm:w-full pt-4">
-              
-              <Button as={Link} to="/contact" btnBgColor="bg-linear-to-r from-indigo-600 to-purple-500" btnBgHover="bg-indigo-500" icon={<IoRocketOutline className="text-indigo-600" />}>Optimize Our Delivery</Button>
+              <Button
+                as={Link}
+                to="/contact"
+                btnBgColor="bg-linear-to-r from-indigo-600 to-purple-500"
+                btnBgHover="bg-indigo-500"
+                icon={<IoRocketOutline className="text-indigo-600" />}
+              >
+                Optimize Our Delivery
+              </Button>
 
-              <Button as="a" href="#framework" btnBgColor="bg-white/90" btnTxtColor="text-slate-800 group-hover:text-white" btnBgHover="bg-indigo-600" iconBgColor="bg-indigo-600 group-hover:bg-white" icon={<TbArrowDownRight className="text-white group-hover:text-indigo-600"/>} >
+              <Button
+                as="a"
+                href="#framework"
+                btnBgColor="bg-white/90"
+                btnTxtColor="text-slate-800 group-hover:text-white"
+                btnBgHover="bg-indigo-600"
+                iconBgColor="bg-indigo-600 group-hover:bg-white"
+                icon={
+                  <TbArrowDownRight className="text-white group-hover:text-indigo-600" />
+                }
+              >
                 Management Frameworks
               </Button>
             </div>
@@ -201,7 +220,10 @@ const ProjectManagement = () => {
       </section>
 
       {/* Capabilities Matrix Section */}
-      <section id="framework" className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#070a13] transition-colors duration-300">
+      <section
+        id="framework"
+        className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#070a13] transition-colors duration-300"
+      >
         {/* Background Structural Ambient Shadows */}
         <div className="absolute left-1/4 top-1/4 w-125 h-125 bg-indigo-500/5 blur-[160px] rounded-full pointer-events-none" />
         <div className="absolute right-10 bottom-10 w-96 h-96 bg-purple-500/5 blur-[130px] rounded-full pointer-events-none" />
@@ -236,69 +258,70 @@ const ProjectManagement = () => {
             {pmCapabilities.map((item, index) => {
               const { Icon, title, description } = item;
               return (
-              <motion.div
-                key={index}
-                className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/20 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-              >
-                {/* Top Row: Icon Container */}
-                <div className="flex items-start justify-between relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300 shadow-xs">
-                    <Icon size={24} />
+                <motion.div
+                  key={index}
+                  className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/20 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  {/* Top Row: Icon Container */}
+                  <div className="flex items-start justify-between relative z-10">
+                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors duration-300 shadow-xs">
+                      <Icon size={24} />
+                    </div>
                   </div>
-                </div>
 
-                {/* Central Information Stack */}
-                <div className="mt-8 relative z-10 space-y-3">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                    {title}
-                  </h3>
-                  <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                    {description}
-                  </p>
-                </div>
+                  {/* Central Information Stack */}
+                  <div className="mt-8 relative z-10 space-y-3">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
+                      {title}
+                    </h3>
+                    <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                      {description}
+                    </p>
+                  </div>
 
-                {/* Bottom Project Management Tooling / Process Pills */}
-                <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
-                  {item.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-950/60 border border-slate-200/60 dark:border-white/5 tracking-wide font-mono"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                  {/* Bottom Project Management Tooling / Process Pills */}
+                  <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
+                    {item.tags.map((tag, tagIdx) => (
+                      <span
+                        key={tagIdx}
+                        className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-950/60 border border-slate-200/60 dark:border-white/5 tracking-wide font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Dynamic Indigo Border Highlight Line on Hover */}
-                <div
-                  className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                />
-              </motion.div>
-              )})}
+                  {/* Dynamic Indigo Border Highlight Line on Hover */}
+                  <div
+                    className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Bottom Metric Reassurance Row */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 p-6 rounded-2xl border border-dashed border-slate-200 dark:border-white/10 bg-slate-50/20 dark:bg-slate-900/5 backdrop-blur-xs text-left">
             {pmHighlights.map((highlight, index) => {
-              const { Icon, iconColor, text} = highlight;
+              const { Icon, iconColor, text } = highlight;
               return (
-              <div key={index} className="flex items-center gap-3 max-w-md">
-                <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                  <Icon className={iconColor} />
+                <div key={index} className="flex items-center gap-3 max-w-md">
+                  <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <Icon className={iconColor} />
+                  </div>
+                  <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
+                    {text}
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                  {text}
-                </p>
-              </div>
-              )
+              );
             })}
           </div>
         </div>

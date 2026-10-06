@@ -1,20 +1,24 @@
 import React from "react";
 import { motion } from "motion/react";
-import { IoShareSocialOutline, IoTrendingUpOutline, IoSparklesOutline, IoMegaphoneOutline } from "react-icons/io5";
+import {
+  IoShareSocialOutline,
+  IoTrendingUpOutline,
+  IoSparklesOutline,
+  IoMegaphoneOutline,
+} from "react-icons/io5";
 import Timeline from "../components/sections/Timeline";
 import Projects from "../components/sections/Projects";
 import LogoMarquee from "../components/sections/LogoMarquee";
 import CTA from "../components/sections/Call-To-Action";
 import Button from "../components/ui/Button";
 import { Link } from "react-router-dom";
-import { smManagementTools } from "../data/marquee"
-import { smProjectContext, smProjects } from "../data/projects"
-import { smTimelineSteps, smTimelineContext } from "../data/timeline"
-import { smSocialCapabilities } from "../data/capabilities"
-import { smSocialHighlights } from "../data/highlights"
+import { smManagementTools } from "../data/marquee";
+import { smProjectContext, smProjects } from "../data/projects";
+import { smTimelineSteps, smTimelineContext } from "../data/timeline";
+import { smSocialCapabilities } from "../data/capabilities";
+import { smSocialHighlights } from "../data/highlights";
 
 const SocialMediaManagement = () => {
-  
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-6 lg:px-12 bg-linear-to-b from-white to-slate-50 dark:from-[#0c0503] dark:to-[#060201] transition-colors duration-300 overflow-hidden">
@@ -102,7 +106,8 @@ const SocialMediaManagement = () => {
                 as={Link}
                 to="/contact"
                 btnBgColor="bg-linear-to-r from-orange-500 to-rose-500"
-                btnBgHover="bg-linear-to-r from-rose-500 to-orange-500" size="18"
+                btnBgHover="bg-linear-to-r from-rose-500 to-orange-500"
+                size="18"
                 icon={<IoSparklesOutline className="text-orange-600" />}
               >
                 Scale Your Distribution
@@ -259,53 +264,54 @@ const SocialMediaManagement = () => {
             {smSocialCapabilities.map((item, index) => {
               const { Icon, title, description } = item;
               return (
-              <motion.div
-                key={index}
-                className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/10 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-              >
-                {/* Icon Container Layout */}
-                <div className="flex items-start justify-between relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300 shadow-xs">
-                    <Icon size={24} />y
+                <motion.div
+                  key={index}
+                  className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/10 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 transition-all duration-300 hover:shadow-xs text-left`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  {/* Icon Container Layout */}
+                  <div className="flex items-start justify-between relative z-10">
+                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-300 shadow-xs">
+                      <Icon size={24} />y
+                    </div>
                   </div>
-                </div>
 
-                {/* Central Information Typography Stack */}
-                <div className="mt-8 relative z-10 space-y-3">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                    {title}
-                  </h3>
-                  <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                    {description}
-                  </p>
-                </div>
+                  {/* Central Information Typography Stack */}
+                  <div className="mt-8 relative z-10 space-y-3">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
+                      {title}
+                    </h3>
+                    <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                      {description}
+                    </p>
+                  </div>
 
-                {/* Monospace Architectural Technology Pills */}
-                <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
-                  {item.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-950/40 border border-slate-200/60 dark:border-white/5 tracking-wide font-mono"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                  {/* Monospace Architectural Technology Pills */}
+                  <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
+                    {item.tags.map((tag, tagIdx) => (
+                      <span
+                        key={tagIdx}
+                        className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-950/40 border border-slate-200/60 dark:border-white/5 tracking-wide font-mono"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Edge Accent Indicator */}
-                <div
-                  className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                />
-              </motion.div>
-            )})}
+                  {/* Edge Accent Indicator */}
+                  <div
+                    className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Footer Integrity Indicators Banner */}
@@ -313,15 +319,16 @@ const SocialMediaManagement = () => {
             {smSocialHighlights.map((highlight, index) => {
               const { Icon, iconColor, text } = highlight;
               return (
-              <div key={index} className="flex items-center gap-3 max-w-xl">
-                <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                  <Icon className={iconColor} />
+                <div key={index} className="flex items-center gap-3 max-w-xl">
+                  <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <Icon className={iconColor} />
+                  </div>
+                  <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
+                    {text}
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                  {text}
-                </p>
-              </div>
-            )})}
+              );
+            })}
           </div>
         </div>
       </section>

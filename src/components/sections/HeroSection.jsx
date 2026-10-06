@@ -4,11 +4,11 @@ import BreadCrums from "../ui/BreadCrums";
 
 const AboutHero = ({ subText, heading, HeroImg }) => {
   return (
-    <section 
+    <section
       className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center overflow-hidden px-4 pt-32 pb-20 transition-colors duration-300"
       style={{
         backgroundImage: `url(${HeroImg})`,
-        backgroundPosition: "center 25%" // Lowers the asset focus to clear the sticky nav
+        backgroundPosition: "center 25%", // Lowers the asset focus to clear the sticky nav
       }}
     >
       {/* BACKGROUND OVERLAY */}
@@ -16,8 +16,17 @@ const AboutHero = ({ subText, heading, HeroImg }) => {
 
       {/* LEFT BACKGROUND VECTOR LINES */}
       <div className="absolute hidden md:block -left-10 top-0 w-1/4 opacity-60 dark:opacity-40 z-10 pointer-events-none">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 900" className="w-full h-full">
-          <g fill="none" strokeWidth="2" strokeLinecap="round" className="stroke-orange-500 dark:stroke-orange-400 transition-colors duration-300">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 400 900"
+          className="w-full h-full"
+        >
+          <g
+            fill="none"
+            strokeWidth="2"
+            strokeLinecap="round"
+            className="stroke-orange-500 dark:stroke-orange-400 transition-colors duration-300"
+          >
             <path d="M230 0v600a170 170 0 0 1-340 0" />
             <path d="M270 0v600a210 210 0 0 1-420 0" />
             <path d="M310 0v600a250 250 0 0 1-500 0" />

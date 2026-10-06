@@ -34,7 +34,7 @@
 
 /* Animation for toggle */
 @keyframes clip-reveal {
-  from{
+  from {
     /* Starts from the top-right where your toggle likely is */
     clip-path: circle(0% at 90% 5%);
   }
@@ -53,13 +53,21 @@ html {
 
 /* Marquee Animations */
 @keyframes marqueeLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
 }
 
 @keyframes marqueeRight {
-  0% { transform: translateX(-33.333%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-marqueeLeft {
@@ -72,6 +80,18 @@ html {
 
 /* Edge Fading Mask */
 .mask-fade-edges {
-  mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 15%,
+    white 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 15%,
+    white 85%,
+    transparent
+  );
 }

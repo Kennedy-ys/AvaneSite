@@ -42,7 +42,10 @@ export default function Button({
       />
 
       {/* Label */}
-      <span className={`z-10 capitalize ${btnTxtColor}`} style={{ whiteSpace: "nowrap" }}>
+      <span
+        className={`z-10 capitalize ${btnTxtColor}`}
+        style={{ whiteSpace: "nowrap" }}
+      >
         {children}
       </span>
 

@@ -37,9 +37,8 @@ const AboutSection = () => {
   return (
     <section className="py-20 px-6 dark:bg-(image:--background-stripe) bg-(image:--dark-background-stripe) bg-white/30 dark:bg-slate-900/80 overflow-hidden">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        
         {/* Image Column */}
-        <motion.div 
+        <motion.div
           className="relative pb-10 md:pb-0"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +46,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Decorative blobs */}
-          <motion.div 
+          <motion.div
             className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-orange-400/20"
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -66,7 +65,7 @@ const AboutSection = () => {
           </div>
 
           {/* Floating quote card */}
-          <motion.div 
+          <motion.div
             className="absolute -bottom-6 -left-5 bg-amber-50 dark:bg-slate-800 rounded-2xl p-5 w-52 shadow-xl border border-orange-500/10"
             initial={{ opacity: 0, y: 30, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -96,7 +95,10 @@ const AboutSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Badge */}
-          <motion.div variants={itemVariants} className="flex items-center gap-2 mb-4">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-2 mb-4"
+          >
             <span className="block w-6 h-0.5 bg-orange-500" />
             <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
               WHO WE ARE
@@ -104,35 +106,52 @@ const AboutSection = () => {
           </motion.div>
 
           {/* Heading */}
-          <motion.h2 variants={itemVariants} className="font-serif text-4xl md:text-5xl font-bold leading-tight text-slate-900 dark:text-white mb-5">
+          <motion.h2
+            variants={itemVariants}
+            className="font-serif text-4xl md:text-5xl font-bold leading-tight text-slate-900 dark:text-white mb-5"
+          >
             Driving Growth with Cutting
             <span className="text-blue-600">-Edge</span> Technology
           </motion.h2>
 
           {/* Paragraph 1 */}
-          <motion.p variants={itemVariants} className="text-slate-500 dark:text-slate-400 leading-relaxed mb-3 ">
-            At Avane our journey began with a simple yet powerful mission: to bridge the gap between complex technology and business. We believe that digital tools should empower, not complicate. Our team of experts is dedicated to delivering high-performance [IT Services/Software/Solutions] that help our clients stay ahead in an ever-evolving digital landscape.
+          <motion.p
+            variants={itemVariants}
+            className="text-slate-500 dark:text-slate-400 leading-relaxed mb-3 "
+          >
+            At Avane our journey began with a simple yet powerful mission: to
+            bridge the gap between complex technology and business. We believe
+            that digital tools should empower, not complicate. Our team of
+            experts is dedicated to delivering high-performance [IT
+            Services/Software/Solutions] that help our clients stay ahead in an
+            ever-evolving digital landscape.
           </motion.p>
-          
+
           {/* Paragraph 2 */}
-          <motion.p variants={itemVariants} className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6">
+          <motion.p
+            variants={itemVariants}
+            className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6"
+          >
             With years of experience in the technology sector, we have built a
             reputation for innovation, reliability, and excellence.
           </motion.p>
 
           {/* Checklist */}
-          <motion.ul variants={itemVariants} className="grid grid-cols-2 gap-x-6 gap-y-3 mb-8">
+          <motion.ul
+            variants={itemVariants}
+            className="grid grid-cols-2 gap-x-6 gap-y-3 mb-8"
+          >
             {checkItems.map((item, index) => (
               <motion.li
                 key={item}
                 custom={index}
                 variants={{
                   hidden: { opacity: 0, x: 10 },
-                  visible: { 
-                    opacity: 1, 
-                    x: 0, 
-                    transition: { delay: index * 0.05, ease: "easeOut" } 
-                  }
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: index * 0.05, ease: "easeOut" },
+                  },
                 }}
                 className="flex items-center gap-2 text-sm font-medium text-slate-700 dark:text-slate-300"
               >
@@ -149,12 +168,7 @@ const AboutSection = () => {
             <Button
               as={Link}
               to="/about"
-              icon={
-                <IoArrowRedoOutline
-                  className="text-blue-600"
-                  size={19}
-                />
-              }
+              icon={<IoArrowRedoOutline className="text-blue-600" size={19} />}
               btnBgColor="bg-linear-to-r from-blue-700 to-cyan-500"
               btnBgHover="bg-blue-700"
               size={19}
@@ -163,7 +177,6 @@ const AboutSection = () => {
             </Button>
           </motion.div>
         </motion.div>
-        
       </div>
     </section>
   );

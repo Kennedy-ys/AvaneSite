@@ -2,7 +2,13 @@ import { Link } from "react-router-dom";
 import Button from "../ui/Button";
 import { LuArrowUpRight } from "react-icons/lu";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { LuGraduationCap, LuLayers, LuPalette, LuShare2, LuShieldAlert } from "react-icons/lu";
+import {
+  LuGraduationCap,
+  LuLayers,
+  LuPalette,
+  LuShare2,
+  LuShieldAlert,
+} from "react-icons/lu";
 import { AiOutlineProject } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { FaCode } from "react-icons/fa6";
@@ -236,7 +242,15 @@ const ServiceSection = ({ services: servicesProp = services }) => {
         {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {servicesProp.map((service) => {
-            const { link, title, description, offerings, color1, color2, icon: Icon } = service;
+            const {
+              link,
+              title,
+              description,
+              offerings,
+              color1,
+              color2,
+              icon: Icon,
+            } = service;
             const c = colorMap[color1];
             const toClass = colorTo2Map[color2];
 

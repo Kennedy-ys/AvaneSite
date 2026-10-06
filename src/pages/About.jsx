@@ -203,10 +203,7 @@ const About = () => {
 
       <TeamSection />
 
-      <CTA
-        text="Interested in joining our team?"
-        ctaText="Write to us"
-      />
+      <CTA text="Interested in joining our team?" ctaText="Write to us" />
     </div>
   );
 };

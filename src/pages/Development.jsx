@@ -5,15 +5,14 @@ import { IoArrowForwardOutline } from "react-icons/io5";
 import Button from "../components/ui/Button";
 import CTA from "../components/sections/Call-To-Action";
 import Timeline from "../components/sections/Timeline";
-import Projects from "../components/sections/Projects"
+import Projects from "../components/sections/Projects";
 import LogoMarquee from "../components/sections/LogoMarquee";
-import { devTools } from "../data/marquee"
-import { devCapabilities } from "../data/capabilities"
-import { devHighlights } from "../data/highlights"
-import { devTimelineSteps, devTimelineContext } from "../data/timeline"
-import { devProjectContext, devProjects } from "../data/projects"
+import { devTools } from "../data/marquee";
+import { devCapabilities } from "../data/capabilities";
+import { devHighlights } from "../data/highlights";
+import { devTimelineSteps, devTimelineContext } from "../data/timeline";
+import { devProjectContext, devProjects } from "../data/projects";
 import { FaCode } from "react-icons/fa6";
-
 
 const Development = () => {
   // For Interactive Button Calls-to-Action Group Section
@@ -205,7 +204,7 @@ const Development = () => {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Capabilities Matrix Section */}
       <section className="py-24 px-6 lg:px-12 relative overflow-hidden bg-white dark:bg-[#0d1527] transition-colors duration-300">
         {/* Decorative Ambient Background Rings */}
@@ -242,53 +241,54 @@ const Development = () => {
             {devCapabilities.map((item, index) => {
               const { Icon, iconColor, title, description } = item;
               return (
-              <motion.div
-                key={index}
-                className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 hover:-translate-y-2 transition-all duration-300 hover:shadow-xs text-left`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                  ease: "easeOut",
-                }}
-              >
-                {/* Top Row: Floating Utility Accent Glow Behind Icon */}
-                <div className="flex items-start justify-between relative z-10">
-                  <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300 shadow-xs">
-                    <Icon className={iconColor} size={24} />
+                <motion.div
+                  key={index}
+                  className={`${item.gridSpan} bg-slate-50/70 dark:bg-slate-900/30 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group hover:border-slate-300 dark:hover:border-white/10 hover:-translate-y-2 transition-all duration-300 hover:shadow-xs text-left`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  {/* Top Row: Floating Utility Accent Glow Behind Icon */}
+                  <div className="flex items-start justify-between relative z-10">
+                    <div className="w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300 shadow-xs">
+                      <Icon className={iconColor} size={24} />
+                    </div>
                   </div>
-                </div>
 
-                {/* Central Information Stack */}
-                <div className="mt-8 relative z-10 space-y-3">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
-                    {title}
-                  </h3>
-                  <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
-                    {description}
-                  </p>
-                </div>
+                  {/* Central Information Stack */}
+                  <div className="mt-8 relative z-10 space-y-3">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
+                      {title}
+                    </h3>
+                    <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+                      {description}
+                    </p>
+                  </div>
 
-                {/* Bottom Technology Pills Mapping */}
-                <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
-                  {item.tags.map((tag, tagIdx) => (
-                    <span
-                      key={tagIdx}
-                      className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-900/60 border border-slate-200/60 dark:border-white/5 tracking-wide"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                  {/* Bottom Technology Pills Mapping */}
+                  <div className="mt-8 pt-6 border-t border-slate-200/60 dark:border-white/5 flex flex-wrap gap-2 relative z-10">
+                    {item.tags.map((tag, tagIdx) => (
+                      <span
+                        key={tagIdx}
+                        className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-900/60 border border-slate-200/60 dark:border-white/5 tracking-wide"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Dynamic Internal Gradient Underlay Line that appears on block hover */}
-                <div
-                  className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
-                />
-              </motion.div>
-            )})}
+                  {/* Dynamic Internal Gradient Underlay Line that appears on block hover */}
+                  <div
+                    className={`absolute bottom-0 inset-x-0 h-0.5 bg-linear-to-r ${item.accent} scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Global Assurance Banner Below Bento Rows */}
@@ -296,32 +296,36 @@ const Development = () => {
             {devHighlights.map((highlight, index) => {
               const { Icon, iconColor, text } = highlight;
               return (
-              <div key={index} className="flex items-center gap-3 max-w-md">
-                <div className="w-5 h-5 flex items-center justify-center shrink-0">
-                  <Icon className={iconColor} />
+                <div key={index} className="flex items-center gap-3 max-w-md">
+                  <div className="w-5 h-5 flex items-center justify-center shrink-0">
+                    <Icon className={iconColor} />
+                  </div>
+                  <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
+                    {text}
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm font-medium text-slate-600 dark:text-gray-400">
-                  {text}
-                </p>
-              </div>
-            )})}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Design Timeline Process Section */}
-      <Timeline timelineSteps={devTimelineSteps} timelineContext={devTimelineContext} />
-      
-            {/* Project Section */}
-            <Projects ProjectContext={devProjectContext} projects={devProjects} />
-      
-            {/* Tool Stack */}
-             <LogoMarquee
-              row1Data={devTools.slice(7, 15)}
-              row2Data={devTools.slice(0, 6)}
-              subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
-              title="Our Development Toolkit"
-            />
+      <Timeline
+        timelineSteps={devTimelineSteps}
+        timelineContext={devTimelineContext}
+      />
+
+      {/* Project Section */}
+      <Projects ProjectContext={devProjectContext} projects={devProjects} />
+
+      {/* Tool Stack */}
+      <LogoMarquee
+        row1Data={devTools.slice(7, 15)}
+        row2Data={devTools.slice(0, 6)}
+        subText="Leveraging modern technology stacks and tools to build secure, speed-optimized, and scalable applications."
+        title="Our Development Toolkit"
+      />
 
       {/* CTA Section */}
       <CTA

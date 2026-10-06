@@ -5,14 +5,13 @@ import Button from "../components/ui/Button";
 import Projects from "../components/sections/Projects";
 import LogoMarquee from "../components/sections/LogoMarquee";
 import CTA from "../components/sections/Call-To-Action";
-import Timeline from "../components/sections/Timeline"
+import Timeline from "../components/sections/Timeline";
 import { IoArrowForwardOutline, IoSearchOutline } from "react-icons/io5";
 import { FaPalette } from "react-icons/fa";
-import { uiUxTools } from "../data/marquee"
-import { uiUxFeatures } from "../data/capabilities"
-import { uiUxProjectContext,uiUxProjects } from "../data/projects"
-import { uiUxTimelineSteps,uiUxTimelineContext } from "../data/timeline"
-
+import { uiUxTools } from "../data/marquee";
+import { uiUxFeatures } from "../data/capabilities";
+import { uiUxProjectContext, uiUxProjects } from "../data/projects";
+import { uiUxTimelineSteps, uiUxTimelineContext } from "../data/timeline";
 
 // Stagger orchestration for the features section cards
 const containerVariants = {
@@ -47,7 +46,6 @@ const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
-
 
 const Design = () => {
   return (
@@ -251,49 +249,55 @@ const Design = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             {uiUxFeatures.map((feature, index) => {
-              const { Icon, iconColor, title, description, badge, className } = feature;
+              const { Icon, iconColor, title, description, badge, className } =
+                feature;
               return (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                whileHover={{ y: -6}} transition= {{ duration: 0.2 }}
-                whileTap={{ y: -6 }}
-                className={`${className} p-8 rounded-2xl border bg-slate-50/50 dark:bg-slate-900/30 border-slate-200/80 dark:border-white/5 backdrop-blur-xs flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/40 dark:hover:shadow-none transition-shadow duration-300`}
-              >
-                <div>
-                  {/* Icon Header Row */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 shadow-xs border border-slate-200/60 dark:border-white/10 flex items-center justify-center transition-colors duration-300">
-                      <Icon className={iconColor} size={24} />
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.2 }}
+                  whileTap={{ y: -6 }}
+                  className={`${className} p-8 rounded-2xl border bg-slate-50/50 dark:bg-slate-900/30 border-slate-200/80 dark:border-white/5 backdrop-blur-xs flex flex-col justify-between group hover:shadow-xl hover:shadow-slate-200/40 dark:hover:shadow-none transition-shadow duration-300`}
+                >
+                  <div>
+                    {/* Icon Header Row */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-900 shadow-xs border border-slate-200/60 dark:border-white/10 flex items-center justify-center transition-colors duration-300">
+                        <Icon className={iconColor} size={24} />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-200/50 dark:bg-white/5 text-slate-500 dark:text-gray-400">
+                        {badge}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-slate-200/50 dark:bg-white/5 text-slate-500 dark:text-gray-400">
-                      {badge}
-                    </span>
+
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-cyan-400">
+                      {title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-gray-400 text-sm font-light leading-relaxed">
+                      {description}
+                    </p>
                   </div>
 
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-cyan-400">
-                    {title}
-                  </h3>
-                  <p className="text-slate-600 dark:text-gray-400 text-sm font-light leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-
-                {/* Bottom Decorative Arrow */}
-                <div className="pt-6 mt-6 border-t border-slate-200/60 dark:border-white/5 flex justify-end">
-                  <span className="text-slate-400 group-hover:text-orange-500 transition-colors duration-300 text-sm font-bold">
-                    →
-                  </span>
-                </div>
-              </motion.div>
-            )})}
+                  {/* Bottom Decorative Arrow */}
+                  <div className="pt-6 mt-6 border-t border-slate-200/60 dark:border-white/5 flex justify-end">
+                    <span className="text-slate-400 group-hover:text-orange-500 transition-colors duration-300 text-sm font-bold">
+                      →
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
 
       {/* Design Timeline Process Section */}
-      <Timeline timelineSteps={uiUxTimelineSteps} timelineContext={uiUxTimelineContext}  />
+      <Timeline
+        timelineSteps={uiUxTimelineSteps}
+        timelineContext={uiUxTimelineContext}
+      />
 
       {/* Project Section */}
       <Projects projects={uiUxProjects} ProjectContext={uiUxProjectContext} />

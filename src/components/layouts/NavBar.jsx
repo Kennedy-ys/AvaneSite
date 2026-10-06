@@ -1,8 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
 import { LuArrowUpRight, LuChevronDown } from "react-icons/lu";
-import { FaCode, FaPalette, FaDatabase, FaBriefcase, FaShieldAlt, FaPenNib, FaComments, FaSearch } from "react-icons/fa";
+import {
+  FaCode,
+  FaPalette,
+  FaDatabase,
+  FaBriefcase,
+  FaShieldAlt,
+  FaPenNib,
+  FaComments,
+  FaSearch,
+} from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import Logo from "../ui/Logo";
 import AnimatedMenu from "../ui/AnimatedMenu";
@@ -17,7 +31,7 @@ const NavBar = () => {
   const [hovered, setHovered] = useState(null);
   const [hidden, setHidden] = useState(false);
   const location = useLocation();
-  
+
   const { scrollY } = useScroll();
 
   // Handle scroll events to determine if the user has scrolled down a page
@@ -153,7 +167,9 @@ const NavBar = () => {
         animate={{ y: hidden ? -110 : 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 30 }}
         className={`fixed top-0 left-0 right-0 z-1000 w-full transition-[background-color,box-shadow] duration-300 ${
-          isScrolled ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md" : "bg-transparent"
+          isScrolled
+            ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-md"
+            : "bg-transparent"
         }`}
       >
         <nav className="flex items-center justify-between py-3 px-7 max-w-7xl mx-auto">
@@ -208,11 +224,17 @@ const NavBar = () => {
                           <motion.span
                             layoutId="nav-underline"
                             className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-blue-600"
-                            transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 32,
+                            }}
                           />
                         )}
                       </span>
-                      <motion.span animate={{ rotate: isServicesOpen ? 180 : 0 }}>
+                      <motion.span
+                        animate={{ rotate: isServicesOpen ? 180 : 0 }}
+                      >
                         <LuChevronDown />
                       </motion.span>
 
@@ -279,7 +301,11 @@ const NavBar = () => {
                           <motion.span
                             layoutId="nav-underline"
                             className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-blue-600"
-                            transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                            transition={{
+                              type: "spring",
+                              stiffness: 400,
+                              damping: 32,
+                            }}
                           />
                         )}
                       </span>

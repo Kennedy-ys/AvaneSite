@@ -1,19 +1,30 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { IoBookOutline, IoTimeOutline, IoBarChartOutline, IoStar } from "react-icons/io5";
+import {
+  IoBookOutline,
+  IoTimeOutline,
+  IoBarChartOutline,
+  IoStar,
+} from "react-icons/io5";
 import Button from "../ui/Button";
 
 const Courses = () => {
   const [activeTab, setActiveTab] = useState("All Tracks");
 
-  const tabs = ["All Tracks", "Frontend Systems", "UI/UX Design", "State Architecture"];
+  const tabs = [
+    "All Tracks",
+    "Frontend Systems",
+    "UI/UX Design",
+    "State Architecture",
+  ];
 
   const coursesData = [
     {
       id: 1,
       category: "Frontend Systems",
       title: "React.js Production Architectures & Framework Stacks",
-      image: "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
+      image:
+        "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
       rating: 4.9,
       reviews: 240,
       lessons: 18,
@@ -23,13 +34,14 @@ const Courses = () => {
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
       price: "$199",
       discountPrice: "$79",
-      badge: "Popular"
+      badge: "Popular",
     },
     {
       id: 2,
       category: "UI/UX Design",
       title: "Mastering Bento Grids & Micro-Interactions in Tailwind v4",
-      image: "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
+      image:
+        "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
       rating: 4.8,
       reviews: 185,
       lessons: 12,
@@ -39,13 +51,14 @@ const Courses = () => {
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
       price: "$149",
       discountPrice: "$59",
-      badge: "Best Seller"
+      badge: "Best Seller",
     },
     {
       id: 3,
       category: "State Architecture",
       title: "Advanced Component Synchronization & Global Context Labs",
-      image: "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
+      image:
+        "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
       rating: 4.7,
       reviews: 98,
       lessons: 15,
@@ -54,41 +67,44 @@ const Courses = () => {
       instructor: "Alesa Chen",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
       price: "$249",
-      discountPrice: "$129"
+      discountPrice: "$129",
     },
     {
       id: 4,
       category: "Frontend Systems",
       title: "Framer Motion: Orchestrating High-Fidelity Web Physics",
-      image: "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
+      image:
+        "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
       rating: 4.9,
       reviews: 312,
       lessons: 22,
       duration: "28h 10m",
       level: "Advanced",
       instructor: "Marcus K.",
-      avatar: "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
+      avatar:
+        "https://images.pexels.com/photos/10376161/pexels-photo-10376161.jpeg",
       price: "$189",
       discountPrice: "$89",
-      badge: "New Track"
-    }
+      badge: "New Track",
+    },
   ];
 
-  const filteredCourses = activeTab === "All Tracks" 
-    ? coursesData 
-    : coursesData.filter(course => course.category === activeTab);
+  const filteredCourses =
+    activeTab === "All Tracks"
+      ? coursesData
+      : coursesData.filter((course) => course.category === activeTab);
 
   return (
     <section className="bg-slate-50 dark:bg-[#010205] py-24 px-6 lg:px-12 transition-colors duration-300 overflow-hidden border-b border-slate-100 dark:border-white/5">
       <div className="max-w-7xl mx-auto w-full space-y-12">
-        
         {/* Header Setup mirroring Screenshot 2026-06-30 181720.jpg */}
         <div className="text-center space-y-3 max-w-xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
             Our Most Popular Tracks
           </h2>
           <p className="text-slate-500 dark:text-gray-400 text-sm md:text-base font-light">
-            Deep dive into live application frameworks with production-tested workflows.
+            Deep dive into live application frameworks with production-tested
+            workflows.
           </p>
         </div>
 
@@ -98,16 +114,18 @@ const Courses = () => {
             <Button
               key={tab}
               size={15}
-              btnBgColor={`${activeTab === tab ? "bg-blue-600" : "bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 "}`} btnTxtColor={`${activeTab === tab ? "text-white" : "text-slate-600 dark:text-gray-400 transition-200"}`} btnBgHover=""
+              btnBgColor={`${activeTab === tab ? "bg-blue-600" : "bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 "}`}
+              btnTxtColor={`${activeTab === tab ? "text-white" : "text-slate-600 dark:text-gray-400 transition-200"}`}
+              btnBgHover=""
               onClick={() => setActiveTab(tab)}
-              >
+            >
               {tab}
             </Button>
           ))}
         </div>
 
         {/* Responsive Grid System Panel */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 w-full"
         >
@@ -124,16 +142,22 @@ const Courses = () => {
               >
                 {/* Visual Cover Wrapper */}
                 <div className="relative aspect-16/10 overflow-hidden bg-slate-100 dark:bg-slate-950">
-                  <img 
-                    src={course.image} 
+                  <img
+                    src={course.image}
                     alt={course.title}
                     className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
                   {/* Absolute Badge Layers */}
                   {course.badge && (
-                    <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider text-white ${
-                      course.badge === "Popular" ? "bg-indigo-600" : course.badge === "Best Seller" ? "bg-emerald-600" : "bg-blue-600"
-                    }`}>
+                    <span
+                      className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider text-white ${
+                        course.badge === "Popular"
+                          ? "bg-indigo-600"
+                          : course.badge === "Best Seller"
+                            ? "bg-emerald-600"
+                            : "bg-blue-600"
+                      }`}
+                    >
                       {course.badge}
                     </span>
                   )}
@@ -158,21 +182,24 @@ const Courses = () => {
                   {/* Metadata Matrix Spec Row */}
                   <div className="grid grid-cols-3 gap-1 pt-2 border-t border-b border-slate-100 dark:border-white/5 py-2.5 text-[11px] font-medium text-slate-400 dark:text-gray-500 font-mono">
                     <span className="flex items-center gap-1 justify-start">
-                      <IoBookOutline className="text-sm shrink-0" /> {course.lessons} les
+                      <IoBookOutline className="text-sm shrink-0" />{" "}
+                      {course.lessons} les
                     </span>
                     <span className="flex items-center gap-1 justify-center">
-                      <IoTimeOutline className="text-sm shrink-0" /> {course.duration.split(" ")[0]}
+                      <IoTimeOutline className="text-sm shrink-0" />{" "}
+                      {course.duration.split(" ")[0]}
                     </span>
                     <span className="flex items-center gap-1 justify-end uppercase text-right">
-                      <IoBarChartOutline className="text-sm shrink-0" /> {course.level}
+                      <IoBarChartOutline className="text-sm shrink-0" />{" "}
+                      {course.level}
                     </span>
                   </div>
 
                   {/* Pricing and Instructor Footer Grid Panel */}
                   <div className="flex items-center justify-between pt-1">
                     <div className="flex items-center gap-2">
-                      <img 
-                        src={course.avatar} 
+                      <img
+                        src={course.avatar}
                         alt={course.instructor}
                         className="w-7 h-7 rounded-full object-cover border border-slate-200 dark:border-white/10"
                       />
@@ -191,12 +218,10 @@ const Courses = () => {
                     </div>
                   </div>
                 </div>
-
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
-
       </div>
     </section>
   );

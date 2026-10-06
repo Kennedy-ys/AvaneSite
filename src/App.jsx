@@ -81,8 +81,14 @@ function App() {
         <Route path="/services/cybersecurity" element={<Cybersecurity />} />
         <Route path="/services/analysis" element={<DataAnalysis />} />
         <Route path="/services/graphics-design" element={<GraphicsDesign />} />
-        <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
-        <Route path="/services/project-management" element={<ProjectManagement />} />
+        <Route
+          path="/services/social-media-management"
+          element={<SocialMediaManagement />}
+        />
+        <Route
+          path="/services/project-management"
+          element={<ProjectManagement />}
+        />
         <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
       <Footer />

@@ -114,7 +114,9 @@ const TestimonialCard = ({ item }) => (
       "{item.text}"
     </p>
     <div className="flex items-center gap-3">
-      <div className={`w-9 h-9 rounded-xl ${item.color} flex items-center justify-center text-xs font-black shrink-0 tracking-wider shadow-xs`}>
+      <div
+        className={`w-9 h-9 rounded-xl ${item.color} flex items-center justify-center text-xs font-black shrink-0 tracking-wider shadow-xs`}
+      >
         {item.initials}
       </div>
       <div className="text-left">
@@ -190,7 +192,6 @@ const Badge = ({ label, sub }) => (
 export default function TestimonialsSection() {
   return (
     <section className="bg-linear-to-b from-white to-slate-50 dark:from-[#0d1527] dark:to-[#0b1220] py-24 px-6 lg:px-12 relative overflow-hidden transition-colors duration-300">
-      
       {/* Background Micro Glow Fields to tie in with Hero section */}
       <div className="absolute left-[-10%] top-1/3 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute right-[-15%] bottom-1/4 w-125 h-125 bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
@@ -205,7 +206,6 @@ export default function TestimonialsSection() {
       </div> */}
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center relative z-10">
-        
         {/* LEFT BRAND PANEL CONTAINER */}
         <motion.div
           className="lg:col-span-5 flex flex-col items-start text-left"
@@ -229,7 +229,9 @@ export default function TestimonialsSection() {
           </h2>
 
           <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed mb-10 max-w-md">
-            We partner with ambitious startups and established companies to deliver highly scalable applications, conversions-optimized UI/UX designs, and clean production architecture loops.
+            We partner with ambitious startups and established companies to
+            deliver highly scalable applications, conversions-optimized UI/UX
+            designs, and clean production architecture loops.
           </p>
 
           {/* Metric Badges Info Row */}
@@ -243,8 +245,12 @@ export default function TestimonialsSection() {
           <div className="mt-10 pt-8 border-t border-slate-200/80 dark:border-white/5 w-full max-w-md flex items-center gap-4">
             {/* Replaced generic visual circles with a clean modern project tracker text metric */}
             <div className="text-left">
-              <p className="text-2xl font-black text-blue-600 dark:text-cyan-400 leading-none">120+</p>
-              <p className="text-xs font-semibold text-slate-500 dark:text-gray-500 mt-1.5 uppercase tracking-wider">Shipped Digital Products</p>
+              <p className="text-2xl font-black text-blue-600 dark:text-cyan-400 leading-none">
+                120+
+              </p>
+              <p className="text-xs font-semibold text-slate-500 dark:text-gray-500 mt-1.5 uppercase tracking-wider">
+                Shipped Digital Products
+              </p>
             </div>
             <div className="h-8 w-px bg-slate-200 dark:bg-white/5 mx-2" />
             <div className="text-left">
@@ -271,7 +277,6 @@ export default function TestimonialsSection() {
           <ScrollColumn items={testimonials} speed={24} direction={1} />
           <ScrollColumn items={testimonialsCol2} speed={18} direction={-1} />
         </motion.div>
-        
       </div>
 
       {/* Embedded CSS style overrides to smoothly fade column top/bottom cutoffs */}
@@ -281,7 +286,6 @@ export default function TestimonialsSection() {
           -webkit-mask-image: linear-gradient(to bottom, transparent, white 12%, white 88%, transparent);
         }
       `}</style>
-
     </section>
   );
 }
