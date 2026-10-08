@@ -37,20 +37,27 @@ const About = () => {
             viewport={{ once: true }}
           >
             {/* Vision */}
+            <div className="mb-3 flex items-center gap-2">
+              <span className="block w-6 h-0.5 bg-orange-500" />
+              <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
+                Strategic Foundation
+              </span>
+            </div>
+
             <div className="mb-6 flex items-center gap-4">
-              <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10">
-                <PiLightbulbLight className="h-5 w-5 text-orange-500" />
+              <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10 shrink-0">
+                <PiLightbulbLight className="h-6 w-6 text-orange-500" />
               </div>
 
-              <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-700 dark:text-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
                 Our Vision
-              </h3>
+              </h2>
             </div>
 
             <div className="mb-8 h-px w-full bg-zinc-300 dark:bg-white/10" />
 
             {/* Paragraphs */}
-            <div className="space-y-8 text-[17px] leading-9 text-zinc-600 dark:text-zinc-400">
+            <div className="space-y-6 text-base md:text-lg font-light leading-relaxed text-zinc-600 dark:text-zinc-400">
               <p>
                 To enhance society by providing human-centered, customer-centric
                 technology solutions. We understand that fulfilling our vision
@@ -165,20 +172,27 @@ const About = () => {
             viewport={{ once: true }}
           >
             {/* Mission */}
+            <div className="mb-3 flex items-center gap-2">
+              <span className="block w-6 h-0.5 bg-orange-500" />
+              <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
+                Core Purpose
+              </span>
+            </div>
+
             <div className="mb-6 flex items-center gap-4">
-              <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10">
-                <PiLightbulbLight className="h-5 w-5 text-orange-500" />
+              <div className="rounded-full border border-orange-200 bg-orange-50 p-2 dark:border-orange-500/30 dark:bg-orange-500/10 shrink-0">
+                <PiLightbulbLight className="h-6 w-6 text-orange-500" />
               </div>
 
-              <h3 className="text-sm font-medium uppercase tracking-[0.25em] text-zinc-700 dark:text-zinc-300">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
                 Our Mission
-              </h3>
+              </h2>
             </div>
 
             <div className="mb-8 h-px w-full bg-zinc-300 dark:bg-white/10" />
 
             {/* Paragraphs */}
-            <div className="space-y-8 text-[17px] leading-9 text-zinc-600 dark:text-zinc-400">
+            <div className="space-y-6 text-base md:text-lg font-light leading-relaxed text-zinc-600 dark:text-zinc-400">
               <p>
                 To enhance society by providing human-centered, customer-centric
                 technology solutions. We understand that fulfilling our vision

@@ -228,12 +228,12 @@ const ServiceSection = ({ services: servicesProp = services }) => {
             </span>
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
             Explore Our Range of <span className="text-orange-500">Expert</span>{" "}
             Services
           </h2>
 
-          <p className="text-slate-500 dark:text-slate-400 mt-4 text-lg">
+          <p className="text-slate-600 dark:text-gray-400 mt-4 text-base md:text-lg font-light leading-relaxed max-w-2xl">
             From inception to establishment and well beyond, we provide full
             services to help your startup flourish.
           </p>
@@ -274,12 +274,12 @@ const ServiceSection = ({ services: servicesProp = services }) => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">
                   {title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-gray-400 text-sm font-light mb-6 leading-relaxed">
                   {description}
                 </p>
 

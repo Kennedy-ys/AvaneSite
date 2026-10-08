@@ -228,7 +228,7 @@ const Design = () => {
                 OUR CAPABILITIES
               </span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
               How we shape <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
                 digital products
@@ -272,7 +272,7 @@ const Design = () => {
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-cyan-400">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 transition-colors duration-300 group-hover:text-blue-600 dark:group-hover:text-cyan-400">
                       {title}
                     </h3>
                     <p className="text-slate-600 dark:text-gray-400 text-sm font-light leading-relaxed">

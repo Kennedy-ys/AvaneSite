@@ -7,6 +7,7 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
+import DeborahImage from "../../assets/images/DeborahArchibong.jpg";
 
 const teamMembers = [
   {
@@ -43,11 +44,10 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "Karim Haddad",
-    role: "Art Director",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&auto=format&fit=crop",
-    socials: { twitter: "#", linkedin: "#", github: "#" },
+    name: "Archibong Deborah",
+    role: "Technical Director",
+    image: DeborahImage,
+    socials: { twitter: "https://x.com/Ruleobee", linkedin: "https://www.linkedin.com/in/deborah-archibong-935499225", github: "https://github.com/RubeeDee" },
   },
   {
     id: 6,
@@ -63,6 +63,14 @@ const teamMembers = [
     role: "Producer",
     image:
       "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&auto=format&fit=crop",
+    socials: { twitter: "#", linkedin: "#", github: "#" },
+  },
+  {
+    id: 7,
+    name: "Kennedy Chidera",
+    role: "Technology Compliance Officer & Developer",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4E03AQF-I0aAIDnMfg/profile-displayphoto-shrink_400_400/B4EaC.UijCJQAU-/0/1789899450810?e=1793232000&v=beta&t=4-E6Gv21x7euD2XK0ncBOk3LwhunwVz0787gm-lmUes",
     socials: { twitter: "#", linkedin: "#", github: "#" },
   },
 ];
@@ -110,11 +118,18 @@ export default function TeamSection() {
   return (
     <section className="min-h-screen flex bg-linear-to-br from-white to-blue-50 dark:from-slate-800 dark:to-slate-950 flex-col items-center justify-center overflow-hidden py-12">
       {/* Header */}
-      <div className="mb-10 text-center">
-        <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-neutral-900 dark:text-zinc-300 md:text-5xl">
-          Our Team
+      <div className="mb-12 text-center max-w-3xl mx-auto px-6">
+        <div className="flex items-center gap-2 mb-4 justify-center">
+          <span className="w-6 h-0.5 bg-orange-500" />
+          <span className="text-orange-500 text-xs font-bold uppercase tracking-widest">
+            Who We Are
+          </span>
+          <span className="w-6 h-0.5 bg-orange-500" />
+        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white">
+          Meet The <span className="text-orange-500">Minds</span> Behind Avane
         </h2>
-        <p className="mx-auto mt-6 max-w-2xl text-[11px] font-medium uppercase tracking-[0.3em] text-neutral-500 dark:text-zinc-400">
+        <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg font-light text-slate-600 dark:text-gray-400 leading-relaxed">
           A creative collective of designers, developers, and strategists
           building the future of digital experiences.
         </p>
@@ -159,10 +174,10 @@ export default function TeamSection() {
               <div className="absolute inset-0 -z-10 bg-linear-to-t from-black/85 via-black/10 to-transparent" />
 
               <div className="text-left text-white">
-                <h3 className="text-lg font-bold leading-tight">
+                <h3 className="text-lg md:text-xl font-bold leading-tight">
                   {member.name}
                 </h3>
-                <p className="text-sm text-neutral-300">{member.role}</p>
+                <p className="text-sm text-neutral-300 font-light mt-0.5">{member.role}</p>
 
                 <AnimatePresence>
                   {isActive && (

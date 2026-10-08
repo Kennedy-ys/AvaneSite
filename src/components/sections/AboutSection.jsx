@@ -108,7 +108,7 @@ const AboutSection = () => {
           {/* Heading */}
           <motion.h2
             variants={itemVariants}
-            className="font-serif text-4xl md:text-5xl font-bold leading-tight text-slate-900 dark:text-white mb-5"
+            className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
           >
             Driving Growth with Cutting
             <span className="text-blue-600">-Edge</span> Technology
@@ -117,20 +117,20 @@ const AboutSection = () => {
           {/* Paragraph 1 */}
           <motion.p
             variants={itemVariants}
-            className="text-slate-500 dark:text-slate-400 leading-relaxed mb-3 "
+            className="text-slate-600 dark:text-slate-400 text-base md:text-lg font-light leading-relaxed mb-4"
           >
             At Avane our journey began with a simple yet powerful mission: to
             bridge the gap between complex technology and business. We believe
             that digital tools should empower, not complicate. Our team of
-            experts is dedicated to delivering high-performance [IT
-            Services/Software/Solutions] that help our clients stay ahead in an
-            ever-evolving digital landscape.
+            experts is dedicated to delivering high-performance IT
+            Services, Software, and Solutions that help our clients stay ahead
+            in an ever-evolving digital landscape.
           </motion.p>
 
           {/* Paragraph 2 */}
           <motion.p
             variants={itemVariants}
-            className="text-slate-500 dark:text-slate-400 leading-relaxed mb-6"
+            className="text-slate-600 dark:text-slate-400 text-base md:text-lg font-light leading-relaxed mb-6"
           >
             With years of experience in the technology sector, we have built a
             reputation for innovation, reliability, and excellence.

@@ -85,7 +85,7 @@ export default function LogoMarquee({
             <span className="block w-4 h-0.5 bg-orange-500" />
           </div>
         )}
-        <p className="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">
+        <p className="text-xs md:text-sm font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase">
           {subText}
         </p>
       </div>
@@ -110,7 +110,7 @@ export default function LogoMarquee({
                   <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 transition-colors group-hover:text-blue-600 dark:group-hover:text-cyan-400">
                     {name}
                   </h4>
-                  <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400 dark:text-gray-500 mt-0.5">
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-gray-500 mt-0.5">
                     {role}
                   </p>
                 </div>
@@ -136,7 +136,7 @@ export default function LogoMarquee({
                   <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 transition-colors group-hover:text-blue-600 dark:group-hover:text-cyan-400">
                     {name}
                   </h4>
-                  <p className="text-[10px] font-medium uppercase tracking-wider text-slate-400 dark:text-gray-500 mt-0.5">
+                  <p className="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-gray-500 mt-0.5">
                     {role}
                   </p>
                 </div>

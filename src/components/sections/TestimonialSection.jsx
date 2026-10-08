@@ -124,7 +124,7 @@ const TestimonialCard = ({ item }) => (
           {item.author}
         </p>
         {item.company && (
-          <p className="text-[11px] font-medium text-slate-400 dark:text-gray-500 mt-1 uppercase tracking-wider">
+          <p className="text-xs font-medium text-slate-500 dark:text-gray-400 mt-1 uppercase tracking-wider">
             {item.company}
           </p>
         )}
@@ -220,7 +220,7 @@ export default function TestimonialsSection() {
             Social Proof
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-6">
             Trusted by{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-500 to-amber-500">
               innovative

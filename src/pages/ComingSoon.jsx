@@ -15,9 +15,16 @@ const ComingSoon = () => {
       }}
     >
       <div className="absolute inset-0 bg-slate-100/90 dark:bg-[#0d1527]/85 pointer-events-none" />
-      <div className="flex flex-col justify-center items-center gap-6 relative top-[30%] z-10">
-        <p>This Page is</p>
-        <h1 className="text-4xl font-bold text-center">Coming Soon</h1>
+      <div className="flex flex-col justify-center items-center gap-6 relative top-[30%] z-10 px-4">
+        <span className="text-xs font-bold uppercase tracking-widest text-orange-500">
+          Under Construction
+        </span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase text-center text-slate-900 dark:text-white tracking-tight">
+          Coming Soon
+        </h1>
+        <p className="text-base md:text-lg font-light text-slate-600 dark:text-gray-300 text-center max-w-md">
+          We are currently crafting something extraordinary. Check back soon for updates.
+        </p>
         <Button
           as={Link}
           to="/"

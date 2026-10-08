@@ -29,6 +29,7 @@ const Footer = () => {
 
   const navLinks = [
     { name: "About", link: "/about" },
+    { name: "Projects", link: "/projects" },
     { name: "Blog", link: "/blog" },
     { name: "Academy", link: "/academy" },
     { name: "Contact", link: "/contact" },
@@ -133,13 +134,13 @@ const Footer = () => {
       </div>
       <div className="max-w-7xl mt-10 mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12 text-base md:text-lg leading-relaxed font-normal">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-12 justify-center mb-12 text-sm leading-relaxed">
           {/* Brand Column */}
           <div className="">
             <Link to="/">
               <Logo className="mb-4 w-15 h-auto " />
             </Link>
-            <p className=" leading-relaxed ">
+            <p className="leading-relaxed font-light text-slate-600 dark:text-slate-400">
               Transforming businesses through innovative technology solutions,
               thoughtful design, and strategic research.
             </p>
@@ -171,13 +172,15 @@ const Footer = () => {
 
           {/* Company Column */}
           <div className="flex flex-col space-y-3">
-            <h4 className="font-semibold dark:text-white mb-4">Company</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Company
+            </h4>
             {navLinks.map((item, index) => {
               return (
                 <Link
                   to={item.link}
                   key={index}
-                  className="hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
+                  className="text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
                 >
                   {item.name}
                 </Link>
@@ -187,13 +190,15 @@ const Footer = () => {
 
           {/* Service Column */}
           <div className="flex flex-col space-y-3">
-            <h4 className="font-semibold dark:text-white mb-4">Our Services</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Our Services
+            </h4>
             {servicesLinks.map((item, index) => {
               return (
                 <Link
                   to={item.link}
                   key={index}
-                  className="hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
+                  className="text-slate-600 dark:text-slate-400 hover:text-orange-500 hover:translate-x-0.5 transition-all duration-300"
                 >
                   {item.name}
                 </Link>
@@ -203,7 +208,9 @@ const Footer = () => {
 
           {/* Contact Information */}
           <motion.div className="flex flex-col space-y-3">
-            <h4 className="font-semibold dark:text-white mb-4">Contact Us</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Contact Us
+            </h4>
             {[
               {
                 type: "Email",

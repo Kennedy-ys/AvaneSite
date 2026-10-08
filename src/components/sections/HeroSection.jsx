@@ -71,7 +71,7 @@ const AboutHero = ({ subText, heading, HeroImg }) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-wider uppercase font-sans mb-4 transition-colors duration-300"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tight uppercase mb-6 transition-colors duration-300"
         >
           {heading}
         </motion.h1>
@@ -81,7 +81,7 @@ const AboutHero = ({ subText, heading, HeroImg }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-slate-700 dark:text-gray-300 text-sm md:text-base leading-relaxed max-w-xl font-light tracking-wide mb-8 px-4 transition-colors duration-300"
+          className="text-slate-600 dark:text-gray-300 text-base md:text-lg leading-relaxed max-w-xl font-light mb-8 px-4 transition-colors duration-300"
         >
           {subText}
         </motion.p>

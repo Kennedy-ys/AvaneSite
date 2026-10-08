@@ -2,6 +2,8 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import Button from "../components/ui/Button";
 import ServiceSection from "../components/sections/ServiceSection";
+import Projects from "../components/sections/Projects";
+import BlogSection from "../components/sections/BlogSection";
 import CTA from "../components/sections/Call-To-Action";
 import AboutSection from "../components/sections/AboutSection";
 import TestimonialSection from "../components/sections/TestimonialSection";
@@ -9,6 +11,7 @@ import LogoMarquee from "../components/sections/LogoMarquee";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { IoArrowRedoOutline } from "react-icons/io5";
 import heroIImg from "../assets/images/hero1.png";
+import { homeProjects, homeProjectContext } from "../data/projects";
 
 const contentContainerVariants = {
   hidden: { opacity: 0 },
@@ -175,11 +178,27 @@ const Home = () => {
         <ServiceSection />
       </section>
 
+      {/* Projects Section */}
+      <Projects
+        projects={homeProjects}
+        ProjectContext={homeProjectContext}
+        showViewAll={true}
+        viewAllLink="/projects"
+        viewAllText="View All Projects"
+      />
+
       {/* About Us Section */}
       <AboutSection />
 
       {/* Testimonial Section */}
       <TestimonialSection />
+
+      {/* Blogs / Insights Section */}
+      <BlogSection
+        showViewAll={true}
+        viewAllLink="/blog"
+        viewAllText="View All Articles"
+      />
 
       {/* Get Started Section */}
       <CTA

@@ -99,10 +99,10 @@ const Courses = () => {
       <div className="max-w-7xl mx-auto w-full space-y-12">
         {/* Header Setup mirroring Screenshot 2026-06-30 181720.jpg */}
         <div className="text-center space-y-3 max-w-xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
             Our Most Popular Tracks
           </h2>
-          <p className="text-slate-500 dark:text-gray-400 text-sm md:text-base font-light">
+          <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed">
             Deep dive into live application frameworks with production-tested
             workflows.
           </p>
@@ -150,7 +150,7 @@ const Courses = () => {
                   {/* Absolute Badge Layers */}
                   {course.badge && (
                     <span
-                      className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider text-white ${
+                      className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-md text-xs font-bold uppercase tracking-wider text-white ${
                         course.badge === "Popular"
                           ? "bg-indigo-600"
                           : course.badge === "Best Seller"
@@ -174,13 +174,13 @@ const Courses = () => {
                       <span>({course.reviews} reviews)</span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-800 dark:text-gray-200 line-clamp-2 tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-gray-100 line-clamp-2 tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {course.title}
                     </h3>
                   </div>
 
                   {/* Metadata Matrix Spec Row */}
-                  <div className="grid grid-cols-3 gap-1 pt-2 border-t border-b border-slate-100 dark:border-white/5 py-2.5 text-[11px] font-medium text-slate-400 dark:text-gray-500 font-mono">
+                  <div className="grid grid-cols-3 gap-1 pt-2 border-t border-b border-slate-100 dark:border-white/5 py-2.5 text-xs font-medium text-slate-500 dark:text-gray-400 font-mono">
                     <span className="flex items-center gap-1 justify-start">
                       <IoBookOutline className="text-sm shrink-0" />{" "}
                       {course.lessons} les

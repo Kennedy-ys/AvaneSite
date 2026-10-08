@@ -365,7 +365,7 @@ const Academy = () => {
               </span>
             </h1>
 
-            <p className="text-slate-600 dark:text-gray-400 text-base md:text-xl font-light leading-relaxed max-w-xl pt-1">
+            <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-xl pt-1">
               Whether you're just starting in a career, or you're an experienced
               professional, our self-directed approach helps you arrive at your
               goals faster, with more confidence and at your own pace. Develop
@@ -456,10 +456,10 @@ const Academy = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex-1 space-y-6"
               >
-                <h2 className="text-3xl md:text-4xl font-bold  tracking-tight capitalize leading-[1.05]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                   {item.title}
                 </h2>
-                <p className="text-slate-600 dark:text-gray-400 leading-relaxed text-lg font-light max-w-xl">
+                <p className="text-slate-600 dark:text-gray-400 leading-relaxed text-base md:text-lg font-light max-w-xl">
                   {item.description}
                 </p>
                 <div>
@@ -543,7 +543,7 @@ const Academy = () => {
             <FaQuoteLeft size={30} />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-black capitalize text-slate-900 dark:text-white tracking-tight leading-[1.05] max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight leading-[1.05] max-w-3xl">
             Over 4.8K Students <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-emerald-500">
               say Avane Learn helped them land a new job
@@ -562,10 +562,10 @@ const Academy = () => {
         <div className="max-w-7xl mx-auto w-full space-y-12">
           {/* Section Heading Setup matching layout blueprint structure */}
           <div className="text-center space-y-3 max-w-xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
               Top Categories
             </h2>
-            <p className="text-slate-500 dark:text-gray-400 text-sm md:text-base font-light">
+            <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed">
               Explore highly-curated, structured engineering pathways
               specialized to accelerate production readiness.
             </p>
@@ -593,7 +593,7 @@ const Academy = () => {
                 </div>
 
                 <div className="space-y-2 flex-1 flex flex-col justify-center">
-                  <h3 className="text-md font-bold text-slate-800 dark:text-gray-200 tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-base md:text-lg font-bold text-slate-900 dark:text-gray-100 tracking-tight leading-snug group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {category.title}
                   </h3>
                   <p className="text-xs font-medium text-slate-400 dark:text-gray-500 font-mono uppercase">
@@ -660,7 +660,7 @@ const Academy = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-slate-900 dark:text-white"
           >
             Why Get Certified?
           </motion.h2>
@@ -669,9 +669,9 @@ const Academy = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-sm md:text-base text-slate-500 dark:text-gray-400 font-light tracking-wide max-w-md mx-auto"
+            className="text-base md:text-lg text-slate-600 dark:text-gray-400 font-light leading-relaxed max-w-md mx-auto"
           >
-            Earn industry- recognized credentials to show the value of your
+            Earn industry-recognized credentials to show the value of your
             skills.
           </motion.p>
         </div>

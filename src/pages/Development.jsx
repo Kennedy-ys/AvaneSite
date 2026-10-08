@@ -74,7 +74,7 @@ const Development = () => {
               <br />& web applications.
             </h1>
 
-            <p className="text-slate-600 dark:text-gray-400 text-base md:text-xl font-light leading-relaxed max-w-xl">
+            <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-xl">
               Bridging complex backend system pipelines with highly interactive,
               pixel-perfect frontend portals. We write clean, lightning-fast
               code custom-tailored to accelerate enterprise operations.
@@ -221,7 +221,7 @@ const Development = () => {
                   CAPABILITIES MATRIX
                 </span>
               </div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
                 Full-Stack <br />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">
                   Engineering Power
@@ -229,7 +229,7 @@ const Development = () => {
               </h2>
             </div>
 
-            <p className="text-slate-600 dark:text-gray-400 font-light text-base md:text-lg max-w-md text-left">
+            <p className="text-slate-600 dark:text-gray-400 font-light text-base md:text-lg max-w-md text-left leading-relaxed">
               We eliminate the artificial boundary between web presentation and
               complex data software. Here is how we build modern digital
               platforms.
@@ -262,7 +262,7 @@ const Development = () => {
 
                   {/* Central Information Stack */}
                   <div className="mt-8 relative z-10 space-y-3">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-wide">
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
                       {title}
                     </h3>
                     <p className="text-sm font-light text-slate-600 dark:text-gray-400 leading-relaxed max-w-2xl">
@@ -275,7 +275,7 @@ const Development = () => {
                     {item.tags.map((tag, tagIdx) => (
                       <span
                         key={tagIdx}
-                        className="text-[11px] font-bold text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-900/60 border border-slate-200/60 dark:border-white/5 tracking-wide"
+                        className="text-xs font-medium text-slate-500 dark:text-gray-400 px-3 py-1 rounded-md bg-white dark:bg-slate-900/60 border border-slate-200/60 dark:border-white/5 tracking-wide"
                       >
                         {tag}
                       </span>

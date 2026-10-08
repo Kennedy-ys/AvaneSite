@@ -34,6 +34,7 @@ export const pmProjectContext = {
   title: "Delivery Proofs",
   heading1: "Predictable",
   heading2: "Execution Lifecycles",
+  serviceType: "Project Management",
   headerLineColor: "indigo",
   gradientHeadingClasses: "from-indigo-500 via-purple-500 to-blue-500",
   description:
@@ -76,6 +77,7 @@ export const gdProjectContext = {
   title: "Creative Proofs",
   heading1: "Artistic",
   heading2: "Identity Systems",
+  serviceType: "Graphic Design",
   headerLineColor: "rose",
   gradientHeadingClasses: "from-rose-500 via-fuchsia-500 to-violet-500",
   description:
@@ -116,6 +118,7 @@ export const cyberProjectContext = {
   title: "Defensive Proofs",
   heading1: "Hardened",
   heading2: "Digital Perimeters",
+  serviceType: "Cybersecurity",
   headerLineColor: "emerald",
   gradientHeadingClasses: "from-emerald-500 via-teal-500 to-cyan-500",
   description:
@@ -184,6 +187,7 @@ export const devProjectContext = {
   title: "Engineering Proofs",
   heading1: "Production",
   heading2: "System Architectures",
+  serviceType: "Development",
   headerLineColor: "blue",
   gradientHeadingClasses: "from-blue-600 via-cyan-500 to-emerald-500",
   description:
@@ -225,6 +229,7 @@ export const smProjectContext = {
   title: "Distribution Proofs",
   heading1: "Amplified",
   heading2: "Market Attention",
+  serviceType: "Social Media",
   headerLineColor: "orange",
   gradientHeadingClasses: "from-orange-500 via-rose-500 to-indigo-500",
   description:
@@ -266,6 +271,7 @@ export const uiUxProjectContext = {
   title: "Case studies",
   heading1: "Selected",
   heading2: "Design Proof",
+  serviceType: "UI/UX Design",
   description:
     "Real products built for real users, proving that human-centric experiences catalyze massive business scale.",
   headerLineColor: "orange",
@@ -334,6 +340,7 @@ export const analyticsProjectContext = {
   title: "Intelligence Proofs",
   heading1: "Automated",
   heading2: "Growth Vectors",
+  serviceType: "Data Analysis",
   headerLineColor: "emerald",
   gradientHeadingClasses: "from-emerald-500 via-teal-400 to-cyan-500",
   description:
@@ -375,8 +382,63 @@ export const researchProjectContext = {
   title: "Empirical Proofs",
   heading1: "Evidence-Led",
   heading2: "Product Discoveries",
+  serviceType: "Research",
   headerLineColor: "emerald",
   gradientHeadingClasses: "from-emerald-500 via-teal-500 to-amber-500",
   description:
     "Explore comprehensive discovery case studies, behavioral telemetry teardowns, and actionable market analysis blueprints designed to back product decisions with true user data.",
 };
+
+// Home page Featured Projects
+export const homeProjects = [
+  {
+    title: "Fintech Core Banking Ecosystem",
+    category: "Web Application & APIs",
+    metric: "-42% Latency Overhead",
+    imageUrl:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    link: "services/development",
+    accentColor: "from-blue-600 to-cyan-500",
+  },
+  {
+    title: "E-Commerce Mobile Workspace",
+    category: "iOS & Android App",
+    metric: "+125% Conversion Boost",
+    imageUrl:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    link: "services/ui-ux-design",
+    accentColor: "from-orange-500 to-amber-500",
+  },
+  {
+    title: "Global FinTech Perimeter Hardening",
+    category: "Zero-Trust Infrastructure",
+    metric: "99.9% Exploit Surface Reduction",
+    imageUrl:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+    link: "services/cybersecurity",
+    accentColor: "from-emerald-600 to-teal-500",
+  },
+];
+
+export const homeProjectContext = {
+  title: "Proven Case Studies",
+  heading1: "Impact-Driven",
+  heading2: "Digital Solutions",
+  description:
+    "Explore how our design, engineering, and cybersecurity teams transform business visions into market-defining digital products.",
+  headerLineColor: "orange",
+  gradientHeadingClasses: "from-blue-600 via-cyan-500 to-indigo-600",
+};
+
+// Unified projects collection with tags for the dedicated Projects page
+export const allProjectsList = [
+  ...devProjects.map((p) => ({ ...p, serviceType: "Development" })),
+  ...uiUxProjects.map((p) => ({ ...p, serviceType: "UI/UX Design" })),
+  ...cyberProjects.map((p) => ({ ...p, serviceType: "Cybersecurity" })),
+  ...analyticsProjects.map((p) => ({ ...p, serviceType: "Data Analysis" })),
+  ...gdProjects.map((p) => ({ ...p, serviceType: "Graphic Design" })),
+  ...pmProjects.map((p) => ({ ...p, serviceType: "Project Management" })),
+  ...researchProjects.map((p) => ({ ...p, serviceType: "Research" })),
+  ...smProjects.map((p) => ({ ...p, serviceType: "Social Media" })),
+];
+

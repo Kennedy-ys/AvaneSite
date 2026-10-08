@@ -17,6 +17,7 @@ import ThemeProvider from "./providers/ThemeProviders";
 import Cybersecurity from "./pages/Cybersecurity";
 import Academy from "./pages/Academy";
 import Blog from "./pages/Blog";
+import Projects from "./pages/Projects";
 
 function App() {
   // Initial state: check localStorage,then system, then default to light
@@ -74,6 +75,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/academy" element={<Academy />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/development" element={<Development />} />
         <Route path="/services/ui-ux-design" element={<UIUXDesign />} />
@@ -81,14 +83,8 @@ function App() {
         <Route path="/services/cybersecurity" element={<Cybersecurity />} />
         <Route path="/services/analysis" element={<DataAnalysis />} />
         <Route path="/services/graphics-design" element={<GraphicsDesign />} />
-        <Route
-          path="/services/social-media-management"
-          element={<SocialMediaManagement />}
-        />
-        <Route
-          path="/services/project-management"
-          element={<ProjectManagement />}
-        />
+        <Route path="/services/social-media-management" element={<SocialMediaManagement />} />
+        <Route path="/services/project-management" element={<ProjectManagement />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
       <Footer />

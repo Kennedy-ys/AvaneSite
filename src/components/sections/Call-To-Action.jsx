@@ -12,7 +12,7 @@ const CTA = ({ text, ctaText }) => {
       >
         <div className="absolute inset-0 bg-black/85 w-full" />
         <div className="flex flex-col gap-17 justify-center items-center text-white z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center capitalize leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center uppercase tracking-tight leading-tight px-4 max-w-4xl">
             {text}
           </h2>
           <Button

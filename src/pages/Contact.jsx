@@ -147,7 +147,7 @@ const Contact = () => {
                 className="flex items-center gap-2.5 mb-4 z-10"
               >
                 <div className="w-5 h-px bg-orange-400" />
-                <span className="text-orange-300 text-xs font-semibold uppercase tracking-[0.15em]">
+                <span className="text-orange-300 text-xs font-bold uppercase tracking-widest">
                   Get in Touch
                 </span>
               </motion.div>
@@ -155,7 +155,7 @@ const Contact = () => {
               {/* Heading */}
               <motion.h2
                 variants={fadeUp}
-                className="text-white text-3xl sm:text-4xl font-bold leading-tight mb-8 z-10"
+                className="text-white text-2xl sm:text-3xl md:text-4xl font-black uppercase tracking-tight leading-tight mb-8 z-10"
               >
                 Send Us a Message For
                 <br />

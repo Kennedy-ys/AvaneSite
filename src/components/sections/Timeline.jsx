@@ -24,7 +24,7 @@ const Timeline = ({ timelineSteps, timelineContext }) => {
               {step.phase}
             </span>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-wide">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">
               {step.title}
             </h3>
             <p className="text-slate-600 dark:text-gray-400 text-sm font-light leading-relaxed">
@@ -38,7 +38,7 @@ const Timeline = ({ timelineSteps, timelineContext }) => {
               {step.details.map((detail, dIdx) => (
                 <span
                   key={dIdx}
-                  className="text-[10px] font-semibold text-slate-500 dark:text-gray-400 bg-slate-50 dark:bg-slate-900/60 px-2.5 py-1 rounded-md border border-slate-200/40 dark:border-white/5"
+                  className="text-xs font-medium text-slate-500 dark:text-gray-400 bg-slate-50 dark:bg-slate-900/60 px-2.5 py-1 rounded-md border border-slate-200/40 dark:border-white/5"
                 >
                   ✓ {detail}
                 </span>
@@ -90,7 +90,7 @@ const Timeline = ({ timelineSteps, timelineContext }) => {
               className={`block w-6 h-0.5 bg-${timelineContext.color}-500`}
             />
           </div>
-          <h2 className="text-3xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white tracking-tight">
             {timelineContext.heading1}{" "}
             <span
               className={`text-transparent bg-clip-text bg-linear-to-r ${timelineContext.gradientHeadingClasses}`}
@@ -98,7 +98,7 @@ const Timeline = ({ timelineSteps, timelineContext }) => {
               {timelineContext.heading2}
             </span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 font-light text-base md:text-lg max-w-xl">
+          <p className="text-slate-600 dark:text-gray-400 font-light text-base md:text-lg leading-relaxed max-w-xl">
             {timelineContext.description}
           </p>
         </div>

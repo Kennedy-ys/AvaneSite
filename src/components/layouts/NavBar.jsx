@@ -128,6 +128,7 @@ const NavBar = () => {
         },
       ],
     },
+    { name: "Projects", link: "/projects" },
     { name: "Blog", link: "/blog" },
     { name: "Academy", link: "/academy" },
     { name: "Contact", link: "/contact" },
