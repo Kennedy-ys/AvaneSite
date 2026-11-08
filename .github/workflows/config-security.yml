@@ -3,13 +3,6 @@ name: Security Scan
 on:
   push:
     branches: [main, develop]
-    paths:
-      - "**.js"
-      - "**.mjs"
-      - "**.cjs"
-      - "**.config.*"
-      - "package.json"
-      - ".github/workflows/security-scan.yml"
   pull_request:
     branches: [main, develop]
 
@@ -27,6 +20,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
+
+      - name: Check for injected code
+        run: node scripts/check-integrity.mjs
 
       - name: Check for obfuscation patterns
         run: |
@@ -47,7 +43,7 @@ jobs:
           # Check for dynamic function execution
           if git diff origin/main...HEAD --unified=0 | grep -E '^[+].*(Function\(|new Function)'; then
             echo "⚠️  WARNING: Dynamic function execution detected"
-            echo "    Please review: new Function() or Function() calls"
+            echo "    Please review: new Function or Function calls"
           fi
 
           echo "✅ Obfuscation check passed"
@@ -70,11 +66,11 @@ jobs:
         run: npm run security:check
         if: hashFiles('scripts/security-check.js') != ''
 
-      - name: Check for eval() calls
+      - name: Check for eval calls
         run: |
-          echo "Checking for eval() patterns..."
+          echo "Checking for eval patterns..."
 
           if git diff origin/main...HEAD | grep -E '^[+].*(eval\(|createRequire.*eval)'; then
-            echo "⚠️  WARNING: eval() or createRequire+eval patterns found"
+            echo "⚠️  WARNING: eval or createRequire+eval patterns found"
             echo "    These should be avoided in production code"
           fi

@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+node scripts/check-integrity.mjs
+
 echo "🔍 Running security checks..."
 
 npm run security:check
