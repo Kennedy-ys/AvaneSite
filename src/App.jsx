@@ -17,6 +17,7 @@ import ThemeProvider from "./providers/ThemeProviders";
 import Cybersecurity from "./pages/Cybersecurity";
 import Academy from "./pages/Academy";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Projects from "./pages/Projects";
 
 function App() {
@@ -75,6 +76,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/academy" element={<Academy />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services/development" element={<Development />} />

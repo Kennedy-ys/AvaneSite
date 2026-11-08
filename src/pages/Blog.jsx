@@ -1,184 +1,110 @@
-import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import HeroSection from "../components/sections/HeroSection";
+import CTA from "../components/sections/Call-To-Action";
+import PostCard from "../components/ui/PostCard";
 import heroimg from "../assets/images/Teamwork.webp";
-import { motion, AnimatePresence } from "motion/react";
-import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
-import {
-  IoTimeOutline,
-  IoChatbubbleOutline,
-  IoCheckmarkCircle,
-} from "react-icons/io5";
-import { blogs as featuredPosts } from "../data/blogs";
+import { blogs, blogContext } from "../data/blogs";
+
+const ALL = "All";
+const categories = [ALL, ...new Set(blogs.map((post) => post.category))];
 
 const Blog = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const requestedCategory = searchParams.get("category");
+  const activeCategory = categories.includes(requestedCategory)
+    ? requestedCategory
+    : ALL;
 
-  const activePost = featuredPosts[currentIndex];
-
-  // Auto-rotate posts every 20 secs
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % featuredPosts.length);
-    }, 20000);
-    return () => clearInterval(interval);
-  });
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % featuredPosts.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + featuredPosts.length) % featuredPosts.length,
-    );
-  };
+  const posts =
+    activeCategory === ALL
+      ? blogs
+      : blogs.filter((post) => post.category === activeCategory);
+  const [featuredPost, ...otherPosts] = posts;
 
   return (
-    <div>
-      {/* --- HERO SECTION ---*/}
+    <MotionConfig reducedMotion="user">
       <HeroSection
         heading="Blog"
-        subText="Explore our latest articles, insights, and updates on real estate trends, investment strategies, and market analysis. Stay informed and make informed decisions with our expert content."
+        subText={blogContext.description}
         HeroImg={heroimg}
       />
-      {/* Featured Blog Section */}
-      <section className="bg-white dark:bg-[#03060d] py-16 px-6 lg:px-12 transition-colors duration-300 overflow-hidden border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto w-full space-y-8">
-          {/* Main Content Split Grid Container */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center min-h-115">
-            {/* LEFT COLUMN: ARTICLE CONTENT */}
-            <div className="lg:col-span-6 flex flex-col justify-between space-y-6 text-left">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activePost.id}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="space-y-5"
-                >
-                  {/* Category Pill Tag */}
-                  <div className="inline-block">
-                    <span className="px-3.5 py-1.5 rounded-lg bg-slate-900 dark:bg-slate-800 text-white text-xs font-bold tracking-wider uppercase font-mono">
-                      {activePost.tag}
-                    </span>
-                  </div>
 
-                  {/* Article Main Headline */}
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase text-slate-900 dark:text-white leading-[1.05] tracking-tight">
-                    {activePost.title}
-                  </h1>
+      <section className="py-20 px-6 lg:px-12 relative overflow-hidden bg-slate-50 dark:bg-[#090f1d] transition-colors duration-300">
+        <div className="absolute left-1/4 top-10 w-96 h-96 bg-orange-500/5 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute right-10 bottom-20 w-80 h-80 bg-blue-600/5 blur-[140px] rounded-full pointer-events-none" />
 
-                  {/* Excerpt Body Paragraph */}
-                  <p className="text-slate-600 dark:text-gray-400 text-base md:text-lg font-light leading-relaxed max-w-xl">
-                    {activePost.excerpt}{" "}
-                    <a
-                      href="#"
-                      className="text-blue-600 dark:text-blue-500 font-medium hover:underline"
-                    >
-                      Read More...
-                    </a>
-                  </p>
-
-                  {/* Author Metadata Badge */}
-                  <div className="flex items-center gap-2.5 pt-2">
-                    <img
-                      src={activePost.authorAvatar}
-                      alt={activePost.author}
-                      className="w-8 h-8 rounded-full object-cover border border-slate-200 dark:border-white/10"
-                    />
-                    <span className="font-bold text-xs md:text-sm text-slate-900 dark:text-white flex items-center gap-1">
-                      {activePost.author}
-                      {activePost.verified && (
-                        <IoCheckmarkCircle className="text-blue-600 dark:text-blue-400 text-base" />
-                      )}
-                    </span>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Reading Duration & Engagement Metrics Row */}
-              <div className="flex items-center gap-6 pt-4 text-xs md:text-sm font-mono text-slate-500 dark:text-gray-400 border-t border-slate-100 dark:border-white/5">
-                <span className="flex items-center gap-2">
-                  <IoTimeOutline className="text-base text-blue-600 dark:text-blue-400" />
-                  {activePost.readTime}
-                </span>
-                <span className="w-px h-4 bg-slate-200 dark:bg-white/10" />
-                <span className="flex items-center gap-2">
-                  <IoChatbubbleOutline className="text-base text-blue-600 dark:text-blue-400" />
-                  {activePost.commentsCount} Comments
-                </span>
-              </div>
-            </div>
-
-            {/* RIGHT COLUMN: FEATURED MEDIA FRAME */}
-            <div className="lg:col-span-6 relative w-full h-full">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activePost.id}
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative aspect-16/10 md:aspect-video rounded-3xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 shadow-2xl group"
-                >
-                  <img
-                    src={activePost.image}
-                    alt={activePost.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  {/* Dark Gradient Overlay for Caption Readability */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex items-end justify-center p-6 text-center">
-                    <p className="text-white text-base md:text-lg font-light tracking-wide font-sans">
-                      {activePost.imageCaption}
-                    </p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* BOTTOM NAVIGATIONAL CONTROL & INDICATOR ROW */}
-          <div className="flex items-center justify-between pt-6">
-            {/* Progress Segmented Dash Indicators */}
-            <div className="flex items-center gap-2">
-              {featuredPosts.map((_, idx) => (
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Category Filter */}
+          <div
+            role="group"
+            aria-label="Filter articles by category"
+            className="flex flex-wrap items-center justify-center gap-2.5 mb-12"
+          >
+            {categories.map((category) => {
+              const isActive = category === activeCategory;
+              return (
                 <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === currentIndex
-                      ? "w-10 bg-slate-900 dark:bg-white"
-                      : "w-6 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+                  key={category}
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() =>
+                    setSearchParams(category === ALL ? {} : { category })
+                  }
+                  className={`px-4.5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+                    isActive
+                      ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
+                      : "bg-slate-200/70 dark:bg-slate-800/80 text-slate-700 dark:text-gray-300 hover:bg-slate-200 dark:hover:bg-slate-700"
                   }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Prev/Next Directional Buttons */}
-            <div className="flex items-center gap-3">
-              <button
-                onClick={handlePrev}
-                className="w-11 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer"
-                aria-label="Previous Post"
-              >
-                <HiArrowLeft size={18} />
-              </button>
-              <button
-                onClick={handleNext}
-                className="w-11 h-11 rounded-full border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-800 dark:text-gray-200 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors cursor-pointer"
-                aria-label="Next Post"
-              >
-                <HiArrowRight size={18} />
-              </button>
-            </div>
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <PostCard
+                post={featuredPost}
+                layout="feature"
+                headingAs="h2"
+                to={`/blog/${featuredPost.slug}`}
+              />
+
+              {otherPosts.length > 0 && (
+                <>
+                  <h2 className="mt-16 mb-8 text-2xl sm:text-3xl font-black uppercase tracking-tight text-left text-slate-900 dark:text-white">
+                    More Articles
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    {otherPosts.map((post) => (
+                      <PostCard
+                        key={post.id}
+                        post={post}
+                        to={`/blog/${post.slug}`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
-    </div>
+
+      <CTA
+        text="Ready to Transform Your Future With Us?"
+        ctaText="Get Started"
+      />
+    </MotionConfig>
   );
 };
 
