@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "lint": "eslint .",
-    "security:check": "node scripts/security-check.js",
-    "preview": "vite preview",
+    "check:integrity": "node scripts/check-integrity.mjs",
+    "dev": "npm run check:integrity && vite --host",
+    "build": "npm run check:integrity && vite build",
+    "lint": "npm run check:integrity && eslint .",
+    "security:check": "npm run check:integrity && node scripts/security-check.js",
+    "preview": "npm run check:integrity && vite preview",
     "prepare": "husky"
   },
   "dependencies": {
