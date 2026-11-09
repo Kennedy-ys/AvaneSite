@@ -194,11 +194,7 @@ const Home = () => {
       <TestimonialSection />
 
       {/* Blogs / Insights Section */}
-      <BlogSection
-        showViewAll={true}
-        viewAllLink="/blog"
-        viewAllText="View All Articles"
-      />
+      <BlogSection />
 
       {/* Get Started Section */}
       <CTA
